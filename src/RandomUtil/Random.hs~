@@ -1,0 +1,12 @@
+module RandomUtil.Random
+  (
+
+  ) where
+
+import System.Random
+
+randomMap :: RandomGen g => (g -> a -> (b,g)) -> g -> [a] -> ([b],g)
+randomMap _ g []     = ([], g)
+randomMap f g (x:xs) = let (y,g') = f g x
+                           (ys, gf) = randomMap f g xs
+                       in (y:ys, gf)

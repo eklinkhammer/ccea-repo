@@ -1,0 +1,21 @@
+--import Test.HUnit
+
+import Numeric.LinearAlgebra.HMatrix hiding (corr)
+import Matrix.State
+import Control.Monad.State.Strict
+
+mat = reshape 3 $ fromList $ take 9 [1..] :: Matrix Double
+vec = fromList $ take 3 [10..] :: Vector Double
+
+vec1 :: State (Vector Double) (Vector Double)
+vec1 = do
+  modify (\v -> changeElement 1 1 v)
+  get
+  
+main :: IO ()
+main = do
+  putStrLn $ show vec
+  vecM <- vec1 vec
+  putStrLn $ show vecM
+  putStrLn "H"
+--  replaceVector 1 1 

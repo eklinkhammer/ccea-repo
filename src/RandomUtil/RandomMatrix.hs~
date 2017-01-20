@@ -1,0 +1,19 @@
+module RandomUtil.RandomMatrix
+  (
+    selectRandomMatrixElement
+  , randomMatrixIndex
+  , randomizeRandomMatrixElement
+  ) where
+
+import System.Random
+import Matrix.State
+
+selectRandomMatrixElement :: Element a => StdGen -> Matrix a -> a
+selectRandomMatrixElement = undefined
+
+randomMatrixIndex :: Element a => StdGen -> Matrix a -> MatrixIndex
+randomMatrixIndex = undefined
+
+randomizeRandomMatrixElement :: Element a => StdGen -> StdGen -> MatrixMutation a
+randomizeRandomMatrixElement = undefined
+
