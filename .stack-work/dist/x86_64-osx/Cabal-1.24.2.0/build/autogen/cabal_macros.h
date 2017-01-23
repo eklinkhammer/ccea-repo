@@ -63,6 +63,13 @@
   (major1) == 0 && (major2) <  11 || \
   (major1) == 0 && (major2) == 11 && (minor) <= 0)
 
+/* package HUnit-1.3.1.2 */
+#define VERSION_HUnit "1.3.1.2"
+#define MIN_VERSION_HUnit(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  3 || \
+  (major1) == 1 && (major2) == 3 && (minor) <= 1)
+
 /* tool gcc-4.2.1 */
 #define TOOL_VERSION_gcc "4.2.1"
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\

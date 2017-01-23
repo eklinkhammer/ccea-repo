@@ -1,19 +1,19 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-20 22:58:16.343864 UTC
+2017-01-23 03:02:21.032076 UTC
 
 interface rover-domain-0.1.0.0-61Fsc9uUajFGfxZsLCyosq:NN.NeuralNetwork 8001
-  interface hash: 89ac311e350a3c98312c7d3b5e01fd77
-  ABI hash: 113908154fbb6902a4b5bd1b4a11ec71
-  export-list hash: d621a5ae456fb51320f20c47599b47f5
-  orphan hash: 58f66fea76b77cc3cd33e9bcf6cc9a72
+  interface hash: 937c57fe7f48fb9864c1dc6afd6ec418
+  ABI hash: 96d401a3c378768062e0895fbb66e9e7
+  export-list hash: 723a119af1627d538a67ace973f98181
+  orphan hash: 82a45973d5166b9535df5017f5c81fa0
   flag hash: 34af92ddec629e2403fad3676ddb0e6e
   sig of: Nothing
   used TH splices: False
   where
 exports:
   NN.NeuralNetwork.createNetworkW
-  NN.NeuralNetwork.NN{NN.NeuralNetwork.create NN.NeuralNetwork.get NN.NeuralNetwork.randomize NN.NeuralNetwork.train}
+  NN.NeuralNetwork.NN{NN.NeuralNetwork.create NN.NeuralNetwork.get NN.NeuralNetwork.randomize NN.NeuralNetwork.train NN.NeuralNetwork.trainV}
   NN.NeuralNetwork.NNVars
 module dependencies: Matrix.State RandomUtil.Random
                      RandomUtil.RandomMatrix Util.Vars
@@ -73,11 +73,11 @@ family instance modules: base-4.9.0.0:Control.Applicative
                          vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed.Base
                          zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV:Codec.Compression.Zlib.Stream
 import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Float 469226b1bc53433e95d0167dec5d0312
 import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
 import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
 import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
 import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
-import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Strict 48e097497655818e164c2bb81a1d7b2d
 import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
 import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix 515b660ee5ee78b11c9f17f31995b4f9
 import  -/  hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.LinearAlgebra.HMatrix 4e354b7f55efceb1e6739fbf94a43aaa
@@ -85,8 +85,6 @@ import  -/  hnn-0.3@hnn-0.3-BTcaYwOzMFRHoXIMlsey6T:AI.HNN.FF.Network 8cb158cb2e5
 import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.Reader 859b39f57eb3bed457106c30aac21473
 import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.Reader.Class 8046d4d7c28bbf9d539af876e6134287
 import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 33fad628288f84aac16d40e5a027af06
-import  -/  Matrix.State b77ab63e0ab88f7eb728e5e684a11321
-  exports: 2c675e5fd7415c7b3ebccc0daa57f07f
 import  -/  RandomUtil.Random 6261e03b28e656e0736ddd6b006154ff
   exports: 7d6c6cf08c7d26459a72686e50048515
   randomMapTwoGens 61d2051ef788269c5955688364b6c5aa
@@ -100,7 +98,31 @@ import  -/  Util.Vars e69d4a01e9894a2dea4eb9f135f01c1a
 import  -/  transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Reader e4096b104cf1a0df8752e81669ef6a24
 import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector c1e986e414fb06d8c78b2ec9a85e2dfc
 import  -/  vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable 8654c53df20dc1a97095be9c331f0e9b
-cbb888407db69833dce4ac53b6c18612
+576161e8ed164adf1235ff9bbb0c3809
+  $dmtrain ::
+    NN.NeuralNetwork.NN n =>
+    NN.NeuralNetwork.NNVars
+    -> n -> AI.HNN.FF.Network.Sample GHC.Types.Double -> n
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(LLLC(C(C(S)))L),1*U(A,A,A,1*C1(C1(C1(U))),A)><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, False)
+                (\ @ n
+                   ($dNN :: NN.NeuralNetwork.NN n)
+                   (vars :: NN.NeuralNetwork.NNVars)
+                   (net :: n)
+                   (samp :: AI.HNN.FF.Network.Sample GHC.Types.Double) ->
+                 NN.NeuralNetwork.trainV
+                   @ n
+                   $dNN
+                   vars
+                   net
+                   (GHC.Base.build
+                      @ (AI.HNN.FF.Network.Sample GHC.Types.Double)
+                      (\ @ a
+                         (c :: AI.HNN.FF.Network.Sample GHC.Types.Double -> a -> a)[OneShot]
+                         (n1 :: a)[OneShot] ->
+                       c samp n1))) -}
+f555cbee70f75015d7ad49ecae70c25d
   $fNNNetwork ::
     NN.NeuralNetwork.NN (AI.HNN.FF.Network.Network GHC.Types.Double)
   DFunId
@@ -110,8 +132,9 @@ cbb888407db69833dce4ac53b6c18612
                   NN.NeuralNetwork.createNetworkW
                   NN.NeuralNetwork.$fNNNetwork_$cget
                   NN.NeuralNetwork.$fNNNetwork_$ctrain
+                  NN.NeuralNetwork.$fNNNetwork_$ctrainV
                   NN.NeuralNetwork.$fNNNetwork_$crandomize -}
-ce29910c6accb2b2e5e0968889f27d24
+af029762ef2e5e3c544d3c058d704a11
   $fNNNetwork1 ::
     AI.HNN.FF.Network.Network GHC.Types.Double
     -> Data.Vector.Storable.Vector GHC.Types.Double
@@ -154,7 +177,7 @@ ce29910c6accb2b2e5e0968889f27d24
 05f2d94ff391b1d9a5785b735587672a
   $fNNNetwork5 :: GHC.Types.Double
   {- HasNoCafRefs, Unfolding: (GHC.Types.D# 1.0##) -}
-65b1971597f141d56065878e18a2625a
+3a21b05d92a4bf45f4b914119bac504a
   $fNNNetwork_$cget ::
     AI.HNN.FF.Network.Network GHC.Types.Double
     -> Data.Vector.Storable.Vector GHC.Types.Double
@@ -189,51 +212,53 @@ ce29910c6accb2b2e5e0968889f27d24
                         w2
                         w3 of ww { (#,#) ww1 ww2 ->
                  (ww1, ww2) }) -}
-16c76b418d546e054b14b06bc6beaa32
+a79ad67631707c586ae339c97a5a7c3e
   $fNNNetwork_$ctrain ::
     NN.NeuralNetwork.NNVars
     -> AI.HNN.FF.Network.Network GHC.Types.Double
     -> AI.HNN.FF.Network.Sample GHC.Types.Double
     -> AI.HNN.FF.Network.Network GHC.Types.Double
-  {- Arity: 3, Strictness: <S,U><S,1*U(U,U,U)><S,1*U(U,U(U,U,U))>m,
+  {- Arity: 3, Strictness: <S,U><S,1*U(U,U,U)><L,U>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ (vars :: NN.NeuralNetwork.NNVars)
+                   (net :: AI.HNN.FF.Network.Network GHC.Types.Double)
+                   (samp :: AI.HNN.FF.Network.Sample GHC.Types.Double) ->
+                 NN.NeuralNetwork.$fNNNetwork_$ctrainV
+                   vars
+                   net
+                   (GHC.Types.:
+                      @ (AI.HNN.FF.Network.Sample GHC.Types.Double)
+                      samp
+                      (GHC.Types.[] @ (AI.HNN.FF.Network.Sample GHC.Types.Double)))) -}
+48454eaf817009463b843af2ab1b89de
+  $fNNNetwork_$ctrainV ::
+    NN.NeuralNetwork.NNVars
+    -> AI.HNN.FF.Network.Network GHC.Types.Double
+    -> AI.HNN.FF.Network.Samples GHC.Types.Double
+    -> AI.HNN.FF.Network.Network GHC.Types.Double
+  {- Arity: 3, Strictness: <S,U><S,1*U(U,U,U)><L,U>m,
      Inline: INLINE[0],
      Unfolding: InlineRule (3, True, False)
                 (\ (w :: NN.NeuralNetwork.NNVars)
                    (w1 :: AI.HNN.FF.Network.Network GHC.Types.Double)
-                   (w2 :: AI.HNN.FF.Network.Sample GHC.Types.Double) ->
+                   (w2 :: AI.HNN.FF.Network.Samples GHC.Types.Double) ->
                  case w1
                         `cast`
                       (AI.HNN.FF.Network.N:Network[0]
                            <GHC.Types.Double>_P) of ww { Data.Vector.Vector ww1 ww2 ww3 ->
-                 case w2 of ww4 { (,) ww5 ww6 ->
-                 case NN.NeuralNetwork.$w$ctrain
+                 case NN.NeuralNetwork.$w$ctrainV
                         w
                         ww1
                         ww2
                         ww3
-                        ww5
-                        ww6 of ww7 { (#,,#) ww8 ww9 ww10 ->
+                        w2 of ww4 { (#,,#) ww5 ww6 ww7 ->
                  (Data.Vector.Vector
                     @ (Internal.Matrix.Matrix GHC.Types.Double)
-                    ww8
-                    ww9
-                    ww10)
+                    ww5
+                    ww6
+                    ww7)
                    `cast`
-                 (Sym (AI.HNN.FF.Network.N:Network[0]
-                           <GHC.Types.Double>_P)) } } }) -}
-99fa29f2dd508828a332da438e00ded9
-  $fNNNetwork_$ssigmoid :: GHC.Types.Double -> GHC.Types.Double
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
-     Inline: INLINE (sat-args=1),
-     Unfolding: InlineRule (1, False, False)
-                (\ (eta :: GHC.Types.Double) ->
-                 case eta of x { GHC.Types.D# ipv ->
-                 GHC.Float.$fFractionalDouble_$c/
-                   (GHC.Types.D# 1.0##)
-                   (GHC.Float.$fNumDouble_$c+
-                      (GHC.Types.D# 1.0##)
-                      (GHC.Float.$fFloatingDouble_$cexp
-                         (GHC.Float.$fNumDouble_$cnegate x))) }) -}
+                 (Sym (AI.HNN.FF.Network.N:Network[0] <GHC.Types.Double>_P)) } }) -}
 d4d4f84fd18759937aff6a4e11e5141e
   $sinit_$slength ::
     Data.Vector.Vector (Data.Vector.Storable.Vector GHC.Types.Double)
@@ -248,25 +273,18 @@ d4d4f84fd18759937aff6a4e11e5141e
     -> GHC.Types.Int
   {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,U,A)>m,
      Inline: [NEVER] -}
-3f26b580aa0630815cc2d665f28d98b3
-  $ssigmoid' :: GHC.Types.Double -> GHC.Types.Double
+38ec307a9252ed723b82517eceff72cf
+  $stanh' :: GHC.Types.Double -> GHC.Types.Double
   {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
      Inline: INLINE (sat-args=1),
      Unfolding: InlineRule (1, False, False)
                 (\ (eta :: GHC.Types.Double) ->
                  case eta of x { GHC.Types.D# ipv ->
-                 let {
-                   s :: GHC.Types.Double
-                   = GHC.Float.$fFractionalDouble_$c/
-                       (GHC.Types.D# 1.0##)
-                       (GHC.Float.$fNumDouble_$c+
-                          (GHC.Types.D# 1.0##)
-                          (GHC.Float.$fFloatingDouble_$cexp
-                             (GHC.Float.$fNumDouble_$cnegate x)))
-                 } in
-                 GHC.Float.$fNumDouble_$c*
-                   s
-                   (GHC.Float.$fNumDouble_$c- (GHC.Types.D# 1.0##) s) }) -}
+                 GHC.Float.$fNumDouble_$c-
+                   (GHC.Types.D# 1.0##)
+                   (GHC.Float.$fFloatingDouble_$c**
+                      (GHC.Float.$fFloatingDouble_$ctanh x)
+                      (GHC.Types.D# 2.0##)) }) -}
 1a6ae8ce96579d2b780bf28292722b89
   $tc'C:NN :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -306,7 +324,7 @@ d4d4f84fd18759937aff6a4e11e5141e
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS
                    "rover-domain-0.1.0.0-61Fsc9uUajFGfxZsLCyosq"#) -}
-f782d33784d7417c9ed78383ed50a47b
+fa5cea4dce3da1283b8c10deee98e5c0
   $w$cget ::
     GHC.Prim.Int#
     -> GHC.Prim.Int#
@@ -362,7 +380,7 @@ f782d33784d7417c9ed78383ed50a47b
                           case Internal.Numeric.$w$ccmap'5
                                  @ GHC.Types.Double
                                  Internal.Matrix.$fElementDouble
-                                 NN.NeuralNetwork.$fNNNetwork_$ssigmoid
+                                 GHC.Float.tanhDouble
                                  ww12
                                  ww13
                                  ww14 of ww15 { Data.Vector.Storable.Vector ww16 ww17 ww18 ->
@@ -384,18 +402,16 @@ ff56f8c9d56e7d7eaaf29b8d561c9efb
     -> (# AI.HNN.FF.Network.Network GHC.Types.Double, g #)
   {- Arity: 4, Strictness: <L,U(U,U,U)><L,U><L,1*U><L,U(U,U,U)>,
      Inline: [0] -}
-d64239486df364612d0cad49e2c1d41d
-  $w$ctrain ::
+f15da31e242f920b8a9be5253bb13ff7
+  $w$ctrainV ::
     NN.NeuralNetwork.NNVars
     -> GHC.Prim.Int#
     -> GHC.Prim.Int#
     -> GHC.Prim.Array# (Internal.Matrix.Matrix GHC.Types.Double)
-    -> Data.Vector.Storable.Vector GHC.Types.Double
-    -> Data.Vector.Storable.Vector GHC.Types.Double
+    -> AI.HNN.FF.Network.Samples GHC.Types.Double
     -> (# GHC.Prim.Int#, GHC.Prim.Int#,
           GHC.Prim.Array# (Internal.Matrix.Matrix GHC.Types.Double) #)
-  {- Arity: 6, Strictness: <S,U><L,U><L,U><L,U><L,U><L,U(U,U,U)>,
-     Inline: [0] -}
+  {- Arity: 5, Strictness: <S,U><L,U><L,U><L,U><L,U>, Inline: [0] -}
 cd4beb33d9dbcfced46e77dacc896bad
   $wgo ::
     System.Random.MWC.Gen
@@ -409,7 +425,7 @@ cd4beb33d9dbcfced46e77dacc896bad
           Data.Vector.Vector (Internal.Matrix.Matrix GHC.Types.Double) #)
   {- Arity: 6, Strictness: <L,U(U,A,U)><S,1*U><L,U><L,U><L,U><S,U>,
      Inline: [0] -}
-cbb888407db69833dce4ac53b6c18612
+f555cbee70f75015d7ad49ecae70c25d
   class NN n where
     create :: NN.NeuralNetwork.NNVars -> GHC.Types.IO n
     get :: n
@@ -417,9 +433,11 @@ cbb888407db69833dce4ac53b6c18612
            -> Data.Vector.Storable.Vector GHC.Types.Double
     train :: NN.NeuralNetwork.NNVars
              -> n -> AI.HNN.FF.Network.Sample GHC.Types.Double -> n
+    trainV :: NN.NeuralNetwork.NNVars
+              -> n -> AI.HNN.FF.Network.Samples GHC.Types.Double -> n
     randomize :: System.Random.RandomGen g =>
                  g -> NN.NeuralNetwork.NNVars -> n -> (n, g)
-    {-# MINIMAL create, get, train, randomize #-}
+    {-# MINIMAL create, get, trainV, randomize #-}
 553e1549c6d43b178c84aaeffd033c56
   type NNVars = Util.Vars.Vars
 b8e751e9e0077f1e719ee037e1971f45
@@ -616,14 +634,10 @@ instance NN.NeuralNetwork.NN [AI.HNN.FF.Network.Network]
                                 Internal.Matrix.Matrix GHC.Types.Double)
                              $dVector
   = NN.NeuralNetwork.$slength
-"SPEC/NN.NeuralNetwork sigmoid @ Double" [ALWAYS] forall ($dFloating :: GHC.Float.Floating
-                                                                          GHC.Types.Double)
-  AI.HNN.FF.Network.sigmoid @ GHC.Types.Double $dFloating
-  = NN.NeuralNetwork.$fNNNetwork_$ssigmoid
-"SPEC/NN.NeuralNetwork sigmoid' @ Double" [ALWAYS] forall ($dFloating :: GHC.Float.Floating
-                                                                           GHC.Types.Double)
-  AI.HNN.FF.Network.sigmoid' @ GHC.Types.Double $dFloating
-  = NN.NeuralNetwork.$ssigmoid'
+"SPEC/NN.NeuralNetwork tanh' @ Double" [ALWAYS] forall ($dFloating :: GHC.Float.Floating
+                                                                        GHC.Types.Double)
+  AI.HNN.FF.Network.tanh' @ GHC.Types.Double $dFloating
+  = NN.NeuralNetwork.$stanh'
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

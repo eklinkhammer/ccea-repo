@@ -19,7 +19,7 @@ cceaVars :: CCEAVars
 cceaVars = Map.fromList [("numberPools", 5)
                     ,("poolSize",4)
                     ,("percentChanceMaxFitnessIsChosen",0.85)
-                    ,("numberGenerationsPerEpoch", 200)]
+                    ,("numberGenerationsPerEpoch", 1)]
 
 nnVars :: NNVars
 nnVars = Map.fromList [("numberInputs", 2)
@@ -55,6 +55,7 @@ trainXorNetwork ccea = do
 someFunc :: IO Double
 someFunc = do
   ccea <- createXorNetwork
+  putStrLn "Created Network"
   trained <- trainXorNetwork ccea
   let (CCEA pop _ _) = trained
       network = pop !! 0 !! 0 :: Network Double

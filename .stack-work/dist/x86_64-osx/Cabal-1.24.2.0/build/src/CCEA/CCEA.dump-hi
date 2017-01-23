@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-01-20 22:58:16.785816 UTC
+2017-01-23 03:02:21.54681 UTC
 
 interface rover-domain-0.1.0.0-61Fsc9uUajFGfxZsLCyosq:CCEA.CCEA 8001
-  interface hash: f299f3aa8c74dc4b6fe5f2d6ce762740
-  ABI hash: 0abd3083a76b02ea9790e478967a1310
+  interface hash: ac7db996e1a2c42cfb28c673b9d56050
+  ABI hash: 7a45fe8ba7d6ecca86be1c81a6f2807a
   export-list hash: fd21067d0f39b21e72638931f3467a6c
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: db84b2549858666a400c84cb900ff8fa
@@ -94,12 +94,12 @@ import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.Reader 859b
 import  -/  mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM:Control.Monad.Reader.Class 8046d4d7c28bbf9d539af876e6134287
 import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 33fad628288f84aac16d40e5a027af06
 import  -/  random-shuffle-0.0.4@random-shuffle-0.0.4-LfeDYNPfwrQ2o9p6tw2M9l:System.Random.Shuffle 3f5e54b2036bc5b8dc7743ffe99c3f89
-import  -/  NN.NeuralNetwork 113908154fbb6902a4b5bd1b4a11ec71
-  exports: d621a5ae456fb51320f20c47599b47f5
-  NN cbb888407db69833dce4ac53b6c18612
+import  -/  NN.NeuralNetwork 96d401a3c378768062e0895fbb66e9e7
+  exports: 723a119af1627d538a67ace973f98181
+  NN f555cbee70f75015d7ad49ecae70c25d
   NNVars 553e1549c6d43b178c84aaeffd033c56
-  create cdc32f3b564c44acfd8af2d76be0abf3
-  randomize 8a7dd191fabcbc4efa1e9403fc056b1d
+  create 85bde2899b06b6fd841f64ea656cff32
+  randomize 657ff23c987a76c7c361c4a8ed62c618
 import  -/  Util.Vars e69d4a01e9894a2dea4eb9f135f01c1a
   exports: 5cf7af007601f05532c4b62a35097504
   Vars d9765cd23921f7d00c2542402938917d
@@ -322,7 +322,7 @@ f1fe14430b46ec26277206d290d50430
   type Population n = [[n]]
 62792831e0560ed696172aaebc85778b
   type Scores = [[GHC.Types.Double]]
-a43fa64c787a02367c741f33c1d73ff2
+56d2c5a3ae062062054ecacc58de67ac
   createCCEA ::
     NN.NeuralNetwork.NN n =>
     NN.NeuralNetwork.NNVars
@@ -331,7 +331,7 @@ a43fa64c787a02367c741f33c1d73ff2
     -> CCEA.CCEA.CCEAEvaluator n s
     -> GHC.Types.IO (CCEA.CCEA.CCEA n s)
   {- Arity: 6,
-     Strictness: <L,U(C(U),A,A,A)><L,U><S,U><L,U><L,U><L,U>,
+     Strictness: <L,U(C(U),A,A,A,A)><L,U><S,U><L,U><L,U><L,U>,
      Unfolding: InlineRule (0, True, True)
                 CCEA.CCEA.createCCEA1
                   `cast`
@@ -342,7 +342,7 @@ a43fa64c787a02367c741f33c1d73ff2
                  ->_R <s>_R
                  ->_R <CCEA.CCEA.CCEAEvaluator n s>_R
                  ->_R Sym (GHC.Types.N:IO[0] <CCEA.CCEA.CCEA n s>_R)) -}
-d188e4ddb5e18e4ed962e6fa128f2bc0
+3750f4efb8bf614aa3911cc451ddf376
   createCCEA1 ::
     NN.NeuralNetwork.NN n =>
     NN.NeuralNetwork.NNVars
@@ -352,7 +352,7 @@ d188e4ddb5e18e4ed962e6fa128f2bc0
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, CCEA.CCEA.CCEA n s #)
   {- Arity: 6,
-     Strictness: <L,U(C(U),A,A,A)><L,U><S,U><L,U><L,U><L,U>,
+     Strictness: <L,U(C(U),A,A,A,A)><L,U><S,U><L,U><L,U><L,U>,
      Unfolding: (\ @ n
                    @ s
                    ($dNN :: NN.NeuralNetwork.NN n)
@@ -484,7 +484,7 @@ e57c239c79b6a7e5841f495fb61e6755
   jointMap :: (a -> b -> c) -> [a] -> [b] -> [c]
   {- Arity: 3, HasNoCafRefs,
      Strictness: <L,C(C1(U))><S,1*U><L,1*U> -}
-599691f9ab97682a679cd5f0d52e43f3
+ac33f0b9a59fcf587dcb9fd695158c69
   runEpoch ::
     (NN.NeuralNetwork.NN n, System.Random.RandomGen g) =>
     CCEA.CCEA.CCEAVars
@@ -530,7 +530,7 @@ a342996802e4713350337d80bf019cd0
   runEpoch_name :: GHC.Base.String
   {- Unfolding: (GHC.CString.unpackCString#
                    "numberGenerationsPerEpoch"#) -}
-97a14a2d8a474953107bfa5bd3ebc553
+c4042cb51ec3c39d5b95f7c04a36bf7d
   runGeneration ::
     (NN.NeuralNetwork.NN n, System.Random.RandomGen g) =>
     CCEA.CCEA.CCEAVars
