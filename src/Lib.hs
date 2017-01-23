@@ -1,4 +1,7 @@
-module Lib where
+module Lib
+  (
+    someFunc
+  ) where
 
 import AI.HNN.FF.Network
 import Numeric.LinearAlgebra.HMatrix hiding (corr)
@@ -39,35 +42,22 @@ evaluator _ nets = (0,map (\net -> let z1 = (get net $ fromList [0.0,0.0]) ! 0
                                        result = [z1,o1,o2,z2] :: [Double]
                                 in sum $ map (\(a,b) -> (b - a) * (b - a)) $ zip result expected) nets)
 
-samples :: Samples Double
-samples = [ fromList [0, 0] --> fromList [0]
-          , fromList [0, 1] --> fromList [1]
-          , fromList [1, 0] --> fromList [1]
-          , fromList [1, 1] --> fromList [0] 
-          ]
-          
-getM :: Network Double -> V.Vector (Matrix Double)
-getM (Network matrices) = matrices
+createXorNetwork :: IO (CCEA (Network Double) Double)
+createXorNetwork = createCCEA nnVars cceaVars initState evaluator
 
-createNet :: Reader NNVars (IO (Network Double))
-createNet = do
-  return $ createNetwork 1 [2] 3
-
-randomizeMatrix :: Matrix Double -> IO (Matrix Double)
-randomizeMatrix mat = undefined
-
-someFunc :: IO ()
-someFunc = do
-  --ccea <- createCCEA nnVars cceaVars initState evaluator :: IO (CCEA (Network Double) Double)
+trainXorNetwork :: CCEA (Network Double) Double -> IO (CCEA (Network Double) Double)
+trainXorNetwork ccea = do
   gen <- getStdGen
-  --myCCEA <- createCCEA nnVars cceaVars initState evaluator :: IO (CCEA (Network Double) Double)
-  --let (trainedCCEA, _) = runEpoch cceaVars nnVars gen ccea
-  --    (CCEA pop _ _) = trainedCCEA
-  --    n = head $ head pop
-  --mapM_ (print . output n tanh . fst) samples
-  
-  putStrLn "------------------------"
-  
-  --let matrixVector = getM n
-  --putStrLn $ concatMap (\x -> show x ++ "\n") matrixVector
-  --putStrLn $ show (matrixVector V.! 0)
+  let (trainedCCEA, _) = runEpoch cceaVars nnVars gen ccea
+  return trainedCCEA
+
+
+someFunc :: IO Double
+someFunc = do
+  ccea <- createXorNetwork
+  trained <- trainXorNetwork ccea
+  let (CCEA pop _ _) = trained
+      network = pop !! 0 !! 0 :: Network Double
+      response = output network sigmoid $ fromList [0.0,1.0]
+      val = response ! 0 :: Double
+  return val

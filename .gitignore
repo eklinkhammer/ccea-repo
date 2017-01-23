@@ -1,0 +1,11 @@
+*.*~
+.stack*
+*.*#
+
+
+*.dyn_o
+*.o
+*.dyn_hi
+*.dynlib
+*.a
+*stack-work/

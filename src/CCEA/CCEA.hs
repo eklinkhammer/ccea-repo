@@ -15,6 +15,7 @@ import qualified Data.Map.Strict as Map
 import Data.List
 import Control.Monad.Reader
 
+
 import Util.Vars
 import NN.NeuralNetwork
 
