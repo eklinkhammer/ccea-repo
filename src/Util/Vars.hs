@@ -1,6 +1,6 @@
 module Util.Vars
   (
-    Vars (..)
+    Vars
   , getVar
   ) where
 
