@@ -67,4 +67,4 @@ test-suite rover-domain-test
 
 source-repository head
   type:     git
-  location: https://github.com/eklinkhammer/rover-domain
+  location: git@github.com/eklinkhammer/rover-domain
