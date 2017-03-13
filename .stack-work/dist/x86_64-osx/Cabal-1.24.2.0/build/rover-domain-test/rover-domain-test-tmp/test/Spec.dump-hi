@@ -1,0 +1,215 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-08 23:05:09.211162 UTC
+
+interface main@main:Main 8001
+  interface hash: 2956227ec9083dc15d5e8b0ca1b1aa72
+  ABI hash: 1ebcfcaab7c4075287bd2f50515d505d
+  export-list hash: 116093a25f6fb9d12592a4365da4e0e0
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b58b65d93fce1109cc830d2a48b264f5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies: Models.Location Models.LocationTest
+                     Models.Orientation Models.OrientationTest Models.POI Models.POITest
+                     Models.RoverDomain Models.State Models.StateTest
+package dependencies: HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      hnn-0.3@hnn-0.3-BTcaYwOzMFRHoXIMlsey6T integer-gmp-1.0.0.1
+                      loop-0.3.0@loop-0.3.0-98VH1UqsOHy2KxBxA55ICY
+                      matrix-0.3.5.0@matrix-0.3.5.0-Ai5MbZhiOOC3qmPfUuhoAV
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX
+                      neural-algorithms-0.1.0.0@neural-algorithms-0.1.0.0-5aqhJNMEboR7D3hIbxnTW3
+                      normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+                      zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX:System.Random.MWC
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV:Codec.Compression.Zlib.Stream
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit dedf8672d65dfb10ce8a7e3bc8c64de6
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit.Base 4113b18d5fbd12caebd3c809c2e60152
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit.Text c6e098f6b3c772536ba756a7745e52f0
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  Models.LocationTest 58b74a79e1575652ab1149a298a054f9
+  exports: 291b42143181d2e9ec7463727f079718
+  testsLocation aaa05eff9462e3bb5be03387a2508b3f
+import  -/  Models.OrientationTest b0ddb299f50d87e09ac77e3d77c75ddf
+  exports: c9f65db1c8f456e3a0d97828a5f93a71
+  testsOrientation 6f612a0d81ca2e59848e2bbd9180ca29
+import  -/  Models.POITest ecc9bd7d4f735c11c6209a1055a84171
+  exports: db2ec417c1a085efcffdf3801bdee3c3
+  testsPOI bc2cfa8fac9c7bc60854fde8c12bcf64
+import  -/  Models.StateTest 3532aab5834c348cb0aee68756e68a03
+  exports: 1277fbf392fc61981c6b573559fa82f3
+  testsState 3c730cc5e685b731c6c47a457bcb40ff
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+1dc3b0c109dfca3bc27c11a5d6fc0209
+  main :: GHC.Types.IO Test.HUnit.Base.Counts
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <Test.HUnit.Base.Counts>_R)) -}
+fd7a6563c6d731df529b0db59643a520
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Test.HUnit.Base.Counts #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.HUnit.Text.runTestTT3 of ww { Test.HUnit.Text.PutText ww1 ww2 ->
+                 case Test.HUnit.Text.$wrunTestText
+                        @ GHC.Types.Int
+                        ww1
+                        ww2
+                        Main.main2
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild { (,) counts' ds ->
+                 case ds of wild1 { GHC.Types.I# ds2 ->
+                 case ds2 of ds3 {
+                   DEFAULT
+                   -> GHC.IO.failIO1
+                        @ Test.HUnit.Base.Counts
+                        Test.HUnit.Text.runTestTT2
+                        ipv
+                   0# -> (# ipv, counts' #) } } } } }) -}
+52303d988b41328af4ba92eba9a5adc9
+  main10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Models.State Tests"#) -}
+5d5a143f6f9746b01335193053b13e35
+  main11 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestLabel
+                   Main.main12
+                   Models.OrientationTest.testsOrientation) -}
+2cd0d686267b2d3425869be1659e9b98
+  main12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Models.Orientation Tests"#) -}
+08175207ef97b9257b2b455cd6dfc6b4
+  main13 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestLabel
+                   Main.main14
+                   Models.LocationTest.testsLocation) -}
+fe6a7846b71d88209fb0e6657d55eeb3
+  main14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Models.Location Tests"#) -}
+e4a16dd53fa655cbaf09a1da9822a1d2
+  main15 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Test.HUnit.Base.Counts #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ Test.HUnit.Base.Counts
+                   Main.main1
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <Test.HUnit.Base.Counts>_R))) -}
+21dd28b14feed795367e280498b7a1de
+  main2 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestList Main.main3) -}
+b8a07c904934faf9bb2a84866cce3879
+  main3 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.main13
+                   Main.main4) -}
+687b5879079ce69f2e54ca62281356e4
+  main4 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.main11
+                   Main.main5) -}
+a6569a2a4e1657e8cce5dc02ed7ce7d1
+  main5 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.main9
+                   Main.main6) -}
+ce34a524fcef43337deda385ff539b96
+  main6 :: [Test.HUnit.Base.Test]
+  {- Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Main.main7
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+0f2d991e5c64eeaabdfd61151ea93922
+  main7 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestLabel
+                   Main.main8
+                   Models.POITest.testsPOI) -}
+8691441880d38c79b5d1623c26e9f907
+  main8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Models.POI Tests"#) -}
+0ef8adb0212fd4b108e2aa27466e5bde
+  main9 :: Test.HUnit.Base.Test
+  {- Unfolding: (Test.HUnit.Base.TestLabel
+                   Main.main10
+                   Models.StateTest.testsState) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,1047 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-08 22:45:09.244176 UTC
+
+interface main@main:Models.POITest 8001
+  interface hash: d68deaf5e1e3a3438ea39c8bc9b501d4
+  ABI hash: ecc9bd7d4f735c11c6209a1055a84171
+  export-list hash: db2ec417c1a085efcffdf3801bdee3c3
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fa54a010328cf9ad9d5706abd58048ee
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Models.POITest.testsPOI
+module dependencies: Models.Location Models.Orientation Models.POI
+                     Models.RoverDomain Models.State
+package dependencies: HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      hnn-0.3@hnn-0.3-BTcaYwOzMFRHoXIMlsey6T integer-gmp-1.0.0.1
+                      loop-0.3.0@loop-0.3.0-98VH1UqsOHy2KxBxA55ICY
+                      matrix-0.3.5.0@matrix-0.3.5.0-Ai5MbZhiOOC3qmPfUuhoAV
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX
+                      neural-algorithms-0.1.0.0@neural-algorithms-0.1.0.0-5aqhJNMEboR7D3hIbxnTW3
+                      normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+                      zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX:System.Random.MWC
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV:Codec.Compression.Zlib.Stream
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit dedf8672d65dfb10ce8a7e3bc8c64de6
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit.Base 4113b18d5fbd12caebd3c809c2e60152
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Err 3bba35a16538d33d424682ce66876cdd
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  Models.Location e429380de20abd7aeab63d05abffa9ae
+  Location a465f175b29794a8b975bc784ea364e9
+import  -/  Models.POI 6aec13020419e1991f2cfd57f2a41884
+  exports: 4537642f35b71ea003c784a1708d7ab5
+  POI 895e4da0f683f24abc46b40de8d4dffd
+  POI 0c07bc530f9ae8d6d453ef988019653b
+import  -/  Models.RoverDomain c53254f8ce529f7da5507c132a938f16
+  exports: de82eb88498dfc63cf162ae3c9659534
+  Actor 7e95090a530aee8c1ddb014e078b54c3
+  Agent 7e95090a530aee8c1ddb014e078b54c3
+  RoverDomain 8c76bcb5505906251a73b6165e1d4e4c
+  RoverDomain 7e95090a530aee8c1ddb014e078b54c3
+  getScore aab9e88c3ccbb653c13e407de4c3ffec
+  updateScore 3a923796396b83a958af2214dc7ef183
+import  -/  Models.State 6c0fa7f0879ff4d8e027dbe5916c49d4
+  exports: 0b0b62ee65b88820697ceada401bba4a
+  State b98cf4f17057e31e8ea314686a7673db
+  State 03e92fc1250bf60fdd9a80654439b472
+  Stay 516b3f6222e2522a4ccaac4d4f2c74a3
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy :: Models.RoverDomain.Actor Models.POITest.Dummy
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POITest.Dummy
+                  Models.POITest.$fShowDummy
+                  Models.POITest._state
+                  Models.POITest.$fActorDummy_$csetState
+                  Models.POITest.$fActorDummy_$cgetMove
+                  Models.POITest.$fActorDummy_$cmove
+                  Models.POITest.$fActorDummy_$coneMove
+                  Models.POITest.$fActorDummy_$cresetActor
+                  Models.POITest.$fActorDummy_$cresetActors
+                  Models.POITest.$fActorDummy_$cgetID -}
+430530f66404a08bce9dfa26a2bad44e
+  $fActorDummy1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy2 ::
+    [Models.POITest.Dummy] -> g -> (# g, [Models.POITest.Dummy] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy3 ::
+    (GHC.Types.Int, GHC.Types.Int)
+    -> g -> Models.POITest.Dummy -> (g, Models.POITest.Dummy)
+  {- Strictness: x -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$cgetID ::
+    Models.POITest.Dummy -> Models.RoverDomain.UUID
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>m,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Models.POITest.Dummy) -> Models.POITest.$fActorDummy1) -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$cgetMove ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.POITest.Dummy -> Models.State.Cmd
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,A><L,A><L,A><L,A>,
+     Unfolding: InlineRule (4, True, True)
+                (\ @ t1
+                   @ t2
+                   ($dAgent :: Models.RoverDomain.Agent t1)
+                   ($dScoring :: Models.RoverDomain.Scoring t2)
+                   (ds :: Models.RoverDomain.RoverDomain t1 t2)
+                   (ds1 :: Models.POITest.Dummy) ->
+                 Models.State.Stay) -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$cmove ::
+    Models.POITest.Dummy -> Models.State.Cmd -> Models.POITest.Dummy
+  {- Strictness: x -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$coneMove ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.POITest.Dummy -> Models.POITest.Dummy
+  {- Arity: 4, Strictness: <B,A><B,A><B,A><B,A>x,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ t1
+                   @ t2
+                   ($dAgent :: Models.RoverDomain.Agent t1)
+                   ($dScoring :: Models.RoverDomain.Scoring t2)
+                   (dom :: Models.RoverDomain.RoverDomain t1 t2)
+                   (a1 :: Models.POITest.Dummy) ->
+                 case Models.POITest.$fActorDummy_$cmove
+                 ret_ty Models.POITest.Dummy
+                 of {}) -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$cresetActor ::
+    System.Random.RandomGen g =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> g -> Models.POITest.Dummy -> (g, Models.POITest.Dummy)
+  {- Arity: 1, Strictness: <B,A>x,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ g ($dRandomGen :: System.Random.RandomGen g) ->
+                 Models.POITest.$fActorDummy3 @ g) -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$cresetActors ::
+    System.Random.RandomGen g =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> g -> [Models.POITest.Dummy] -> (g, [Models.POITest.Dummy])
+  {- Arity: 4, Strictness: <L,A><L,A><L,U><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: (GHC.Types.Int, GHC.Types.Int))
+                   (w2 :: g)
+                   (w3 :: [Models.POITest.Dummy]) ->
+                 case Models.POITest.$fActorDummy2
+                        @ g
+                        w3
+                        w2 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+67483b3df8def61d5f9a483712afcebc
+  $fActorDummy_$csetState ::
+    Models.POITest.Dummy -> Models.State.State -> Models.POITest.Dummy
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><L,U>m,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Models.POITest.Dummy) (s :: Models.State.State) ->
+                 Models.POITest.Dummy s) -}
+67483b3df8def61d5f9a483712afcebc
+  $fAgentDummy :: Models.RoverDomain.Agent Models.POITest.Dummy
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POITest.Dummy
+                  Models.POITest.$fActorDummy
+                  Models.POITest.$fAgentDummy_$csetPolicy
+                  Models.POITest.$fAgentDummy_$cgetPolicy
+                  Models.POITest.$fAgentDummy_$cgetFitness
+                  Models.POITest.$fAgentDummy_$cisLoyal -}
+d3306425756a6f8db7ebba7cdbc5c849
+  $fAgentDummy1 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
+67483b3df8def61d5f9a483712afcebc
+  $fAgentDummy_$cgetFitness ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.POITest.Dummy -> GHC.Types.Double
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,A><L,A><L,A><L,A>m,
+     Unfolding: InlineRule (4, True, True)
+                (\ @ t1
+                   @ t2
+                   ($dAgent :: Models.RoverDomain.Agent t1)
+                   ($dScoring :: Models.RoverDomain.Scoring t2)
+                   (ds :: Models.RoverDomain.RoverDomain t1 t2)
+                   (ds1 :: Models.POITest.Dummy) ->
+                 Models.POITest.$fAgentDummy1) -}
+67483b3df8def61d5f9a483712afcebc
+  $fAgentDummy_$cgetPolicy ::
+    Models.POITest.Dummy -> AI.HNN.FF.Network.Network GHC.Types.Double
+  {- Strictness: x -}
+67483b3df8def61d5f9a483712afcebc
+  $fAgentDummy_$cisLoyal :: Models.POITest.Dummy -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Models.POITest.Dummy) -> GHC.Types.True) -}
+67483b3df8def61d5f9a483712afcebc
+  $fAgentDummy_$csetPolicy ::
+    Models.POITest.Dummy
+    -> AI.HNN.FF.Network.Network GHC.Types.Double
+    -> Models.POITest.Dummy
+  {- Strictness: x -}
+67483b3df8def61d5f9a483712afcebc
+  $fEqDummy :: GHC.Classes.Eq Models.POITest.Dummy
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POITest.Dummy
+                  Models.POITest.$fEqDummy_$c==
+                  Models.POITest.$fEqDummy_$c/= -}
+67483b3df8def61d5f9a483712afcebc
+  $fEqDummy_$c/= ::
+    Models.POITest.Dummy -> Models.POITest.Dummy -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S(S)L)L)),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)))><S(S(S(S(S)L)L)),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Models.POITest.Dummy) (w1 :: Models.POITest.Dummy) ->
+                 case w of ww { Models.POITest.Dummy ww1 ->
+                 case ww1 of ww2 { Models.State.State ww3 ww4 ->
+                 case ww3 of ww5 { Models.Location.Location ww6 ww7 ->
+                 case ww6 of ww8 { GHC.Types.D# ww9 ->
+                 case w1 of ww10 { Models.POITest.Dummy ww11 ->
+                 case ww11 of ww12 { Models.State.State ww13 ww14 ->
+                 case ww13 of ww15 { Models.Location.Location ww16 ww17 ->
+                 case ww16 of ww18 { GHC.Types.D# ww19 ->
+                 Models.POITest.$w$c/=
+                   ww9
+                   ww7
+                   ww4
+                   ww19
+                   ww17
+                   ww14 } } } } } } } }) -}
+67483b3df8def61d5f9a483712afcebc
+  $fEqDummy_$c== ::
+    Models.POITest.Dummy -> Models.POITest.Dummy -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S(S)L)L)),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)))><S(S(S(S(S)L)L)),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Models.POITest.Dummy) (ds1 :: Models.POITest.Dummy) ->
+                 case ds of wild { Models.POITest.Dummy a1 ->
+                 case ds1 of wild1 { Models.POITest.Dummy b1 ->
+                 Models.State.$fEqState_$c== a1 b1 } }) -}
+67483b3df8def61d5f9a483712afcebc
+  $fShowDummy :: GHC.Show.Show Models.POITest.Dummy
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POITest.Dummy
+                  Models.POITest.$fShowDummy_$cshowsPrec
+                  Models.POITest.$fShowDummy_$cshow
+                  Models.POITest.$fShowDummy_$cshowList -}
+67483b3df8def61d5f9a483712afcebc
+  $fShowDummy1 :: Models.POITest.Dummy -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Models.POITest.Dummy) ->
+                 case w of ww { Models.POITest.Dummy ww1 ->
+                 Models.POITest.$w$cshowsPrec 0# ww1 }) -}
+c320c903d745ce7bcb39ec48c4b988da
+  $fShowDummy2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+ee200200a39b53b3802a788074863f81
+  $fShowDummy3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "_state = "#) -}
+c5556cb2ba3b13ab2c86c121901ea96d
+  $fShowDummy4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Dummy {"#) -}
+a6a7e9a9b183c164db098a9ee86ca153
+  $fShowDummy5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Base.++
+                   @ GHC.Types.Char
+                   Models.POITest.$fShowDummy2
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+67483b3df8def61d5f9a483712afcebc
+  $fShowDummy_$cshow :: Models.POITest.Dummy -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Models.POITest.Dummy) ->
+                 case w of ww { Models.POITest.Dummy ww1 ->
+                 Models.POITest.$w$cshow ww1 }) -}
+67483b3df8def61d5f9a483712afcebc
+  $fShowDummy_$cshowList :: [Models.POITest.Dummy] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Models.POITest.Dummy
+                   Models.POITest.$fShowDummy1) -}
+67483b3df8def61d5f9a483712afcebc
+  $fShowDummy_$cshowsPrec ::
+    GHC.Types.Int -> Models.POITest.Dummy -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Models.POITest.Dummy) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Models.POITest.Dummy ww3 ->
+                 Models.POITest.$w$cshowsPrec ww1 ww3 } }) -}
+294bd67ad6a7b0ac8f8b3fa15721a44d
+  $tc'Dummy :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7349326660896050252##
+                   8967146546015101155##
+                   Models.POITest.$trModule
+                   Models.POITest.$tc'Dummy1) -}
+0e395b5b545b8a32ddff231737f16186
+  $tc'Dummy1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Dummy"#) -}
+1ccfda8b728fe5200eec9fbc234bb1b6
+  $tcDummy :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3850508151450356754##
+                   8160358445460652680##
+                   Models.POITest.$trModule
+                   Models.POITest.$tcDummy1) -}
+b22cd8373de8b05d16a895a1ba0cc156
+  $tcDummy1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Dummy"#) -}
+c868db581dd87653ef3bc64e3f1f63f0
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Models.POITest.$trModule2
+                   Models.POITest.$trModule1) -}
+f123efd9121883891aa377ddb36c36a9
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Models.POITest"#) -}
+cc65bf5f358e6f963951501c53487237
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+aa1cef5e82d5bd6c208f05419fb9245f
+  $w$c/= ::
+    GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> Models.Orientation.Orientation
+    -> GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> Models.Orientation.Orientation
+    -> GHC.Types.Bool
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><S,U><L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Double#)
+                   (ww1 :: GHC.Types.Double)
+                   (ww2 :: Models.Orientation.Orientation)
+                   (ww3 :: GHC.Prim.Double#)
+                   (ww4 :: GHC.Types.Double)
+                   (ww5 :: Models.Orientation.Orientation) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==## ww ww3) of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case ww1 of wild1 { GHC.Types.D# x ->
+                      case ww4 of wild2 { GHC.Types.D# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==## x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True
+                        -> case ww2 of wild4 { GHC.Types.D# x1 ->
+                           case ww5 of wild5 { GHC.Types.D# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==## x1 y1) of wild6 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True -> GHC.Types.False } } } } } } }) -}
+688c35133e12bbb58f4055e9385bd1ea
+  $w$cshow :: Models.State.State -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U(1*U(1*U(U),1*U(U)),1*U(U))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: Models.State.State) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Models.POITest.$fShowDummy4
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      Models.POITest.$fShowDummy3
+                      (case ww of ww2 { Models.State.State ww3 ww4 ->
+                       Models.State.$w$cshowsPrec
+                         0#
+                         ww3
+                         ww4
+                         Models.POITest.$fShowDummy5 }))) -}
+637c0118404d000c34a732bacad023ab
+  $w$cshowsPrec ::
+    GHC.Prim.Int# -> Models.State.State -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,U><L,1*U(1*U(1*U(U),1*U(U)),1*U(U))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#) (ww1 :: Models.State.State) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = case ww1 of ww2 { Models.State.State ww3 ww4 ->
+                     Models.State.$w$cshowsPrec 0# ww3 ww4 }
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Models.POITest.$fShowDummy4
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Models.POITest.$fShowDummy3
+                          (f (GHC.Base.++ @ GHC.Types.Char Models.POITest.$fShowDummy2 x)))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x)) }) -}
+67483b3df8def61d5f9a483712afcebc
+  data Dummy = Dummy {_state :: Models.State.State}
+67483b3df8def61d5f9a483712afcebc
+  _state :: Models.POITest.Dummy -> Models.State.State
+  RecSel Left Models.POITest.Dummy
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U(U,U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.POITest.Dummy) ->
+                 case ds of wild { Models.POITest.Dummy ds1 -> ds1 }) -}
+bc2cfa8fac9c7bc60854fde8c12bcf64
+  testsPOI :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Models.POITest.testsPOI1) -}
+3b938fcd36b1b978209a9b2f0c8f4cf0
+  testsPOI1 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.POITest.testsPOI2
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+66b931ec4f717a6bfdd01c80e8c2434f
+  testsPOI10 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.POITest.testsPOI11
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+2ef5976a3562bc54a24f0797e0421005
+  testsPOI11 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.POITest.testsPOI20
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.POITest.testsPOI19
+                   Models.POITest.$fAgentDummy1
+                   Models.POITest.testsPOI12) -}
+befe6b2280e496603dd148584ee84336
+  testsPOI12 :: GHC.Types.Double
+  {- Unfolding: (case Models.POI.$w$cevalScore
+                        @ Models.POITest.Dummy
+                        @ Models.POI.POI
+                        Models.POITest.$fAgentDummy
+                        Models.POITest.testsPOI14
+                        Models.POITest.testsPOI_sP
+                        0.0##
+                        Models.POITest.testsPOI13 of ww11 { DEFAULT ->
+                 GHC.Types.D# ww11 }) -}
+9392649182e164bbbdd01e5ec7846d09
+  testsPOI13 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.0##) -}
+a8a2cea1b59d88a1023acee25050f6bc
+  testsPOI14 :: [Models.POITest.Dummy]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Models.POITest.Dummy
+                   Models.POITest.testsPOI15
+                   (GHC.Types.[] @ Models.POITest.Dummy)) -}
+09f67bdae4cd6c72d585720d1f53c4f4
+  testsPOI15 :: Models.POITest.Dummy
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.POITest.Dummy Models.POITest.testsPOI16) -}
+c97e344685f0f82244a31734e18ee36c
+  testsPOI16 :: Models.State.State
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.State.State
+                   Models.POITest.testsPOI17
+                   Models.POITest.$fAgentDummy1) -}
+a405d3ab82e7cc717b9cb4833e80535c
+  testsPOI17 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.POITest.testsPOI18
+                   Models.POITest.testsPOI18) -}
+7a88db78a784580a3c819a3f839a1030
+  testsPOI18 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 10.0##) -}
+9f070891f6ce3a0b45a0a1bad54cf0cd
+  testsPOI19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No POIs in range"#) -}
+3f51cbe28d131dec25fcda7ac975f826
+  testsPOI2 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.POITest.testsPOI85
+                   Models.POITest.testsPOI3) -}
+8557abf9824983f507f9877a1ad76e07
+  testsPOI20 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.POITest.testsPOI28
+                   Models.POITest.testsPOI21
+                   GHC.Stack.Types.EmptyCallStack) -}
+380b4511ba8b86348e4c636c47243920
+  testsPOI21 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.POITest.testsPOI27
+                   Models.POITest.testsPOI26
+                   Models.POITest.testsPOI25
+                   Models.POITest.testsPOI24
+                   Models.POITest.testsPOI23
+                   Models.POITest.testsPOI24
+                   Models.POITest.testsPOI22) -}
+2e85d7109dd56aba98998ba2ffb7a6a3
+  testsPOI22 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 77#) -}
+cd7fabf78a968a97b944b83f31f096ba
+  testsPOI23 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 31#) -}
+59cf873defc5e358f605dbf89c627620
+  testsPOI24 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 97#) -}
+bfe6a2bfcacd28f320cc97eed42eb2b0
+  testsPOI25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "test/Models/POITest.hs"#) -}
+6d5113ab25b728883f023e1f5c87d969
+  testsPOI26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Models.POITest"#) -}
+3c3e82aae86d095f0541c3d750f081ea
+  testsPOI27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "main"#) -}
+f7ef9a34a0931460638a6294cf2bb468
+  testsPOI28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "assertEqual"#) -}
+4d47aea9fd78798471ac9b79592ef079
+  testsPOI29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Update Score - Out of Range"#) -}
+a359c0df57766e99eef3fff7839c737f
+  testsPOI3 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList Models.POITest.testsPOI4) -}
+f7b47286fad6f1b571d7ba320c8be1eb
+  testsPOI30 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.POITest.testsPOI41
+                   Models.POITest.testsPOI31) -}
+5783f4140a9f9ff7c996000e5f960379
+  testsPOI31 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.POITest.testsPOI32
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+4ff92687115701e6aec9d273b59d4101
+  testsPOI32 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.POITest.testsPOI37
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.POITest.testsPOI36
+                   Models.POITest.testsPOI18
+                   Models.POITest.testsPOI33) -}
+69286d74ae108ceda76bd088107a25e6
+  testsPOI33 :: GHC.Types.Double
+  {- Unfolding: (case Models.POI.$w$cevalScore
+                        @ Models.POITest.Dummy
+                        @ Models.POI.POI
+                        Models.POITest.$fAgentDummy
+                        Models.POITest.testsPOI34
+                        Models.POITest.testsPOI_sP
+                        0.0##
+                        Models.POITest.testsPOI18 of ww11 { DEFAULT ->
+                 GHC.Types.D# ww11 }) -}
+97a61ee31219824acde7ba318ad49afd
+  testsPOI34 :: [Models.POITest.Dummy]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Models.POITest.Dummy
+                   Models.POITest.testsPOI35
+                   (GHC.Types.[] @ Models.POITest.Dummy)) -}
+b73f00e6e2dc0f03708e5c8d3786bac6
+  testsPOI35 :: Models.POITest.Dummy
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.POITest.Dummy Models.POITest.testsPOI_sP) -}
+99dbadb9ed13591411a620b694b25b6a
+  testsPOI36 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Score Upper Limit"#) -}
+826e8fa9b4b572725ff0d2583c637458
+  testsPOI37 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.POITest.testsPOI28
+                   Models.POITest.testsPOI38
+                   GHC.Stack.Types.EmptyCallStack) -}
+63ecf9372a7e09014dcaee1a9a4f1a7a
+  testsPOI38 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.POITest.testsPOI27
+                   Models.POITest.testsPOI26
+                   Models.POITest.testsPOI25
+                   Models.POITest.testsPOI40
+                   Models.POITest.testsPOI39
+                   Models.POITest.testsPOI40
+                   Models.POITest.testsPOI22) -}
+8656fa02b80c82661dc44e697cd885bc
+  testsPOI39 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 29#) -}
+a3b164075a2435772b5d3707b01d05f4
+  testsPOI4 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.POITest.testsPOI73
+                   Models.POITest.testsPOI5) -}
+3f6203030b85fe18194feee99a1c078b
+  testsPOI40 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 85#) -}
+29c44d0aad9c1f50cf014bee0ab4c2e1
+  testsPOI41 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Update Score - Max Score"#) -}
+65d80ba914bd59ecf63d77acdf231bff
+  testsPOI42 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.POITest.testsPOI62
+                   Models.POITest.testsPOI43) -}
+6cd11a045b33f5ab49be697f6708c7b9
+  testsPOI43 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.POITest.testsPOI44
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+746772e18be2e7ce8e813452b08711d5
+  testsPOI44 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.POITest.testsPOI57
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.POITest.testsPOI56
+                   Models.POITest.testsPOI13
+                   Models.POITest.testsPOI45) -}
+08bf99825d38119ddfa659e857b205df
+  testsPOI45 :: GHC.Types.Double
+  {- Unfolding: (case Models.POI.$w$cevalScore
+                        @ Models.POITest.Dummy
+                        @ Models.POI.POI
+                        Models.POITest.$fAgentDummy
+                        Models.POITest.testsPOI46
+                        Models.POITest.testsPOI_sP
+                        0.0##
+                        Models.POITest.testsPOI18 of ww11 { DEFAULT ->
+                 GHC.Types.D# ww11 }) -}
+88a12e39003c84f90942504e068054c9
+  testsPOI46 :: [Models.POITest.Dummy]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Models.POITest.Dummy
+                   Models.POITest.testsPOI51
+                   Models.POITest.testsPOI47) -}
+12a9355e84d2b264d36571ef3fd59a4a
+  testsPOI47 :: [Models.POITest.Dummy]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Models.POITest.Dummy
+                   Models.POITest.testsPOI48
+                   (GHC.Types.[] @ Models.POITest.Dummy)) -}
+4397cc6e3f175d33ca6fe4e6fb6a957c
+  testsPOI48 :: Models.POITest.Dummy
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.POITest.Dummy Models.POITest.testsPOI49) -}
+e833910c6f5cc510ccc4c72d1ddd9ba1
+  testsPOI49 :: Models.State.State
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.State.State
+                   Models.POITest.testsPOI50
+                   Models.POITest.$fAgentDummy1) -}
+d88c16d4f0b5eb15a702384d7a39cca5
+  testsPOI5 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.POITest.testsPOI63
+                   Models.POITest.testsPOI6) -}
+53ad17dba40724031b59b2e68896891d
+  testsPOI50 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.POITest.testsPOI13
+                   Models.POITest.$fAgentDummy1) -}
+983f28dd1dc0fa510525150e70c4a04a
+  testsPOI51 :: Models.POITest.Dummy
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.POITest.Dummy Models.POITest.testsPOI52) -}
+78a75f8d4355cef8133e865e6c33b0b9
+  testsPOI52 :: Models.State.State
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.State.State
+                   Models.POITest.testsPOI53
+                   Models.POITest.$fAgentDummy1) -}
+1ed935877514c6a840c7c6dab2e2535b
+  testsPOI53 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.POITest.testsPOI55
+                   Models.POITest.testsPOI54) -}
+08e87e633b1a8913eb28d88af529a900
+  testsPOI54 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 4.0##) -}
+60478118df05e2a73fae1d426aec5f39
+  testsPOI55 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 3.0##) -}
+c39ec05d1f3744ca7de35f75ae54e0fe
+  testsPOI56 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Multiple Actors"#) -}
+710b4000e3cc5368d4f3604651ffadaf
+  testsPOI57 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.POITest.testsPOI28
+                   Models.POITest.testsPOI58
+                   GHC.Stack.Types.EmptyCallStack) -}
+5882f1bf986c86fe8890630cad639cc9
+  testsPOI58 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.POITest.testsPOI27
+                   Models.POITest.testsPOI26
+                   Models.POITest.testsPOI25
+                   Models.POITest.testsPOI61
+                   Models.POITest.testsPOI60
+                   Models.POITest.testsPOI61
+                   Models.POITest.testsPOI59) -}
+1ffaae42a119fd303b89bcbe0743fa9e
+  testsPOI59 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 80#) -}
+16ee31210c804e68ca154f36cebacc6a
+  testsPOI6 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.POITest.testsPOI42
+                   Models.POITest.testsPOI7) -}
+1bb0a98ec0b54b54c8e1fe2088dd73a7
+  testsPOI60 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 35#) -}
+2d019207d8a449c6bd75049cabfd1594
+  testsPOI61 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 75#) -}
+a66f6e07e4d7b670dd31a1bdb80d7c03
+  testsPOI62 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Update Score - Multiple Actors"#) -}
+a66e352ece9da8117368d91c87c404a1
+  testsPOI63 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.POITest.testsPOI72
+                   Models.POITest.testsPOI64) -}
+28e36cf113de7a050c4acffd335b0e35
+  testsPOI64 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.POITest.testsPOI65
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+89e27a163e318e81fe52e3f1273973d1
+  testsPOI65 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.POITest.testsPOI68
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.POITest.testsPOI67
+                   Models.POITest.testsPOI18
+                   Models.POITest.testsPOI66) -}
+5780d60503eaa1cbf996ab595f7d00d2
+  testsPOI66 :: GHC.Types.Double
+  {- Unfolding: (case Models.POI.$w$cevalScore
+                        @ Models.POITest.Dummy
+                        @ Models.POI.POI
+                        Models.POITest.$fAgentDummy
+                        (GHC.Types.[] @ Models.POITest.Dummy)
+                        Models.POITest.testsPOI_s
+                        10.0##
+                        Models.POITest.testsPOI18 of ww11 { DEFAULT ->
+                 GHC.Types.D# ww11 }) -}
+d201a22766480025c255ef589cbb2d0d
+  testsPOI67 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "No Update"#) -}
+a6001f48ff3f9355ff0dab220cef17a9
+  testsPOI68 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.POITest.testsPOI28
+                   Models.POITest.testsPOI69
+                   GHC.Stack.Types.EmptyCallStack) -}
+7b3206f7e62512d529349137a67fd772
+  testsPOI69 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.POITest.testsPOI27
+                   Models.POITest.testsPOI26
+                   Models.POITest.testsPOI25
+                   Models.POITest.testsPOI71
+                   Models.POITest.testsPOI39
+                   Models.POITest.testsPOI71
+                   Models.POITest.testsPOI70) -}
+9ba6553b0099376d5e809c891febc426
+  testsPOI7 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.POITest.testsPOI30
+                   Models.POITest.testsPOI8) -}
+a1f2b1a632525d62269742baf3b84ad7
+  testsPOI70 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 79#) -}
+ba9affd0fd9c93da2384818d79315076
+  testsPOI71 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 60#) -}
+0a7f4566ecc4d6eb87258b3e10cc09dd
+  testsPOI72 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Update Score - No Update"#) -}
+e5139eeadfa17af9670e271c4759afb1
+  testsPOI73 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.POITest.testsPOI84
+                   Models.POITest.testsPOI74) -}
+47b8e31734e5b31aac994f52575208d4
+  testsPOI74 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.POITest.testsPOI75
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+07eae3c1c64c1f5db5bbfc88b186f0b6
+  testsPOI75 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.POITest.testsPOI80
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.POITest.testsPOI79
+                   Models.POITest.testsPOI78
+                   Models.POITest.testsPOI76) -}
+3448904b833b667b37cb4f20b800ef62
+  testsPOI76 :: GHC.Types.Double
+  {- Unfolding: (case Models.POI.$w$cevalScore
+                        @ Models.POITest.Dummy
+                        @ Models.POI.POI
+                        Models.POITest.$fAgentDummy
+                        Models.POITest.testsPOI77
+                        Models.POITest.testsPOI_sP
+                        0.0##
+                        Models.POITest.testsPOI18 of ww11 { DEFAULT ->
+                 GHC.Types.D# ww11 }) -}
+0c6262ea7b745653ca8229eee52b1eb0
+  testsPOI77 :: [Models.POITest.Dummy]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Models.POITest.Dummy
+                   Models.POITest.testsPOI51
+                   (GHC.Types.[] @ Models.POITest.Dummy)) -}
+4e186077e6aff0efb4b636bd9912e16c
+  testsPOI78 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.D# 4.0e-2##) -}
+c2f705baff64f66fbd2e65cd9d03a4cc
+  testsPOI79 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Single Actor"#) -}
+0dfdc6e8c6dfaaa40d54ee353c039c68
+  testsPOI8 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.POITest.testsPOI9
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+e01c31fb6c32f5adaf8a66d5984f74f1
+  testsPOI80 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.POITest.testsPOI28
+                   Models.POITest.testsPOI81
+                   GHC.Stack.Types.EmptyCallStack) -}
+31c0ddd865761b3aae24da66404f21e7
+  testsPOI81 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.POITest.testsPOI27
+                   Models.POITest.testsPOI26
+                   Models.POITest.testsPOI25
+                   Models.POITest.testsPOI83
+                   Models.POITest.testsPOI82
+                   Models.POITest.testsPOI83
+                   Models.POITest.testsPOI22) -}
+8eb8cc900140852a9f0abaffd114f0d2
+  testsPOI82 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 32#) -}
+fdb8e187c28681bf4b7eba9c663c46b6
+  testsPOI83 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 51#) -}
+3fd3b1f49d1600519e1d8667da3f707c
+  testsPOI84 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Update Score - Single Actor"#) -}
+88a7bfae9f12e8ca2f9c285b7945245c
+  testsPOI85 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "updateScore"#) -}
+8d7ece725282d8748e4770a873735ec6
+  testsPOI9 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.POITest.testsPOI29
+                   Models.POITest.testsPOI10) -}
+2fa9c6ac64d24b8de79425a50afc3143
+  testsPOI_loc :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.POITest.testsPOI55
+                   Models.POITest.testsPOI55) -}
+22de220c148d3c01434cd6e4883c75e2
+  testsPOI_locP :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.POITest.$fAgentDummy1
+                   Models.POITest.$fAgentDummy1) -}
+9838dec86d6d30a7a59421c7c39fc877
+  testsPOI_s :: Models.State.State
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.State.State
+                   Models.POITest.testsPOI_loc
+                   Models.POITest.$fAgentDummy1) -}
+5fd0d70f78febfd24b3e747f7877f802
+  testsPOI_sP :: Models.State.State
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.State.State
+                   Models.POITest.testsPOI_locP
+                   Models.POITest.$fAgentDummy1) -}
+instance Models.RoverDomain.Actor [Models.POITest.Dummy]
+  = Models.POITest.$fActorDummy
+instance Models.RoverDomain.Agent [Models.POITest.Dummy]
+  = Models.POITest.$fAgentDummy
+instance GHC.Classes.Eq [Models.POITest.Dummy]
+  = Models.POITest.$fEqDummy
+instance GHC.Show.Show [Models.POITest.Dummy]
+  = Models.POITest.$fShowDummy
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

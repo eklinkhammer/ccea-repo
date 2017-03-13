@@ -1,0 +1,24 @@
+module Models.StateTest
+  (
+    testsState
+  ) where
+
+import Test.HUnit
+import Models.State
+
+testsState :: Test
+testsState = TestList [ TestLabel "move" testsMoveState
+                      , TestLabel "quadrant" testsGetQuad]
+
+testsMoveState :: Test
+testsMoveState = TestList [ TestLabel "Turn Command" testTurn
+                          , TestLabel "Stay Command" testStay
+                          , TestLabel "Move along orientation" testMoveForward
+                          , TestLabel "Pivot and Move" testMove]
+
+testsGetQuad :: Test
+testsGetQuad = TestList [ TestLabel "Forward" testGetQuadForward
+                        , TestLabel "Left" testGetQuadLeft
+                        , TestLabel "Right" testGetQuadRight
+                        , TestLabel "Behind" testGetQuadBehind
+                        , TestLabel "Respects Rotation" testGetQuadWithOrientation]

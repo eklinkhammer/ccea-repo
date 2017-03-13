@@ -1,46 +1,78 @@
+{-# LANGUAGE AllowAmbiguousTypes #-}
+
 module Models.POI
   (
     POI (..)
+  , printPOI
   ) where
 
 import Models.State
 import Models.Location
 import Models.RoverDomain
 import Data.List (minimum)
+import qualified Data.Map.Strict as Map
 
 type ScoringRadius = Double
-data POI = POI State Double ScoringRadius deriving (Eq)
+type Score = Double
+data POI = POI
+           {
+             _poiState :: State
+           , _poiScore :: Score
+           , _poiScoringRadius :: ScoringRadius
+           , _poiUuid :: Int
+           , _closestAgents :: Map.Map Int Double
+           } deriving (Eq)
 
 instance Actor POI where
-  getState (POI s _ _)   = s
-  setState (POI _ x r) s = POI s x r
-  getBoundingBox _   = undefined
+  getState (POI s _ _ _ _)   = s
+  setState (POI _ x r i m) s = POI s x r i m
+  getID (POI _ _ _ i _) = i
   getMove _ _ = Stay
   move a _ = a
+  resetActor (x,y) g (POI _ _ rad uuid _) = let b = (fromIntegral x, fromIntegral y)
+                                                (g', s) = getRandomState g b
+                                            in (g', POI s 0 rad uuid Map.empty)
 
 instance Scoring POI where
-  getScore (POI _ s _) = s
-  updateScore = updatePOI
-  setScore (POI s _ r) s' = POI s s' r
-
+  getScore (POI _ s _ _ _) = s
+  setScore (POI s _ r i m) s' = POI s s' r i m
+  evalScore d p = let agents   = filter isLoyal $ getAgents d
+                      locPOI   = _loc $ getState p
+                      distID   = map (\a -> (square $ getDistance locPOI a, getID a)) agents
+                      newMap   = foldl updateMap (getMap p) distID
+                      mDist    = maxDist newMap
+                      val      = if mDist == 0 then 0 else 1.0 / mDist
+                      newScore = min 10 $ max val (_poiScore p)
+                  in setMap (setScore p newScore) newMap
+  evalScoreWithout d a p = let mapWithout = Map.delete (getID a) (getMap p)
+                               mDist = maxDist mapWithout
+                           in if mDist == 0 then 0 else min 10 $ 1.0 / mDist
+                               
+                           
 instance Show POI where
-  show _ = "P"
+  show p = "P" ++ (show $ _poiUuid p)
 
-type Score = Double
-
-updatePOI :: (Actor a) => RoverDomain a b -> POI -> POI
-updatePOI dom p@(POI _ x _) = let x' = calcScore dom p
-                              in setScore p (max x x') 
-
-calcScore :: (Actor a) => RoverDomain a b -> POI -> Score
-calcScore (RoverDomain _ xs _) p =
-  let l = _loc $ getState p
-      distances = map (getDistance l) xs
-      scoring   = let r = scoringDistance p in filter (\x -> x < r) distances
-  in if null scoring then 0 else 1 / (max 0.1 $ minimum scoring)
-
-getDistance :: Actor a => Location -> a -> Score
+getDistance :: Actor a => Location -> a -> Double
 getDistance p a = distance p (_loc $ getState a)
 
 scoringDistance :: POI -> ScoringRadius
-scoringDistance (POI _ _ r) = r
+scoringDistance (POI _ _ r _ _) = r
+
+square :: Double -> Double
+square x = x*x
+
+printPOI :: POI -> String
+printPOI (POI _ score _ uuid _) = (show uuid) ++ ": " ++ (show score)
+
+updateMap :: Map.Map Int Double -> (Double, Int) -> Map.Map Int Double
+updateMap m (dist, uuid) = Map.insertWith (\new old -> if new > old then new else old) uuid dist m
+
+
+maxDist :: Map.Map Int Double -> Double
+maxDist = Map.foldl max 0
+
+setMap :: POI -> Map.Map Int Double -> POI
+setMap (POI s x r i _) m = POI s x r i m
+
+getMap :: POI -> Map.Map Int Double
+getMap (POI _ _ _ _ m) = m

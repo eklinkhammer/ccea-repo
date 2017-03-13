@@ -1,0 +1,13 @@
+module Models.Location
+  (
+
+  ) where
+
+
+
+data Location = Location
+  {
+    _x :: Double
+  , _y :: Double
+  }
+  

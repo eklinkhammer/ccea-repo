@@ -3,96 +3,168 @@
 module Rover
   (
     someFunc
-  , showSim
   ) where
 
-import Models.Location
-import Models.State
-import Models.Agent
 import Models.POI
 import Models.RoverDomain
-import qualified Models.Domain as D
-
-
+import Models.Rover
+import Models.State
 import Sim.Simulation
+import Util
+
 import CCEA
-import NN.NeuralNetwork
+import NN.NeuralNetwork hiding (train)
+import Numeric.LinearAlgebra.HMatrix hiding (corr)
 
 import System.IO.Unsafe
 import System.Random
-
 import Control.Monad.Writer
-import Data.List (sortOn, mapAccumL)
+import Data.List (sortOn, mapAccumL, sort)
 
-randomN :: RandomGen g => Int -> g -> (g -> (g,a)) -> (g, [a])
-randomN n g f = mapAccumL (\g' _ -> f g') g [1..n]
-
-randomLocation :: RandomGen g => (Int, Int) -> g -> (g, Location)
-randomLocation (ii, ji) g = let (id, jd) = (fromIntegral ii, fromIntegral ji)
-                                (x, g') = randomR (0, id) g
-                                (y, g'') = randomR (0, jd) g'
-                            in (g'', Location x y)
-
-randomState :: RandomGen g => (Int, Int) -> g -> (g, State)
-randomState b g = let (g', rLoc) = randomLocation b g in (g', State rLoc 0)
-
-randomPOI :: RandomGen g => (Int, Int) -> g -> (g, POI)
-randomPOI b g = let (g',rLoc) = randomLocation b g
-                in (g', POI (State rLoc 0) 0 15) --(fromIntegral $ max (fst b) (snd b)))
-
-randomRover :: RandomGen g => NNVars -> (Int, Int) -> g -> IO (g, Rover)
-randomRover vars b g = do
-  let (g',rLoc) = randomLocation b g
-      rState = State rLoc 0
-  net <- create vars
-  return $! (g', Rover rState net True)
-
-
-randomRoverDomain :: RandomGen g => NNVars -> (Int, Int) -> g -> IO (RoverDomain Rover POI)
-randomRoverDomain vars b@(i,j) g = do
-  let (g', rPois) = randomN 2 g (randomPOI (i-1,j-1))
-  (g'',rRover) <- randomRover vars (i-1,j-1) g'
-  (_, rRover2) <- randomRover vars (i-1,j-1) g''
-  return $! RoverDomain b [rRover, rRover2] rPois
-
-showSim :: IO ()
-showSim = do
-  gen <- getStdGen
-  dom <- randomRoverDomain nnVars (5,5) gen
-  let (dom', log) = runWriter $ simulationWriter 20 dom
-  putStrLn $ id $ log
-  putStrLn $ show $ getGlobalScore dom'
-
+type Bounds = (Int,Int)
+type POICount = Int
+type LoyalCount = Int
+type TraitorCount = Int
+type DomainInfo = (Bounds, POICount, LoyalCount, TraitorCount)
 
 evolveXNIO :: RandomGen g
-  => Int -> g -> CCEA a (g, RoverDomain Rover POI) g -> IO (g, CCEA a (g, RoverDomain Rover POI) g)
-evolveXNIO 0 g c = return (g,c)
-evolveXNIO !n !g !c = do
-  let (g', c') = evolveX g c
-  putStrLn "SIMULATION START"
-  let (dom, log) = runWriter $ simulationWriter 10 (snd $ reset g' $ snd $ _state c')
-  putStrLn $ id log
-  putStrLn $ "SIMULATION END " ++ (show (getGlobalScore dom))
-  evolveXNIO (n - 1) g' c'
-  
-evolveXN :: RandomGen g => Int -> g -> CCEA a b g -> (g, CCEA a b g)
-evolveXN 0 g c = (g,c)
-evolveXN n g c = let (g', c') = evolveX g c in evolveXN (n - 1) g' c'
+  => SimSteps -> Int -> g -> CCEA (Network Double) (g, RoverDomain Rover POI) g -> IO (g, CCEA (Network Double) (g, RoverDomain Rover POI) g)
+evolveXNIO _ 0 g c = return (g,c)
+evolveXNIO simSteps !n !g !c = do
+  let (g', c') = evolveCCEA g c
+  let dom = snd $ _state c'
+      nets = _pop c'
+      domBestNets = assignNets dom (best (snd . gFit simSteps (g, dom)) nets)
+      (testDom, log) = runWriter $ simulationWriter 10 domBestNets
+  putStrLn $ show (getGlobalScore testDom)
+  evolveXNIO simSteps (n - 1) g' c'
 
-evolveX :: RandomGen g => g -> CCEA a b g -> (g, CCEA a b g)
-evolveX g c@(CCEA p ff br sf _) = let (g',ccea') = evolveCCEA g c
-                                 in (g', CCEA p ff br sf (_state ccea'))
+trainingDom :: IO (RoverDomain Rover POI)
+trainingDom = randomRoverDomain nnVars (5,5) 1 1 0
+  
+train :: RoverDomain Rover POI -> Int -> SimSteps -> IO (Population (Network Double))
+train roverDom n simSteps = do
+  nets <- createPopulation 10 5 nnVars :: IO (Population (Network Double))
+  gen  <- newStdGen
+  let ccea :: CCEA (Network Double) (StdGen, RoverDomain Rover POI) StdGen
+      cceaBreeding = elitist (mutateWeights nnVars) :: BreedingStrategy (Network Double) StdGen
+      ccea =  CCEA nets (dFit simSteps) cceaBreeding (tournament 2) (gen,roverDom)
+  let ccea'= evolveNCCEA n gen ccea
+      finalNets = _pop (snd ccea')
+  return $! finalNets
+
+type Domain = RoverDomain Rover POI
+
+-- Given a domain (which may or may not have other agents with neural nets), trains
+-- a population of neural networks to either be loyal or disloyal
+trainX ::  Domain -> Pop -> Int -> SimSteps -> Bool -> IO Pop
+trainX domain nets n steps trainLoyal = do
+  let fit = if trainLoyal then dFit steps else dFitT steps
+  gen <- newStdGen
+  let ccea :: CCEA (Network Double) (StdGen, Domain) StdGen
+      cceaBreeding = elitist (mutateWeights nnVars)
+      ccea = CCEA nets fit cceaBreeding (tournament 2) (gen, domain)
+      ccea' = evolveNCCEA n gen ccea
+      finalNets = _pop (snd ccea')
+  return $! finalNets
+      
+testPop :: DomainInfo -> Population (Network Double) -> SimSteps -> IO Double
+testPop (b,p,l,t) pop n = do
+  roverDom <- randomRoverDomain nnVars b p l t
+  gen      <- newStdGen
+  let scores = map (snd . gFit n (gen, roverDom)) pop
+      teamScores = map sum scores
+      bestScore = head $ sort teamScores
+  return $! bestScore
+
+testPopWithT :: DomainInfo -> [Network Double] -> [Network Double] -> SimSteps -> IO Double
+testPopWithT (b,p,l,t) loyal traitor n = do
+  roverDom <- randomRoverDomain nnVars b p l t
+  gen      <- newStdGen
+  let roverDom' = assignNets (assignNetsT roverDom traitor) loyal
+      afterSim  = simulation n roverDom'
+  return $ getGlobalScore afterSim
+  
+meanScore :: Int -> DomainInfo -> Population (Network Double) -> SimSteps -> IO Double
+meanScore n info pop simSteps = repIO n (\_ -> testPop info pop simSteps) >>= return . mean
+
+-- Returns the before and after scores
+experiment :: Int -> Int -> DomainInfo -> SimSteps -> IO (Double, Double)
+experiment nTrials nGens info@(b,p,l,t) simSteps = do
+  dom <- randomRoverDomain nnVars b p l t
+  nets <- createPopulation 10 5 nnVars :: IO Pop
+  untrained <- trainX dom nets 0 simSteps True
+  trained <- trainX dom nets nGens simSteps False
+  before <- meanScore nTrials info untrained simSteps
+  after <- meanScore nTrials info trained simSteps
+  return (before, after)
+
+best :: ([Network Double] -> [Double]) -> Pop -> [Network Double]
+best _ [] = []
+best f p = let scores = map f p
+               teamScore = map sum scores
+               withScores = zip p teamScore
+           in fst $ head $ sortOn snd withScores
+              
+type Pop = Population (Network Double)
+
+mean :: [Double] -> Double
+mean xs = sum xs / (fromIntegral (length xs))
+
+type NGens = Int
+type NTrials = Int
+type NExps = Int
+type SimSteps = Int
+
+trainingEfficacy :: NExps -> NTrials -> NGens -> DomainInfo -> SimSteps -> IO Double
+trainingEfficacy nExps nTrials nGens info nSimSteps = do
+  expResults <- repIO nExps (\_ -> experiment nTrials nGens info nSimSteps)
+  return $ mean $ map (\(b,a) -> a / b) expResults
+
+averageScore :: NExps -> NTrials -> NGens -> DomainInfo -> SimSteps -> IO Double
+averageScore nExps nTrials nGens info nSimSteps = do
+  expResults <- repIO nExps (\_ -> experiment nTrials nGens info nSimSteps)
+  return $ mean $ map snd expResults
+  
 someFunc :: IO ()
 someFunc = do
-  nets <- createPopulation 10 10 nnVars
-  gen  <- getStdGen
-  roverDom <- randomRoverDomain nnVars (5,5) gen
-  putStrLn "Agents upon creation of roverDom"
-  putStrLn $ show $ map getState (getAgents roverDom)
-  let ccea :: CCEA (Network Double) (StdGen, RoverDomain Rover POI) StdGen
-      ccea =  CCEA nets gFit (elitist (mutateWeights nnVars)) (fitnessProp) (gen,roverDom)
-      (g6, c6)     = evolveXN 100 gen ccea
-      (dom', log) = runWriter $ simulationWriter 10 (snd $ reset g6 $ snd $ _state c6)
-  putStrLn $ id $ log
-  putStrLn $ show $ getGlobalScore dom'
-  putStrLn $ show $ map getState (getAgents dom')
+  let domInfo  = ((5,5), 5, 2, 0)
+      domInfo2 = ((5,5), 5, 2, 2)
+      nTrials  = 30
+      nGens    = 1000
+      nExps    = 15
+      simStep  = 20
+      
+  nets  <- createPopulation 5 2 nnVars :: IO Pop
+  netsT <- createPopulation 2 2 nnVars :: IO Pop
+  dom   <- randomRoverDomain nnVars (5,5) 5 2 0
+  domT  <- randomRoverDomain nnVars (5,5) 5 2 2
+  gen   <- newStdGen
+
+
+  
+  trained <- trainX dom nets nGens simStep True
+  
+  let bestNet = best (snd . gFit simStep (gen, dom)) trained
+      domWithBestLoyal = assignNets domT bestNet
+
+  testPopWithT domInfo bestNet [] simStep >>= print
+
+
+  
+  trainedT <- trainX domWithBestLoyal netsT nGens simStep False
+
+  let bestNetT = best (snd . traitorFit simStep (gen, domT)) trainedT
+      domWithBestTraitor = assignNetsT domWithBestLoyal bestNetT
+
+  testPopWithT domInfo2 bestNet bestNetT simStep >>= print
+  
+
+
+  
+  trainedLoyal <- trainX domWithBestTraitor trained nGens simStep True
+
+  let bestNetFinal = best (snd . gFit simStep (gen, domT)) trainedLoyal
+      finalDom = assignNets domWithBestTraitor bestNetFinal
+
+  testPopWithT domInfo2 bestNetFinal bestNetT simStep >>= print

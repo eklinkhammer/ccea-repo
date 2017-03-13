@@ -16,12 +16,13 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Rover
+                     , Util
                      , Models.Location
                      , Sim.Simulation
                      , Models.State
                      , Models.RoverDomain
                      , Models.Orientation
-                     , Models.Agent
+                     , Models.Rover
                      , Models.POI
   build-depends:       base >= 4.7 && < 5   
                      , neural-algorithms
@@ -53,7 +54,6 @@ test-suite rover-domain-test
                      , Models.POI
                      , Models.POITest
                      , Models.RoverDomain
-                     , Models.Agent
   build-depends:       base
                      , rover-domain
                      , HUnit

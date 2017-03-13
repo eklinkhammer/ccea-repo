@@ -1,0 +1,940 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-13 19:58:18.948292 UTC
+
+interface rover-domain-0.1.0.0-G32AcM5MtzlJS0iNGAVaLr:Models.RoverDomain 8001
+  interface hash: d289d49c2a148568e27a9555bf8c9bc7
+  ABI hash: b97cd8117a6404f89f03d51f2f59fc58
+  export-list hash: d83c08f75f6e90218a0a1cae58cf690f
+  orphan hash: 969fc77445c75a76c022e489c3eb5506
+  flag hash: f947b60ac104d9cfc4eb592ee0282628
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Models.RoverDomain.getAgents
+  Models.RoverDomain.getAllScores
+  Models.RoverDomain.getGlobalScore
+  Models.RoverDomain.getGlobalScoreWithout
+  Models.RoverDomain.getScoring
+  Models.RoverDomain.inBounds
+  Models.RoverDomain.reset
+  Models.RoverDomain.setActors
+  Models.RoverDomain.setAgents
+  Models.RoverDomain.setScoring
+  Models.RoverDomain.timestep
+  Models.RoverDomain.Actor{Models.RoverDomain.getID Models.RoverDomain.getMove Models.RoverDomain.getState Models.RoverDomain.move Models.RoverDomain.oneMove Models.RoverDomain.resetActor Models.RoverDomain.resetActors Models.RoverDomain.setState}
+  Models.RoverDomain.Agent{Models.RoverDomain.getFitness Models.RoverDomain.getPolicy Models.RoverDomain.isLoyal Models.RoverDomain.setPolicy}
+  Models.RoverDomain.RoverDomain{Models.RoverDomain.RoverDomain}
+  Models.RoverDomain.Scoring{Models.RoverDomain.evalScore Models.RoverDomain.evalScoreWithout Models.RoverDomain.getScore Models.RoverDomain.setScore}
+module dependencies: Models.Location Models.Orientation
+                     Models.State
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      hnn-0.3@hnn-0.3-BTcaYwOzMFRHoXIMlsey6T integer-gmp-1.0.0.1
+                      loop-0.3.0@loop-0.3.0-98VH1UqsOHy2KxBxA55ICY
+                      matrix-0.3.5.0@matrix-0.3.5.0-Ai5MbZhiOOC3qmPfUuhoAV
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX
+                      neural-algorithms-0.1.0.0@neural-algorithms-0.1.0.0-5aqhJNMEboR7D3hIbxnTW3
+                      normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+                      zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX:System.Random.MWC
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:Data.Maybe 5f2ba364cbe65c060bc5436bc0b9d049
+import  -/  base-4.9.0.0:Data.Traversable 7ce5b7ee67475ac3d03ae825b86efd9f
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  hnn-0.3@hnn-0.3-BTcaYwOzMFRHoXIMlsey6T:AI.HNN.FF.Network 8cb158cb2e5449e87bc4852442ea2657
+import  -/  matrix-0.3.5.0@matrix-0.3.5.0-Ai5MbZhiOOC3qmPfUuhoAV:Data.Matrix a687e632fe85518f4a0d171926d72f1c
+import  -/  neural-algorithms-0.1.0.0@neural-algorithms-0.1.0.0-5aqhJNMEboR7D3hIbxnTW3:NN.NeuralNetwork 34d6bc9b709f2635f8b3532a87756b2a
+import  -/  random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe:System.Random 33fad628288f84aac16d40e5a027af06
+import  -/  Models.Location dd4e137586ebbbc4454a355db991c55c
+  exports: 1480745372b9db6f1a9a1290118c70c9
+  Location df31e068a8873925342e37313c680769
+  Location 32839bfa1b13f473b9bd2bd712830631
+import  -/  Models.State b252959b413f1809445e9ecdb01e43a2
+  exports: c7f2ff648c9fd96dab306ab96046fb60
+  Cmd f7fdecb2d6ccb132c03e13fec81361cf
+  State 18ace96112b5cd47be56725afc563065
+  _loc 115cfd89b4442935fd1e7eb4090a613a
+b144514598cef575f9937d351e17c14f
+  $dmoneMove ::
+    Models.RoverDomain.Actor a =>
+    forall t1 t2.
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2 -> a -> a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(LLLLC(C(S))LLLL),U(A,A,A,1*C1(C1(C1(C1(U)))),1*C1(C1(U)),A,A,A,A)><L,U><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, False)
+                (\ @ a
+                   ($dActor :: Models.RoverDomain.Actor a)
+                   @ t1
+                   @ t2
+                   ($dAgent :: Models.RoverDomain.Agent t1)
+                   ($dScoring :: Models.RoverDomain.Scoring t2)
+                   (dom :: Models.RoverDomain.RoverDomain t1 t2)
+                   (a1 :: a) ->
+                 Models.RoverDomain.move
+                   @ a
+                   $dActor
+                   a1
+                   (Models.RoverDomain.getMove
+                      @ a
+                      $dActor
+                      @ t1
+                      @ t2
+                      $dAgent
+                      $dScoring
+                      dom
+                      a1)) -}
+104563e84be33a14fc2ae0c5f9e37fba
+  $dmresetActors ::
+    Models.RoverDomain.Actor a =>
+    forall g.
+    System.Random.RandomGen g =>
+    (GHC.Types.Int, GHC.Types.Int) -> g -> [a] -> (g, [a])
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,1*U(A,A,A,A,A,A,1*C1(C1(U)),A,A)><L,U><L,U><L,U><S,1*U>m,
+     Unfolding: InlineRule (0, True, False)
+                (\ @ a
+                   ($dActor :: Models.RoverDomain.Actor a)
+                   @ g
+                   ($dRandomGen :: System.Random.RandomGen g)
+                   (b :: (GHC.Types.Int, GHC.Types.Int))
+                   (g1 :: g)
+                   (as :: [a]) ->
+                 Models.RoverDomain.$dmresetActors_$smapAccumL
+                   @ g
+                   @ a
+                   @ a
+                   (Models.RoverDomain.resetActor @ a $dActor @ g $dRandomGen b)
+                   g1
+                   as) -}
+d483e3939f164416ba0b1ce5aa461e6e
+  $dmresetActors_$smapAccumL ::
+    (a -> b -> (a, c)) -> a -> [b] -> (a, [c])
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,C(C1(U(U,U)))><L,U><S,1*U>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a @ b @ c1 (f :: a -> b -> (a, c1)) (s :: a) (t1 :: [b]) ->
+                 (GHC.Base.foldr
+                    @ b
+                    @ (Data.Traversable.StateL a [c1])
+                    (\ (x :: b) (ys :: Data.Traversable.StateL a [c1])[OneShot] ->
+                     Data.Traversable.$fApplicativeStateL_$c<*>
+                       @ a
+                       @ [c1]
+                       @ [c1]
+                       (Data.Functor.<$>
+                          @ (Data.Traversable.StateL a)
+                          @ c1
+                          @ ([c1] -> [c1])
+                          (Data.Traversable.$fFunctorStateL @ a)
+                          (GHC.Types.: @ c1)
+                          (\ (y :: a) -> f y x)
+                            `cast`
+                          (Sym (Data.Traversable.N:StateL[0] <a>_R <c1>_R)))
+                       ys)
+                    (Data.Traversable.$fApplicativeStateL_$cpure
+                       @ a
+                       @ [c1]
+                       (GHC.Types.[] @ c1))
+                    t1)
+                   `cast`
+                 (Data.Traversable.N:StateL[0] <a>_R <[c1]>_R)
+                   s) -}
+8afbdafad7dca3fb8c1686938d96e167
+  $fShowRoverDomain ::
+    (Models.RoverDomain.Actor a, Models.RoverDomain.Actor b) =>
+    GHC.Show.Show (Models.RoverDomain.RoverDomain a b)
+  DFunId
+  {- Arity: 2,
+     Strictness: <L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a
+                      @ b
+                      ($dActor :: Models.RoverDomain.Actor a)
+                      ($dActor1 :: Models.RoverDomain.Actor b).
+                  @ (Models.RoverDomain.RoverDomain a b)
+                  (Models.RoverDomain.$fShowRoverDomain_$cshowsPrec
+                     @ a
+                     @ b
+                     $dActor
+                     $dActor1)
+                  (Models.RoverDomain.$fShowRoverDomain_$cshow
+                     @ a
+                     @ b
+                     $dActor
+                     $dActor1)
+                  (Models.RoverDomain.$fShowRoverDomain_$cshowList
+                     @ a
+                     @ b
+                     $dActor
+                     $dActor1) -}
+8afbdafad7dca3fb8c1686938d96e167
+  $fShowRoverDomain_$cshow ::
+    (Models.RoverDomain.Actor a, Models.RoverDomain.Actor b) =>
+    Models.RoverDomain.RoverDomain a b -> GHC.Base.String
+  {- Arity: 3,
+     Strictness: <L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><S(SSL),1*U(1*U(1*U(U),1*U(U)),1*U,1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ b
+                   (w :: Models.RoverDomain.Actor a)
+                   (w1 :: Models.RoverDomain.Actor b)
+                   (w2 :: Models.RoverDomain.RoverDomain a b) ->
+                 case w2 of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                 case ww1 of ww4 { (,) ww5 ww6 ->
+                 Models.RoverDomain.$w$cshow @ a @ b w w1 ww5 ww6 ww2 ww3 } }) -}
+8afbdafad7dca3fb8c1686938d96e167
+  $fShowRoverDomain_$cshowList ::
+    (Models.RoverDomain.Actor a, Models.RoverDomain.Actor b) =>
+    [Models.RoverDomain.RoverDomain a b] -> GHC.Show.ShowS
+  {- Arity: 4,
+     Strictness: <L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><S,1*U><L,U>,
+     Unfolding: (\ @ a
+                   @ b
+                   ($dActor :: Models.RoverDomain.Actor a)
+                   ($dActor1 :: Models.RoverDomain.Actor b)
+                   (ls :: [Models.RoverDomain.RoverDomain a b])
+                   (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ (Models.RoverDomain.RoverDomain a b)
+                   (\ (x :: Models.RoverDomain.RoverDomain a b)
+                      (s1 :: GHC.Base.String)[OneShot] ->
+                    case x of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                    case ww1 of ww4 { (,) ww5 ww6 ->
+                    GHC.Base.++
+                      @ GHC.Types.Char
+                      (Models.RoverDomain.$w$cshow
+                         @ a
+                         @ b
+                         $dActor
+                         $dActor1
+                         ww5
+                         ww6
+                         ww2
+                         ww3)
+                      s1 } })
+                   ls
+                   s) -}
+8afbdafad7dca3fb8c1686938d96e167
+  $fShowRoverDomain_$cshowsPrec ::
+    (Models.RoverDomain.Actor a, Models.RoverDomain.Actor b) =>
+    GHC.Types.Int
+    -> Models.RoverDomain.RoverDomain a b -> GHC.Show.ShowS
+  {- Arity: 5,
+     Strictness: <L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,A><S(SSL),1*U(1*U(1*U(U),1*U(U)),1*U,1*U)><L,1*U>,
+     Unfolding: InlineRule (5, True, False)
+                (\ @ a
+                   @ b
+                   ($dActor :: Models.RoverDomain.Actor a)
+                   ($dActor1 :: Models.RoverDomain.Actor b)
+                   (ds :: GHC.Types.Int)
+                   (x :: Models.RoverDomain.RoverDomain a b)
+                   (s :: GHC.Base.String) ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b1
+                      (c1 :: GHC.Types.Char -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Char
+                      @ b1
+                      c1
+                      n
+                      (Models.RoverDomain.$fShowRoverDomain_$cshow
+                         @ a
+                         @ b
+                         $dActor
+                         $dActor1
+                         x))
+                   s) -}
+9e55704968f461bee04d744fc6f33057
+  $tc'C:Actor :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5625346128942511144##
+                   18418686608709624976##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tc'C:Actor1) -}
+a717493d2fe1b98aaf50b212ac97511d
+  $tc'C:Actor1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Actor"#) -}
+d153f53709acb2aac7da60404c2adc68
+  $tc'C:Agent :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2625555708406854374##
+                   2563267030498446987##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tc'C:Agent1) -}
+54e19fb2640fce7ce37d07262a80b7bf
+  $tc'C:Agent1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Agent"#) -}
+8ccc96b530267afc7cdd9ce52826701f
+  $tc'C:Scoring :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1832742050043541279##
+                   7615034473374484075##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tc'C:Scoring1) -}
+d61d819b25b96f513da0410a346d7b9e
+  $tc'C:Scoring1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'C:Scoring"#) -}
+d6cbb9a1e59ab7b107b75a7d1d365d16
+  $tc'RoverDomain :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7144547758420850666##
+                   4156342366235743680##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tc'RoverDomain1) -}
+63fd46312a1f666353415655564e1590
+  $tc'RoverDomain1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'RoverDomain"#) -}
+5e67b9941ba2518274f6a19af6212096
+  $tcActor :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10130953528745642365##
+                   16523498798916648907##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tcActor1) -}
+28855a856a36e71865bfed1a889856d5
+  $tcActor1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Actor"#) -}
+3519cdec4e98aa06de2783c2697497d2
+  $tcAgent :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5213391946998190572##
+                   18340373073125044572##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tcAgent1) -}
+d084893843e10d1954915da1f963f23b
+  $tcAgent1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Agent"#) -}
+98730f9f11b3cec3fc406269373f8c86
+  $tcRoverDomain :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4685585941630813860##
+                   2568764269967618666##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tcRoverDomain1) -}
+e9d9f1f8e1ff3d7547dacdeedc86ab1c
+  $tcRoverDomain1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "RoverDomain"#) -}
+21b80031512ef268bbdc1fa31f662f22
+  $tcScoring :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11021362599785032214##
+                   10125069018040927627##
+                   Models.RoverDomain.$trModule
+                   Models.RoverDomain.$tcScoring1) -}
+b720e0e8ba77a29188362c1920592e6f
+  $tcScoring1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Scoring"#) -}
+48028ae1b3e84e6491e9532f85ed4986
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Models.RoverDomain.$trModule2
+                   Models.RoverDomain.$trModule1) -}
+ab42d21bcd25fdc48cd36e95b2774b6a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Models.RoverDomain"#) -}
+3dee59cda0fdadcb10fb29beab512be7
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "rover-domain-0.1.0.0-G32AcM5MtzlJS0iNGAVaLr"#) -}
+8afbdafad7dca3fb8c1686938d96e167
+  $w$cshow ::
+    (Models.RoverDomain.Actor a, Models.RoverDomain.Actor b) =>
+    GHC.Types.Int -> GHC.Types.Int -> [a] -> [b] -> GHC.Base.String
+  {- Arity: 6,
+     Strictness: <L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,U(U(U,U,U),C(U(1*U(1*U(U),1*U(U)),A)),A,A,A,A,A,A,A)><L,1*U(U)><L,1*U(U)><S,1*U><L,1*U>,
+     Inline: [0] -}
+af78cd9050e6e21ad053bfd3d95c91ad
+  $wgetAllScores ::
+    (Models.RoverDomain.Agent a, Models.RoverDomain.Scoring s) =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> [a] -> [s] -> [(Models.RoverDomain.UUID, GHC.Types.Double)]
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U><L,U(U,U,U,U,U)><L,U><L,U><S,U>, Inline: [0],
+     Unfolding: (\ @ a
+                   @ s
+                   (w :: Models.RoverDomain.Agent a)
+                   (w1 :: Models.RoverDomain.Scoring s)
+                   (ww :: (GHC.Types.Int, GHC.Types.Int))
+                   (ww1 :: [a])
+                   (ww2 :: [s]) ->
+                 let {
+                   $dActor :: Models.RoverDomain.Actor s
+                   = Models.RoverDomain.$p1Scoring @ s w1
+                 } in
+                 let {
+                   wild :: Models.RoverDomain.RoverDomain a s
+                   = Models.RoverDomain.RoverDomain @ a @ s ww ww1 ww2
+                 } in
+                 GHC.Base.map
+                   @ s
+                   @ (Models.RoverDomain.UUID, GHC.Types.Double)
+                   (\ (s1 :: s) ->
+                    (Models.RoverDomain.getID @ s $dActor s1,
+                     Models.RoverDomain.getScore
+                       @ s
+                       w1
+                       (Models.RoverDomain.evalScore @ s w1 @ a @ s w w1 wild s1)))
+                   ww2) -}
+2a1337ea5c8bfdfbb0f403354c50e994
+  $wgetGlobalScore ::
+    (Models.RoverDomain.Agent a, Models.RoverDomain.Scoring s) =>
+    (GHC.Types.Int, GHC.Types.Int) -> [a] -> [s] -> GHC.Prim.Double#
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U><L,U(U,U,U,U,U)><L,U><L,U><S,U>, Inline: [0],
+     Unfolding: (\ @ a
+                   @ s
+                   (w :: Models.RoverDomain.Agent a)
+                   (w1 :: Models.RoverDomain.Scoring s)
+                   (ww :: (GHC.Types.Int, GHC.Types.Int))
+                   (ww1 :: [a])
+                   (ww2 :: [s]) ->
+                 let {
+                   f :: s -> GHC.Types.Double = Models.RoverDomain.getScore @ s w1
+                 } in
+                 let {
+                   g :: s -> s
+                   = Models.RoverDomain.evalScore
+                       @ s
+                       w1
+                       @ a
+                       @ s
+                       w
+                       w1
+                       (Models.RoverDomain.RoverDomain @ a @ s ww ww1 ww2)
+                 } in
+                 letrec {
+                   $wgo :: [s] -> GHC.Prim.Double# -> GHC.Prim.Double#
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w2 :: [s]) (ww3 :: GHC.Prim.Double#) ->
+                     case w2 of wild {
+                       [] -> ww3
+                       : y ys
+                       -> case f (g y) of wild1 { GHC.Types.D# y1 ->
+                          $wgo ys (GHC.Prim.+## ww3 y1) } }
+                 } in
+                 $wgo ww2 0.0##) -}
+2cb96a864f184493ed534c612fb090b7
+  $wgetGlobalScoreWithout ::
+    (Models.RoverDomain.Agent a, Models.RoverDomain.Scoring s) =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> [a] -> [s] -> a -> GHC.Prim.Double#
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <L,U><L,U(U,U,U,U,U)><L,U><L,U><S,U><L,U>, Inline: [0],
+     Unfolding: (\ @ a
+                   @ s
+                   (w :: Models.RoverDomain.Agent a)
+                   (w1 :: Models.RoverDomain.Scoring s)
+                   (ww :: (GHC.Types.Int, GHC.Types.Int))
+                   (ww1 :: [a])
+                   (ww2 :: [s])
+                   (w2 :: a) ->
+                 let {
+                   f :: s -> GHC.Types.Double
+                   = Models.RoverDomain.evalScoreWithout
+                       @ s
+                       w1
+                       @ a
+                       @ s
+                       w
+                       w1
+                       (Models.RoverDomain.RoverDomain @ a @ s ww ww1 ww2)
+                       w2
+                 } in
+                 letrec {
+                   $wgo :: [s] -> GHC.Prim.Double# -> GHC.Prim.Double#
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w3 :: [s]) (ww3 :: GHC.Prim.Double#) ->
+                     case w3 of wild {
+                       [] -> ww3
+                       : y ys
+                       -> case f y of wild1 { GHC.Types.D# y1 ->
+                          $wgo ys (GHC.Prim.+## ww3 y1) } }
+                 } in
+                 $wgo ww2 0.0##) -}
+4756e66a0cf0e61786b8bc10286904cf
+  $winBounds ::
+    Models.RoverDomain.RoverDomain t t1
+    -> GHC.Types.Double -> GHC.Prim.Double# -> GHC.Types.Bool
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(1*U(1*U(U),1*U(U)),A,A)><L,1*U(U)><S,U>,
+     Inline: [0],
+     Unfolding: (\ @ t
+                   @ t1
+                   (w :: Models.RoverDomain.RoverDomain t t1)
+                   (ww :: GHC.Types.Double)
+                   (ww1 :: GHC.Prim.Double#) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>## ww1 0.0##) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case {__pkg_ccall base-4.9.0.0 rintDouble GHC.Prim.Double#
+                                                                -> GHC.Prim.State#
+                                                                     GHC.Prim.RealWorld
+                                                                -> (# GHC.Prim.State#
+                                                                        GHC.Prim.RealWorld,
+                                                                      GHC.Prim.Double# #)}
+                             ww1
+                             GHC.Prim.realWorld# of wild1 { (#,#) ds2 ds3 ->
+                      case w of wild2 { Models.RoverDomain.RoverDomain b ds ds1 ->
+                      case b of wild3 { (,) h w1 ->
+                      case h of wild4 { GHC.Types.I# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<# (GHC.Prim.double2Int# ds3) y) of wild5 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case ww of wild6 { GHC.Types.D# x ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.>## x 0.0##) of wild7 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case {__pkg_ccall base-4.9.0.0 rintDouble GHC.Prim.Double#
+                                                                          -> GHC.Prim.State#
+                                                                               GHC.Prim.RealWorld
+                                                                          -> (# GHC.Prim.State#
+                                                                                  GHC.Prim.RealWorld,
+                                                                                GHC.Prim.Double# #)}
+                                       x
+                                       GHC.Prim.realWorld# of wild8 { (#,#) ds5 ds6 ->
+                                case w1 of wild9 { GHC.Types.I# y1 ->
+                                GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.<#
+                                     (GHC.Prim.double2Int# ds6)
+                                     y1) } } } } } } } } } }) -}
+7e74b36b1899e579d20e6120373e0eab
+  $wreset ::
+    (Models.RoverDomain.Actor b, Models.RoverDomain.Actor a,
+     System.Random.RandomGen t) =>
+    t
+    -> (GHC.Types.Int, GHC.Types.Int)
+    -> [a]
+    -> [b]
+    -> (# t, Models.RoverDomain.RoverDomain a b #)
+  {- Arity: 7, HasNoCafRefs,
+     Strictness: <L,1*U(A,A,A,A,A,A,A,1*C1(C1(C1(C1(U(U,U))))),A)><L,1*U(A,A,A,A,A,A,A,1*C1(C1(C1(C1(U(U,U))))),A)><L,U><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ t
+                   @ a
+                   @ b
+                   (w :: Models.RoverDomain.Actor b)
+                   (w1 :: Models.RoverDomain.Actor a)
+                   (w2 :: System.Random.RandomGen t)
+                   (w3 :: t)
+                   (ww :: (GHC.Types.Int, GHC.Types.Int))
+                   (ww1 :: [a])
+                   (ww2 :: [b]) ->
+                 let {
+                   ds :: (t, [a])
+                   = Models.RoverDomain.resetActors @ a w1 @ t w2 ww w3 ww1
+                 } in
+                 let {
+                   ds1 :: (t, [b])
+                   = Models.RoverDomain.resetActors
+                       @ b
+                       w
+                       @ t
+                       w2
+                       ww
+                       (case ds of wild { (,) g1 as' -> g1 })
+                       ww2
+                 } in
+                 (# case ds1 of wild { (,) g2 ss' -> g2 },
+                    Models.RoverDomain.RoverDomain
+                      @ a
+                      @ b
+                      ww
+                      (case ds of wild { (,) g1 as' -> as' })
+                      (case ds1 of wild { (,) g2 ss' -> ss' }) #)) -}
+70329a1c3d4c51fec61b6f5d2a23ab2e
+  $wtimestep ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring b) =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> [t1] -> [b] -> (# (GHC.Types.Int, GHC.Types.Int), [t1], [b] #)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,U(U(U,U,U,U,U,U,U,U,U),U,U,U,U)><L,U(U(U,U,U,U,U,U,U,U,U),U,U,U,U)><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ b
+                   @ t1
+                   (w :: Models.RoverDomain.Agent t1)
+                   (w1 :: Models.RoverDomain.Scoring b)
+                   (ww :: (GHC.Types.Int, GHC.Types.Int))
+                   (ww1 :: [t1])
+                   (ww2 :: [b]) ->
+                 let {
+                   as :: [t1]
+                   = GHC.Base.map
+                       @ t1
+                       @ t1
+                       (Models.RoverDomain.oneMove
+                          @ t1
+                          (Models.RoverDomain.$p1Agent @ t1 w)
+                          @ t1
+                          @ b
+                          w
+                          w1
+                          (Models.RoverDomain.RoverDomain @ t1 @ b ww ww1 ww2))
+                       ww1
+                 } in
+                 (# ww, as,
+                    GHC.Base.map
+                      @ b
+                      @ b
+                      (let {
+                         wild :: Models.RoverDomain.RoverDomain t1 b {- Strictness: m -}
+                         = Models.RoverDomain.RoverDomain @ t1 @ b ww as ww2
+                       } in
+                       let {
+                         f :: b -> b
+                         = Models.RoverDomain.evalScore @ b w1 @ t1 @ b w w1 wild
+                       } in
+                       let {
+                         g :: b -> b
+                         = Models.RoverDomain.oneMove
+                             @ b
+                             (Models.RoverDomain.$p1Scoring @ b w1)
+                             @ t1
+                             @ b
+                             w
+                             w1
+                             wild
+                       } in
+                       \ (x :: b) -> f (g x))
+                      ww2 #)) -}
+8afbdafad7dca3fb8c1686938d96e167
+  class GHC.Show.Show a => Actor a where
+    getState :: a -> Models.State.State
+    setState :: a -> Models.State.State -> a
+    getMove :: (Models.RoverDomain.Agent t1,
+                Models.RoverDomain.Scoring t2) =>
+               Models.RoverDomain.RoverDomain t1 t2 -> a -> Models.State.Cmd
+    move :: a -> Models.State.Cmd -> a
+    oneMove :: (Models.RoverDomain.Agent t1,
+                Models.RoverDomain.Scoring t2) =>
+               Models.RoverDomain.RoverDomain t1 t2 -> a -> a
+    resetActor :: System.Random.RandomGen g =>
+                  (GHC.Types.Int, GHC.Types.Int) -> g -> a -> (g, a)
+    resetActors :: System.Random.RandomGen g =>
+                   (GHC.Types.Int, GHC.Types.Int) -> g -> [a] -> (g, [a])
+    getID :: a -> Models.RoverDomain.UUID
+    RecFlag: Recursive
+    {-# MINIMAL getState, setState, getMove, move, resetActor,
+                getID #-}
+8afbdafad7dca3fb8c1686938d96e167
+  class Models.RoverDomain.Actor a => Agent a where
+    setPolicy :: a -> AI.HNN.FF.Network.Network GHC.Types.Double -> a
+    getPolicy :: a -> AI.HNN.FF.Network.Network GHC.Types.Double
+    getFitness :: (Models.RoverDomain.Agent t1,
+                   Models.RoverDomain.Scoring t2) =>
+                  Models.RoverDomain.RoverDomain t1 t2 -> a -> GHC.Types.Double
+    isLoyal :: a -> GHC.Types.Bool
+    RecFlag: Recursive
+    {-# MINIMAL setPolicy, getPolicy, getFitness, isLoyal #-}
+8afbdafad7dca3fb8c1686938d96e167
+  data RoverDomain a b
+    = RoverDomain (GHC.Types.Int, GHC.Types.Int) [a] [b]
+8afbdafad7dca3fb8c1686938d96e167
+  class Models.RoverDomain.Actor a => Scoring a where
+    getScore :: a -> GHC.Types.Double
+    setScore :: a -> GHC.Types.Double -> a
+    evalScore :: (Models.RoverDomain.Agent t1,
+                  Models.RoverDomain.Scoring t2) =>
+                 Models.RoverDomain.RoverDomain t1 t2 -> a -> a
+    evalScoreWithout :: (Models.RoverDomain.Agent t1,
+                         Models.RoverDomain.Scoring t2) =>
+                        Models.RoverDomain.RoverDomain t1 t2 -> t1 -> a -> GHC.Types.Double
+    RecFlag: Recursive
+    {-# MINIMAL getScore, setScore, evalScore, evalScoreWithout #-}
+8954ee5ff9d5d22887449dc15aabbbbf
+  type UUID = GHC.Types.Int
+cf36706807f7cc56436d3f7baf52b742
+  getAgents :: Models.RoverDomain.RoverDomain t t1 -> [t]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ t @ t1 (ds :: Models.RoverDomain.RoverDomain t t1) ->
+                 case ds of wild { Models.RoverDomain.RoverDomain ds1 as ds2 ->
+                 as }) -}
+4d690fc2bcb1c81c646e866227a66d75
+  getAllScores ::
+    (Models.RoverDomain.Agent a, Models.RoverDomain.Scoring s) =>
+    Models.RoverDomain.RoverDomain a s
+    -> [(GHC.Types.Int, GHC.Types.Double)]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U><L,U(U,U,U,U,U)><S(LLS),1*U(U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ s
+                   (w :: Models.RoverDomain.Agent a)
+                   (w1 :: Models.RoverDomain.Scoring s)
+                   (w2 :: Models.RoverDomain.RoverDomain a s) ->
+                 case w2 of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                 Models.RoverDomain.$wgetAllScores @ a @ s w w1 ww1 ww2 ww3 }) -}
+d70ebc428381704b715b3de55d6322f5
+  getGlobalScore ::
+    (Models.RoverDomain.Agent a, Models.RoverDomain.Scoring s) =>
+    Models.RoverDomain.RoverDomain a s -> GHC.Types.Double
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U><L,U(U,U,U,U,U)><S(LLS),1*U(U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   @ s
+                   (w :: Models.RoverDomain.Agent a)
+                   (w1 :: Models.RoverDomain.Scoring s)
+                   (w2 :: Models.RoverDomain.RoverDomain a s) ->
+                 case w2 of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                 case Models.RoverDomain.$wgetGlobalScore
+                        @ a
+                        @ s
+                        w
+                        w1
+                        ww1
+                        ww2
+                        ww3 of ww4 { DEFAULT ->
+                 GHC.Types.D# ww4 } }) -}
+a9bbeb30e011c79e5a09fbcc95ac5727
+  getGlobalScoreWithout ::
+    (Models.RoverDomain.Agent a, Models.RoverDomain.Scoring s) =>
+    Models.RoverDomain.RoverDomain a s -> a -> GHC.Types.Double
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,U><L,U(U,U,U,U,U)><S(LLS),1*U(U,U,U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ a
+                   @ s
+                   (w :: Models.RoverDomain.Agent a)
+                   (w1 :: Models.RoverDomain.Scoring s)
+                   (w2 :: Models.RoverDomain.RoverDomain a s)
+                   (w3 :: a) ->
+                 case w2 of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                 case Models.RoverDomain.$wgetGlobalScoreWithout
+                        @ a
+                        @ s
+                        w
+                        w1
+                        ww1
+                        ww2
+                        ww3
+                        w3 of ww4 { DEFAULT ->
+                 GHC.Types.D# ww4 } }) -}
+646901d9e39c08b32dd016192359a6a8
+  getScoring :: Models.RoverDomain.RoverDomain t t1 -> [t1]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ t @ t1 (ds :: Models.RoverDomain.RoverDomain t t1) ->
+                 case ds of wild { Models.RoverDomain.RoverDomain ds1 ds2 ss ->
+                 ss }) -}
+e2c417ca00ff8133faa06a14c86ae5b5
+  inBounds ::
+    Models.RoverDomain.RoverDomain t t1
+    -> Models.State.State -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*U(1*U(1*U(U),1*U(U)),A,A)><S(S(LS(S))L),1*U(1*U(1*U(U),1*U(U)),A)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ t
+                   @ t1
+                   (w :: Models.RoverDomain.RoverDomain t t1)
+                   (w1 :: Models.State.State) ->
+                 case w1 of ww { Models.State.State ww1 ww2 ->
+                 case ww1 of ww3 { Models.Location.Location ww4 ww5 ->
+                 case ww5 of ww6 { GHC.Types.D# ww7 ->
+                 Models.RoverDomain.$winBounds @ t @ t1 w ww4 ww7 } } }) -}
+802fc332e2386b9a6a59a450542a0ce8
+  reset ::
+    (Models.RoverDomain.Actor b, Models.RoverDomain.Actor a,
+     System.Random.RandomGen t) =>
+    t
+    -> Models.RoverDomain.RoverDomain a b
+    -> (t, Models.RoverDomain.RoverDomain a b)
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <L,1*U(A,A,A,A,A,A,A,1*C1(C1(C1(C1(U(U,U))))),A)><L,1*U(A,A,A,A,A,A,A,1*C1(C1(C1(C1(U(U,U))))),A)><L,U><L,U><S,1*U(U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ t
+                   @ a
+                   @ b
+                   (w :: Models.RoverDomain.Actor b)
+                   (w1 :: Models.RoverDomain.Actor a)
+                   (w2 :: System.Random.RandomGen t)
+                   (w3 :: t)
+                   (w4 :: Models.RoverDomain.RoverDomain a b) ->
+                 case w4 of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                 case Models.RoverDomain.$wreset
+                        @ t
+                        @ a
+                        @ b
+                        w
+                        w1
+                        w2
+                        w3
+                        ww1
+                        ww2
+                        ww3 of ww4 { (#,#) ww5 ww6 ->
+                 (ww5, ww6) } }) -}
+fac9cf49418f1489a1b9a2dbcb888571
+  setActors ::
+    Models.RoverDomain.RoverDomain t t1
+    -> [a] -> [b] -> Models.RoverDomain.RoverDomain a b
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U,A,A)><L,U><L,U>m,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ t
+                   @ t1
+                   @ a
+                   @ b
+                   (ds :: Models.RoverDomain.RoverDomain t t1)
+                   (as :: [a])
+                   (ss :: [b]) ->
+                 case ds of wild { Models.RoverDomain.RoverDomain b1 ds1 ds2 ->
+                 Models.RoverDomain.RoverDomain @ a @ b b1 as ss }) -}
+17aeab7ee6ccc7dec64105c412b2b6bb
+  setAgents ::
+    Models.RoverDomain.RoverDomain t b
+    -> [a] -> Models.RoverDomain.RoverDomain a b
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,A,U)><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ t
+                   @ a
+                   @ b
+                   (ds :: Models.RoverDomain.RoverDomain t b)
+                   (as :: [a]) ->
+                 case ds of wild { Models.RoverDomain.RoverDomain b1 ds1 ss ->
+                 Models.RoverDomain.RoverDomain @ a @ b b1 as ss }) -}
+062c4cf845bd618b62d332e6f81ee435
+  setScoring ::
+    Models.RoverDomain.RoverDomain a t
+    -> [b] -> Models.RoverDomain.RoverDomain a b
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U,A)><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ t
+                   @ a
+                   @ b
+                   (ds :: Models.RoverDomain.RoverDomain a t)
+                   (ss :: [b]) ->
+                 case ds of wild { Models.RoverDomain.RoverDomain b1 as ds1 ->
+                 Models.RoverDomain.RoverDomain @ a @ b b1 as ss }) -}
+1b1488ae02c0f11298bef423961ada22
+  timestep ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring b) =>
+    Models.RoverDomain.RoverDomain t1 b
+    -> Models.RoverDomain.RoverDomain t1 b
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U(U,U,U,U,U,U,U,U,U),U,U,U,U)><L,U(U(U,U,U,U,U,U,U,U,U),U,U,U,U)><S,1*U(U,U,U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ b
+                   @ t1
+                   (w :: Models.RoverDomain.Agent t1)
+                   (w1 :: Models.RoverDomain.Scoring b)
+                   (w2 :: Models.RoverDomain.RoverDomain t1 b) ->
+                 case w2 of ww { Models.RoverDomain.RoverDomain ww1 ww2 ww3 ->
+                 case Models.RoverDomain.$wtimestep
+                        @ b
+                        @ t1
+                        w
+                        w1
+                        ww1
+                        ww2
+                        ww3 of ww4 { (#,,#) ww5 ww6 ww7 ->
+                 Models.RoverDomain.RoverDomain @ t1 @ b ww5 ww6 ww7 } }) -}
+instance GHC.Show.Show [Models.RoverDomain.RoverDomain]
+  = Models.RoverDomain.$fShowRoverDomain
+"SPEC/Models.RoverDomain mapAccumL @ [] _ _ _" [ALWAYS] forall @ a
+                                                               @ b
+                                                               @ c1
+                                                               ($dTraversable :: Data.Traversable.Traversable
+                                                                                   [])
+  Data.Traversable.mapAccumL @ [] @ a @ b @ c1 $dTraversable
+  = Models.RoverDomain.$dmresetActors_$smapAccumL @ a @ b @ c1
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,364 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-27 01:33:29.202559 UTC
+
+interface main@main:Models.Location 8001
+  interface hash: 444f99d38ef933a8eb8a2e4ed9d3b639
+  ABI hash: e429380de20abd7aeab63d05abffa9ae
+  export-list hash: 22f841e516640ed9894dc94401ac2192
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 2d6c658b37d8f82bf6e00b49e1e25654
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Models.Location.addLoc
+  Models.Location.diffLoc
+  Models.Location.distance
+  Models.Location.Location{Models.Location.Location _x _y}
+module dependencies:
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Float 469226b1bc53433e95d0167dec5d0312
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+81bbee21f6e2d509b74dca7975379295
+  $fEqLocation :: GHC.Classes.Eq Models.Location.Location
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.Location.Location
+                  Models.Location.$fEqLocation_$c==
+                  Models.Location.$fEqLocation_$c/= -}
+81bbee21f6e2d509b74dca7975379295
+  $fEqLocation_$c/= ::
+    Models.Location.Location
+    -> Models.Location.Location -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Models.Location.Location)
+                   (w1 :: Models.Location.Location) ->
+                 case w of ww { Models.Location.Location ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.D# ww4 ->
+                 case w1 of ww5 { Models.Location.Location ww6 ww7 ->
+                 case ww6 of ww8 { GHC.Types.D# ww9 ->
+                 Models.Location.$w$c/= ww4 ww2 ww9 ww7 } } } }) -}
+81bbee21f6e2d509b74dca7975379295
+  $fEqLocation_$c== ::
+    Models.Location.Location
+    -> Models.Location.Location -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Models.Location.Location)
+                   (w1 :: Models.Location.Location) ->
+                 case w of ww { Models.Location.Location ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.D# ww4 ->
+                 case w1 of ww5 { Models.Location.Location ww6 ww7 ->
+                 case ww6 of ww8 { GHC.Types.D# ww9 ->
+                 Models.Location.$w$c== ww4 ww2 ww9 ww7 } } } }) -}
+81bbee21f6e2d509b74dca7975379295
+  $fShowLocation :: GHC.Show.Show Models.Location.Location
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.Location.Location
+                  Models.Location.$fShowLocation_$cshowsPrec
+                  Models.Location.$fShowLocation_$cshow
+                  Models.Location.$fShowLocation_$cshowList -}
+81bbee21f6e2d509b74dca7975379295
+  $fShowLocation1 :: Models.Location.Location -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Models.Location.Location) ->
+                 case w of ww { Models.Location.Location ww1 ww2 ->
+                 Models.Location.$w$cshowsPrec 0# ww1 ww2 }) -}
+bf2391c4f05063a9ed0cf89f8f924fb5
+  $fShowLocation2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+f62bbb5d5070844d1cf332aa8c260f68
+  $fShowLocation3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "_y = "#) -}
+d3296078ab5bdb5e509e65f95e3afa64
+  $fShowLocation4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+f079fb345d1ca43d664539484abaa54b
+  $fShowLocation5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "_x = "#) -}
+e88da5df24fd387d5015fecd3c6c026b
+  $fShowLocation6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Location {"#) -}
+5c6b7cd18f88d4dadd13c368c12bbda9
+  $fShowLocation7 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+81bbee21f6e2d509b74dca7975379295
+  $fShowLocation_$cshow ::
+    Models.Location.Location -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Models.Location.Location) ->
+                 Models.Location.$fShowLocation_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+81bbee21f6e2d509b74dca7975379295
+  $fShowLocation_$cshowList ::
+    [Models.Location.Location] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Models.Location.Location
+                   Models.Location.$fShowLocation1) -}
+81bbee21f6e2d509b74dca7975379295
+  $fShowLocation_$cshowsPrec ::
+    GHC.Types.Int -> Models.Location.Location -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(1*U(U),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Models.Location.Location) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Models.Location.Location ww3 ww4 ->
+                 Models.Location.$w$cshowsPrec ww1 ww3 ww4 } }) -}
+a61081aa2a5da5a60b68f33757f706e4
+  $tc'Location :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1386310218091713398##
+                   5975233680021865295##
+                   Models.Location.$trModule
+                   Models.Location.$tc'Location1) -}
+58dbd69c3fd0b5e23628ed6b83c4f6d3
+  $tc'Location1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Location"#) -}
+de7efdb58e1481c5e29d831bed18f686
+  $tcLocation :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11094451982888318714##
+                   2494171540033027445##
+                   Models.Location.$trModule
+                   Models.Location.$tcLocation1) -}
+12fd89995f5a096e3f495016130c30ad
+  $tcLocation1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Location"#) -}
+23748b13b16bda2df1f10576c4e87fc5
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Models.Location.$trModule2
+                   Models.Location.$trModule1) -}
+d09513b59ad2a09cda0874e2c2f0a27a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Models.Location"#) -}
+91d6c31173f2f2be6d38896e1f1b4b68
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+4aa0d3ca12f7de18a6d5cd4eb26e5025
+  $w$c/= ::
+    GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><S,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Double#)
+                   (ww1 :: GHC.Types.Double)
+                   (ww2 :: GHC.Prim.Double#)
+                   (ww3 :: GHC.Types.Double) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==## ww ww2) of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case ww1 of wild1 { GHC.Types.D# x ->
+                      case ww3 of wild2 { GHC.Types.D# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==## x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False } } } }) -}
+b28e2ae75780604c18c053a0d2b08c2f
+  $w$c== ::
+    GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><S,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Double#)
+                   (ww1 :: GHC.Types.Double)
+                   (ww2 :: GHC.Prim.Double#)
+                   (ww3 :: GHC.Types.Double) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==## ww ww2) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True -> GHC.Classes.eqDouble ww1 ww3 }) -}
+95df9b22c57672dc0ffac8b31cf80eac
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> GHC.Types.Double -> GHC.Types.Double -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,U><L,1*U(U)><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: GHC.Types.Double)
+                   (ww2 :: GHC.Types.Double) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = case ww1 of ww3 { GHC.Types.D# ww4 ->
+                     GHC.Float.$w$sshowSignedFloat
+                       GHC.Float.$fShowDouble_$sshowFloat
+                       Models.Location.$fShowLocation7
+                       ww4 }
+                 } in
+                 let {
+                   f1 :: GHC.Base.String -> GHC.Base.String
+                   = case ww2 of ww3 { GHC.Types.D# ww4 ->
+                     GHC.Float.$w$sshowSignedFloat
+                       GHC.Float.$fShowDouble_$sshowFloat
+                       Models.Location.$fShowLocation7
+                       ww4 }
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Models.Location.$fShowLocation6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Models.Location.$fShowLocation5
+                          (f (GHC.Base.++
+                                @ GHC.Types.Char
+                                Models.Location.$fShowLocation4
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Models.Location.$fShowLocation3
+                                   (f1
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Models.Location.$fShowLocation2
+                                         x))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x)) }) -}
+81bbee21f6e2d509b74dca7975379295
+  data Location
+    = Location {_x :: GHC.Types.Double, _y :: GHC.Types.Double}
+3b0f9b13fbb37544a8cefaa951a9a325
+  _x :: Models.Location.Location -> GHC.Types.Double
+  RecSel Left Models.Location.Location
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.Location.Location) ->
+                 case ds of wild { Models.Location.Location ds1 ds2 -> ds1 }) -}
+eb39f67b258b8cc741f472fdbeb63f5b
+  _y :: Models.Location.Location -> GHC.Types.Double
+  RecSel Left Models.Location.Location
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.Location.Location) ->
+                 case ds of wild { Models.Location.Location ds1 ds2 -> ds2 }) -}
+f42027cdfe6e3854d19528becf53a3b3
+  addLoc ::
+    Models.Location.Location
+    -> Models.Location.Location -> Models.Location.Location
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(1*U(U),1*U(U))><L,U(1*U(U),1*U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Models.Location.Location)
+                   (w1 :: Models.Location.Location) ->
+                 Models.Location.Location
+                   (case w of wild { Models.Location.Location ds ds1 ->
+                    case ds of wild1 { GHC.Types.D# x ->
+                    case w1 of wild2 { Models.Location.Location ds2 ds3 ->
+                    case ds2 of wild3 { GHC.Types.D# y ->
+                    GHC.Types.D# (GHC.Prim.+## x y) } } } })
+                   (case w of wild { Models.Location.Location ds ds1 ->
+                    case ds1 of wild1 { GHC.Types.D# x ->
+                    case w1 of wild2 { Models.Location.Location ds2 ds3 ->
+                    case ds3 of wild3 { GHC.Types.D# y ->
+                    GHC.Types.D# (GHC.Prim.+## x y) } } } })) -}
+9fabfc00b44593676e7c0467e0900b17
+  diffLoc ::
+    Models.Location.Location
+    -> Models.Location.Location -> Models.Location.Location
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(1*U(U),1*U(U))><L,U(1*U(U),1*U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Models.Location.Location)
+                   (w1 :: Models.Location.Location) ->
+                 Models.Location.Location
+                   (case w1 of wild { Models.Location.Location ds ds1 ->
+                    case ds of wild1 { GHC.Types.D# x ->
+                    case w of wild2 { Models.Location.Location ds2 ds3 ->
+                    case ds2 of wild3 { GHC.Types.D# y ->
+                    GHC.Types.D# (GHC.Prim.-## x y) } } } })
+                   (case w1 of wild { Models.Location.Location ds ds1 ->
+                    case ds1 of wild1 { GHC.Types.D# x ->
+                    case w of wild2 { Models.Location.Location ds2 ds3 ->
+                    case ds3 of wild3 { GHC.Types.D# y ->
+                    GHC.Types.D# (GHC.Prim.-## x y) } } } })) -}
+2d967692ae8979b8e6afea2d2dc37e1c
+  distance ::
+    Models.Location.Location
+    -> Models.Location.Location -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)S(S)),1*U(1*U(U),1*U(U))><S(S(S)S(S)),1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (l1 :: Models.Location.Location)
+                   (l2 :: Models.Location.Location) ->
+                 case l2 of wild { Models.Location.Location ds ds1 ->
+                 case ds of wild1 { GHC.Types.D# x ->
+                 case l1 of wild2 { Models.Location.Location ds2 ds3 ->
+                 case ds2 of wild3 { GHC.Types.D# y ->
+                 case ds1 of wild4 { GHC.Types.D# x1 ->
+                 case ds3 of wild5 { GHC.Types.D# y1 ->
+                 let {
+                   x2 :: GHC.Prim.Double# = GHC.Prim.-## x1 y1
+                 } in
+                 let {
+                   x3 :: GHC.Prim.Double# = GHC.Prim.-## x y
+                 } in
+                 GHC.Types.D#
+                   (GHC.Prim.sqrtDouble#
+                      (GHC.Prim.+##
+                         (GHC.Prim.*## x3 x3)
+                         (GHC.Prim.*## x2 x2))) } } } } } }) -}
+instance [safe] GHC.Classes.Eq [Models.Location.Location]
+  = Models.Location.$fEqLocation
+instance [safe] GHC.Show.Show [Models.Location.Location]
+  = Models.Location.$fShowLocation
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

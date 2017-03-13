@@ -1,0 +1,10 @@
+module Models.Actor
+  (
+
+  ) where
+
+import qualified Models.State as S
+
+class Actor a where
+  getState :: a -> S.State
+  move :: a -> S.Cmd -> 

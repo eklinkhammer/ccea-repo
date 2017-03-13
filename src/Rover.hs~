@@ -1,0 +1,29 @@
+module Rover
+  (
+    someFunc
+  ) where
+
+import Models.Location
+import Models.Agent
+import Models.POI
+import Models.RoverDomain
+
+import Sim.Simulation
+import CCEA
+import NN.NeuralNetwork
+import Util.Vars
+
+import System.Random
+
+getRoverDom :: RoverDomain Rover POI
+getRoverDom = RoverDomain (5,5) [] []
+
+someFunc :: IO ()
+someFunc = do
+  nets <- createPopulation 10 10 nnVars
+  gen  <- getStdGen
+  let roverDom = getRoverDom
+      ccea :: CCEA (Network Double) (RoverDomain Rover POI) StdGen
+      ccea =  CCEA nets gFit (elitist (mutateWeights nnVars)) (tournament 2) roverDom
+  putStrLn "Created Network"
+

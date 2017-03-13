@@ -1,0 +1,14 @@
+module Models.RoverDomain
+  (
+    
+  ) where
+
+import Models.State
+
+data RoverDomain a b = RoverDomain [a] [b]
+
+class Actor a where
+  getState :: a -> State
+  getBoundingBox :: a -> [Location]
+  getMove :: RoverDomain -> a -> Cmd
+  move :: a -> Cmd -> a

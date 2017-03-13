@@ -1,0 +1,6 @@
+module Models.State
+  (
+
+  ) where
+
+data State = State Location Orientation

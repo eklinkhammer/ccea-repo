@@ -1,0 +1,886 @@
+
+==================== FINAL INTERFACE ====================
+2017-02-27 01:34:50.622825 UTC
+
+interface main@main:Models.LocationTest 8001
+  interface hash: abb1986332bb3bba5068e9b39d19fc73
+  ABI hash: 58b74a79e1575652ab1149a298a054f9
+  export-list hash: 291b42143181d2e9ec7463727f079718
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fa54a010328cf9ad9d5706abd58048ee
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Models.LocationTest.testsLocation
+module dependencies: Models.Location
+package dependencies: HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.0.0*
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit dedf8672d65dfb10ce8a7e3bc8c64de6
+import  -/  HUnit-1.3.1.2@HUnit-1.3.1.2-LggooYwT1UPHSoNYWvAdgk:Test.HUnit.Base 4113b18d5fbd12caebd3c809c2e60152
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  Models.Location e429380de20abd7aeab63d05abffa9ae
+  exports: 22f841e516640ed9894dc94401ac2192
+  Location a465f175b29794a8b975bc784ea364e9
+  addLoc f42027cdfe6e3854d19528becf53a3b3
+  diffLoc 9fabfc00b44593676e7c0467e0900b17
+  distance 2d967692ae8979b8e6afea2d2dc37e1c
+d623b8c0e9162bfcfa909dd917fe9337
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Models.LocationTest.$trModule2
+                   Models.LocationTest.$trModule1) -}
+d307fac8f60183b891609179eae7a067
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Models.LocationTest"#) -}
+65e65ce190e65ee9c4fd7122762813e7
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+aaa05eff9462e3bb5be03387a2508b3f
+  testsLocation :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList
+                   Models.LocationTest.testsLocation1) -}
+042332a2232f6d317f7c1a122710733c
+  testsLocation1 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation100
+                   Models.LocationTest.testsLocation2) -}
+1d1fc500f48dbce075ce84a588b81c2f
+  testsLocation10 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation29
+                   Models.LocationTest.testsLocation11) -}
+b8faaf5af92713c24d99aafb2f7fa866
+  testsLocation100 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation136
+                   Models.LocationTest.testsLocation101) -}
+3cef16fa705877e732689ac46a155bbf
+  testsLocation101 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList
+                   Models.LocationTest.testsLocation102) -}
+39c012ab539eee687cfe797403bd79eb
+  testsLocation102 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation128
+                   Models.LocationTest.testsLocation103) -}
+1ced0423200f08b593e77fb8e2700390
+  testsLocation103 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation117
+                   Models.LocationTest.testsLocation104) -}
+6abd676e014150fa48d64caeab09fdfc
+  testsLocation104 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation105
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+14cd6aafff3c9f32666e18faf0bc54d7
+  testsLocation105 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation116
+                   Models.LocationTest.testsLocation106) -}
+30c87784bdac32130c3956456cbd6f9d
+  testsLocation106 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation107
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+2da23fea52511cee3acaff0ca27f0e31
+  testsLocation107 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.LocationTest.testsLocation111
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.LocationTest.testsLocation110
+                   Models.LocationTest.testsLocation109
+                   Models.LocationTest.testsLocation108) -}
+b835a1380b52300955a9bd5eb01e01c2
+  testsLocation108 :: GHC.Types.Double
+  {- Strictness: m,
+     Unfolding: (GHC.Types.D# (GHC.Prim.sqrtDouble# 25.0##)) -}
+57f5a7e45e8824734a00b44cbe48722b
+  testsLocation109 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 5.0##) -}
+7eb3d8f29661c36325842b89a450de66
+  testsLocation11 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation12
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+d46b965f59a142540af7c6113aaae8ad
+  testsLocation110 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Distance"#) -}
+8a0efe4274c4fcc9de1312ae880c6420
+  testsLocation111 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation112
+                   GHC.Stack.Types.EmptyCallStack) -}
+3f6bbf1b814e9f95de32186bc91dc220
+  testsLocation112 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation115
+                   Models.LocationTest.testsLocation114
+                   Models.LocationTest.testsLocation115
+                   Models.LocationTest.testsLocation113) -}
+35205c301f85f2afcc85e9f946372de6
+  testsLocation113 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 76#) -}
+484b4043b7ecdb65f38663f99213c72d
+  testsLocation114 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 33#) -}
+f9fb22c2c2b93cc0d7aa6c6675bd4a04
+  testsLocation115 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 44#) -}
+8617083d76d4f29d7ca58908c5395ac1
+  testsLocation116 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Dist.2"#) -}
+04f8f2400bd656ac13e3c7dc480b6538
+  testsLocation117 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation127
+                   Models.LocationTest.testsLocation118) -}
+73cc6facd56d2fee5a0aab9b5b9c6047
+  testsLocation118 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation119
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+bd420df8d7be7d3689eaa7711bea4d5d
+  testsLocation119 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.LocationTest.testsLocation123
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.LocationTest.testsLocation122
+                   Models.LocationTest.testsLocation121
+                   Models.LocationTest.testsLocation120) -}
+9f761f17641469769c02a1017963bc04
+  testsLocation12 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ Models.Location.Location
+                   Models.LocationTest.testsLocation20
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   Models.Location.$fEqLocation
+                   Models.Location.$fShowLocation
+                   Models.LocationTest.testsLocation19
+                   Models.LocationTest.testsLocation16
+                   Models.LocationTest.testsLocation13) -}
+93eb12ba8e4621f23993a9d915ed38ba
+  testsLocation120 :: GHC.Types.Double
+  {- Strictness: m,
+     Unfolding: (GHC.Types.D# (GHC.Prim.sqrtDouble# 49.0##)) -}
+dc13dcfe458315b469f6996e2ec1f6b3
+  testsLocation121 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 7.0##) -}
+76c51c5b69db36346ee02588322d3987
+  testsLocation122 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Diff Quad"#) -}
+73a161c406f98765221ec2c624f4ee55
+  testsLocation123 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation124
+                   GHC.Stack.Types.EmptyCallStack) -}
+34fab2c92f7684369d2581e0d2910c1d
+  testsLocation124 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation126
+                   Models.LocationTest.testsLocation125
+                   Models.LocationTest.testsLocation126
+                   Models.LocationTest.testsLocation52) -}
+28985b971b910d09d0160a47a0f82004
+  testsLocation125 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 42#) -}
+e377a62341f208fe5416fa9f03a42c84
+  testsLocation126 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 38#) -}
+bc075cb9185963c951cff6a96a4cb4e2
+  testsLocation127 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Dist.1"#) -}
+5123f24e880f5c0576395ad8437203e7
+  testsLocation128 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation135
+                   Models.LocationTest.testsLocation129) -}
+7b23fb20a881b32bd50fda8c499328ab
+  testsLocation129 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation130
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+409c32cbaff94e33e60920ea8033b08e
+  testsLocation13 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation15
+                   Models.LocationTest.testsLocation14) -}
+11ef74533aa869bb90d51bd79988efe0
+  testsLocation130 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ GHC.Types.Double
+                   Models.LocationTest.testsLocation132
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   GHC.Classes.$fEqDouble
+                   GHC.Float.$fShowDouble
+                   Models.LocationTest.testsLocation131
+                   Models.LocationTest.testsLocation109
+                   Models.LocationTest.testsLocation108) -}
+bbef3412be15801ad6a0fb4cecdd7d8d
+  testsLocation131 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "With Zero V"#) -}
+09d5bd6e179c446e272fe9d86973b3b5
+  testsLocation132 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation133
+                   GHC.Stack.Types.EmptyCallStack) -}
+f3e0e1566c74d2702d628879867c1f57
+  testsLocation133 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation114
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation134) -}
+7d69a72bbdcb503b49b18a41f03b165f
+  testsLocation134 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 79#) -}
+d73f26fa1113ca480c323249e9baeb30
+  testsLocation135 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Dist.0"#) -}
+7b893380d3217277dc5559036ec5aaa1
+  testsLocation136 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "distance"#) -}
+ce1ab300fcb19582039d25d5816ff1e6
+  testsLocation14 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 8.8##) -}
+cb272d42de21a9681bb3f75565667911
+  testsLocation15 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 4.1##) -}
+18fdf4b176535a63d7d7f65f44328a16
+  testsLocation16 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation18
+                   Models.LocationTest.testsLocation17) -}
+2c4d8fcd43ce658de22e4e75db2e1929
+  testsLocation17 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 8.8##) -}
+c05391dbcd69058110b6d61b11049d28
+  testsLocation18 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 4.1##) -}
+601495cf9abdf467b402fbfc4f51d2df
+  testsLocation19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Value"#) -}
+b33bc6096066a10325a9500ebe48ffc4
+  testsLocation2 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation67
+                   Models.LocationTest.testsLocation3) -}
+b6e1fa78aeaaa9479850b97933856385
+  testsLocation20 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation21
+                   GHC.Stack.Types.EmptyCallStack) -}
+52371553413b97d9a6c9f8e98413d09b
+  testsLocation21 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation24
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation24
+                   Models.LocationTest.testsLocation22) -}
+c42be65f707cf6e72da6be7d4cc3c0a5
+  testsLocation22 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 85#) -}
+985c2e5a0e8f79f39d0d10dac553fdf4
+  testsLocation23 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 32#) -}
+f1bc83a5d2eac6ab7cb425a01e7d51ee
+  testsLocation24 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 83#) -}
+1f42fe24715d05d6d27acffdf6b8aaf2
+  testsLocation25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "test/Models/LocationTest.hs"#) -}
+88f934ba056867ce0f9663c94d5fd669
+  testsLocation26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Models.LocationTest"#) -}
+bbbd2b05adbeb96a4f5527df8e335011
+  testsLocation27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "main"#) -}
+89c52513b2232da1f9ea2e597e96bcad
+  testsLocation28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "assertEqual"#) -}
+f152e565c330e97fee5c849bae016cac
+  testsLocation29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add.3"#) -}
+4acf42bf7518a2c5a996f653755770b1
+  testsLocation3 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation4
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+cc52a36f76b71d0dc5773340f98b4fb1
+  testsLocation30 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation42
+                   Models.LocationTest.testsLocation31) -}
+b55eb4a9e60f38b91998cf35a1aa7049
+  testsLocation31 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation32
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+7ac23fd3ae920f03457b8dc100cee275
+  testsLocation32 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ Models.Location.Location
+                   Models.LocationTest.testsLocation37
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   Models.Location.$fEqLocation
+                   Models.Location.$fShowLocation
+                   Models.LocationTest.testsLocation36
+                   Models.LocationTest.testsLocation33
+                   Models.LocationTest.testsLocation33) -}
+d2eec33de3ad39f7e79ea248e22cc4fc
+  testsLocation33 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation35
+                   Models.LocationTest.testsLocation34) -}
+45414e2062ca463fdd23582de2e392f9
+  testsLocation34 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.D# -6.800000000000001##) -}
+d57efd8e19ae3cb42da43040705ea837
+  testsLocation35 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# -4.8##) -}
+5259e8cd775e70ea4eba83f4070679ae
+  testsLocation36 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Associative"#) -}
+65ab7e6bb99452ba1c595a8eda4797e6
+  testsLocation37 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation38
+                   GHC.Stack.Types.EmptyCallStack) -}
+5dd3ed096116f98b95a8f277d5279022
+  testsLocation38 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation41
+                   Models.LocationTest.testsLocation40
+                   Models.LocationTest.testsLocation41
+                   Models.LocationTest.testsLocation39) -}
+941cacacddf09ffba95edcf676953201
+  testsLocation39 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 108#) -}
+04863172825ef14adadef957972859fc
+  testsLocation4 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation66
+                   Models.LocationTest.testsLocation5) -}
+22157ebe850b9724dfa1c34a5845b0b6
+  testsLocation40 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 29#) -}
+e532138bcaaa6ac5473ef68591a3ea05
+  testsLocation41 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 77#) -}
+aeb766c5d003c33dc1990f067e5ee1d0
+  testsLocation42 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add.2"#) -}
+dece5c078a1c3b24e2b13d1711d84a21
+  testsLocation43 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation55
+                   Models.LocationTest.testsLocation44) -}
+bee06fd6526408872b52e7d7d022defd
+  testsLocation44 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation45
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+337b41704d4d6c7d14e84f9d25eac592
+  testsLocation45 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ Models.Location.Location
+                   Models.LocationTest.testsLocation50
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   Models.Location.$fEqLocation
+                   Models.Location.$fShowLocation
+                   Models.LocationTest.testsLocation49
+                   Models.LocationTest.testsLocation46
+                   Models.LocationTest.testsLocation46) -}
+190029ffce128e8671c4bcab89fee155
+  testsLocation46 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation48
+                   Models.LocationTest.testsLocation47) -}
+2577d6133eb4506de8b1b6b3d4b6b813
+  testsLocation47 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 4.0##) -}
+002f2dff7b72d50d12d7e9a72da7d500
+  testsLocation48 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 6.0##) -}
+d8d72243d672d3e47d0283dcdebde9f1
+  testsLocation49 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Commutative"#) -}
+bb1f893ecb7644aaddd597a8a299257b
+  testsLocation5 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList
+                   Models.LocationTest.testsLocation6) -}
+84200fc83c4548acf8f920bb64694200
+  testsLocation50 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation51
+                   GHC.Stack.Types.EmptyCallStack) -}
+2e6653cadb943a0cd174e56689ddf81b
+  testsLocation51 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation54
+                   Models.LocationTest.testsLocation53
+                   Models.LocationTest.testsLocation54
+                   Models.LocationTest.testsLocation52) -}
+d59ecea4442007ad18141a7c8a5a6893
+  testsLocation52 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 86#) -}
+2bc8c090a0072da7cc066bd5a8d54ccd
+  testsLocation53 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 31#) -}
+626b76ed0e4b8b10bef59cce19693263
+  testsLocation54 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 70#) -}
+ff281eaa9a46966e248e0a9a1df124c1
+  testsLocation55 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add.1"#) -}
+e8fdb67a86da64ae10346dc9804293af
+  testsLocation56 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation65
+                   Models.LocationTest.testsLocation57) -}
+91110c014add11a625f0bb9992018731
+  testsLocation57 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation58
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+dd7ee2892dcb6b11d16a748be6137b64
+  testsLocation58 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Test.HUnit.Base.@=?7
+                   @ Models.Location.Location
+                   Models.LocationTest.testsLocation60
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   Models.Location.$fEqLocation
+                   Models.Location.$fShowLocation
+                   Models.LocationTest.testsLocation59
+                   Models.LocationTest.testsLocation_l1
+                   Models.LocationTest.testsLocation_l1) -}
+9bbc23b18ce420629621e2f80d4af82a
+  testsLocation59 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Identity"#) -}
+291bc0ffe84179c167be02062e752193
+  testsLocation6 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation56
+                   Models.LocationTest.testsLocation7) -}
+a8f0ca6a23586ee3d0c7dbfa2374fa11
+  testsLocation60 :: GHC.Stack.Types.CallStack
+  {- Strictness: m2,
+     Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation61
+                   GHC.Stack.Types.EmptyCallStack) -}
+b8d3f39a7c84e22196afdb7e19440fe0
+  testsLocation61 :: GHC.Stack.Types.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation64
+                   Models.LocationTest.testsLocation63
+                   Models.LocationTest.testsLocation64
+                   Models.LocationTest.testsLocation62) -}
+6bceae2d5145a7105b223065339a3837
+  testsLocation62 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 74#) -}
+9dbd29e6d8ff89ef2c110ea2e7e6a7cc
+  testsLocation63 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 34#) -}
+19f756079d9376b56fce300f1c8d2523
+  testsLocation64 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 64#) -}
+a112d345b271adef5562ec3a89fd4fb3
+  testsLocation65 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add.0"#) -}
+0e8b39b092b4c13fc50dca018cd982b9
+  testsLocation66 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "addLoc"#) -}
+92d9f17ea0f892f9a0b3fb8070e64183
+  testsLocation67 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation99
+                   Models.LocationTest.testsLocation68) -}
+600cebe1b3a79883f9977a5c8997e283
+  testsLocation68 :: Test.HUnit.Base.Test
+  {- Strictness: m2,
+     Unfolding: (Test.HUnit.Base.TestList
+                   Models.LocationTest.testsLocation69) -}
+f887351aeac28767bfa703de3076d212
+  testsLocation69 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation88
+                   Models.LocationTest.testsLocation70) -}
+374a868cf8c9e4aea7300dca1aea4ca8
+  testsLocation7 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation43
+                   Models.LocationTest.testsLocation8) -}
+c8cd41f175b92eeba0b92ad99b165ff9
+  testsLocation70 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation71
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+9b226991dfb70ee43005e621b605ab9f
+  testsLocation71 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation87
+                   Models.LocationTest.testsLocation72) -}
+8d1023516843b159f708857c588f7ad5
+  testsLocation72 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation73
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+0c6c8e66ced144234665fc5abeb09ad1
+  testsLocation73 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.HUnit.Base.@=?7
+                        @ Models.Location.Location
+                        Models.LocationTest.testsLocation83
+                          `cast`
+                        (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                        Models.Location.$fEqLocation
+                        Models.Location.$fShowLocation
+                        Models.LocationTest.testsLocation82
+                        Models.LocationTest.testsLocation80
+                        Models.LocationTest.testsLocation80
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 Test.HUnit.Base.@=?7
+                   @ Models.Location.Location
+                   Models.LocationTest.testsLocation77
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   Models.Location.$fEqLocation
+                   Models.Location.$fShowLocation
+                   Models.LocationTest.testsLocation76
+                   Models.LocationTest.testsLocation74
+                   Models.LocationTest.testsLocation74
+                   ipv }) -}
+bcd8de52b26804e05cf596c8f79c71fa
+  testsLocation74 :: Models.Location.Location
+  {- HasNoCafRefs,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation75
+                   Models.LocationTest.testsLocation75) -}
+2edaa078093a46982d2aa3d73b2fa2f0
+  testsLocation75 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 2.0##) -}
+c69691bfc8527c63385766600b8466d6
+  testsLocation76 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Neg Diff"#) -}
+d7bfc9f70cf2f6eb86bf3032dac28428
+  testsLocation77 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation78
+                   GHC.Stack.Types.EmptyCallStack) -}
+132e1a31381473fb9ecd0b67dc28a7be
+  testsLocation78 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation79
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation79
+                   Models.LocationTest.testsLocation22) -}
+74f31f2d8384cdad4616b8359ac9355b
+  testsLocation79 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 58#) -}
+0211ff959f192a69f2f7362754ca6699
+  testsLocation8 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation30
+                   Models.LocationTest.testsLocation9) -}
+5b4acbde1936b8e45e7171c03cafa965
+  testsLocation80 :: Models.Location.Location
+  {- HasNoCafRefs,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation81
+                   Models.LocationTest.testsLocation81) -}
+549ad391983d0615b67b7f7dd9f90265
+  testsLocation81 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# -2.0##) -}
+9b828c5210cffe0dd6b17e09a96dca82
+  testsLocation82 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Pos Diff"#) -}
+d8ab13eec9463c55be01cefdb2641685
+  testsLocation83 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation84
+                   GHC.Stack.Types.EmptyCallStack) -}
+7ba54e2ad1fae7c2ff1c4890adf484d5
+  testsLocation84 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation86
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation86
+                   Models.LocationTest.testsLocation85) -}
+247d6429f41a4b93a26fd0ab4666f1f2
+  testsLocation85 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 91#) -}
+a37c6d7e67861607f72465fc16b3362a
+  testsLocation86 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 57#) -}
+52404fb75e80f2529ed0340666effc2f
+  testsLocation87 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Diff.1"#) -}
+17acbad499a9019a13331ba50da3022b
+  testsLocation88 :: Test.HUnit.Base.Test
+  {- Strictness: m3,
+     Unfolding: (Test.HUnit.Base.TestLabel
+                   Models.LocationTest.testsLocation98
+                   Models.LocationTest.testsLocation89) -}
+929503bce5267a64cfc3036ac9960e9c
+  testsLocation89 :: Test.HUnit.Base.Test
+  {- Strictness: m1,
+     Unfolding: (Test.HUnit.Base.TestCase
+                   Models.LocationTest.testsLocation90
+                     `cast`
+                   (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+0f3a82fd0b1d95dd4e356bfc8a3c0e50
+  testsLocation9 :: [Test.HUnit.Base.Test]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Test.HUnit.Base.Test
+                   Models.LocationTest.testsLocation10
+                   (GHC.Types.[] @ Test.HUnit.Base.Test)) -}
+46891b0558eb67236b0fd7e2ca350818
+  testsLocation90 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case Test.HUnit.Base.@=?7
+                        @ Models.Location.Location
+                        Models.LocationTest.testsLocation94
+                          `cast`
+                        (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                        Models.Location.$fEqLocation
+                        Models.Location.$fShowLocation
+                        Models.LocationTest.testsLocation82
+                        Models.LocationTest.testsLocation74
+                        Models.LocationTest.testsLocation74
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 Test.HUnit.Base.@=?7
+                   @ Models.Location.Location
+                   Models.LocationTest.testsLocation91
+                     `cast`
+                   (Sym (GHC.Classes.N:IP[0] <"loc">_N <GHC.Stack.Types.CallStack>_N))
+                   Models.Location.$fEqLocation
+                   Models.Location.$fShowLocation
+                   Models.LocationTest.testsLocation76
+                   Models.LocationTest.testsLocation80
+                   Models.LocationTest.testsLocation80
+                   ipv }) -}
+9fe00d51e230deda81a13ab5f0bcb0a3
+  testsLocation91 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation92
+                   GHC.Stack.Types.EmptyCallStack) -}
+c289581d70ad6469a68f527b81563107
+  testsLocation92 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation93
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation93
+                   Models.LocationTest.testsLocation85) -}
+5204d5600ba028d2c241d867f0887499
+  testsLocation93 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 51#) -}
+0e2d33bed90185fe8ad2ab7c7b982a90
+  testsLocation94 :: GHC.Stack.Types.CallStack
+  {- Unfolding: (GHC.Stack.Types.PushCallStack
+                   Models.LocationTest.testsLocation28
+                   Models.LocationTest.testsLocation95
+                   GHC.Stack.Types.EmptyCallStack) -}
+5d6052b86434b59fa06db3d1a04164dc
+  testsLocation95 :: GHC.Stack.Types.SrcLoc
+  {- Unfolding: (GHC.Stack.Types.SrcLoc
+                   Models.LocationTest.testsLocation27
+                   Models.LocationTest.testsLocation26
+                   Models.LocationTest.testsLocation25
+                   Models.LocationTest.testsLocation97
+                   Models.LocationTest.testsLocation23
+                   Models.LocationTest.testsLocation97
+                   Models.LocationTest.testsLocation96) -}
+8b72dc83cbfff6b6010d97d58a051f55
+  testsLocation96 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 89#) -}
+6d7f35c1389073b1f9790849b6f8ddea
+  testsLocation97 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 50#) -}
+09dceab59588132ec92136b3e2c742d6
+  testsLocation98 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Diff.0"#) -}
+738fdeb3065f31b182af7945f6c6b723
+  testsLocation99 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "diffLoc"#) -}
+ed7570b57f077aece614fa5eb396953a
+  testsLocation_l1 :: Models.Location.Location
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Models.Location.Location
+                   Models.LocationTest.testsLocation47
+                   Models.LocationTest.testsLocation47) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

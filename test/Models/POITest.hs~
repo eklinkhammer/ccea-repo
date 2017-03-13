@@ -1,0 +1,11 @@
+module Models.POITest
+  (
+    testsPOI
+  ) where
+
+import Test.HUnit hiding (State, Location)
+
+import Models.POI
+import Models.State
+
+testsPOI = undefined

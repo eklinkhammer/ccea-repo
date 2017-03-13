@@ -1,0 +1,863 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-13 19:58:20.198833 UTC
+
+interface rover-domain-0.1.0.0-G32AcM5MtzlJS0iNGAVaLr:Models.POI 8001
+  interface hash: c93a1a075cedd875117e8673e493acc5
+  ABI hash: 81a4709eafb94b69acf1d6df2495bc24
+  export-list hash: 2dd361f0b34ff61fa15a36d82c0d4ac6
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 6273ebdd41394f96954d7561af7986a4
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Models.POI.printPOI
+  Models.POI.POI{Models.POI.POI _closestAgents _poiScore _poiScoringRadius _poiState _poiUuid}
+module dependencies: Models.Location Models.Orientation
+                     Models.RoverDomain Models.State
+package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.0.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 ghc-prim-0.5.0.0
+                      hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ
+                      hnn-0.3@hnn-0.3-BTcaYwOzMFRHoXIMlsey6T integer-gmp-1.0.0.1
+                      loop-0.3.0@loop-0.3.0-98VH1UqsOHy2KxBxA55ICY
+                      matrix-0.3.5.0@matrix-0.3.5.0-Ai5MbZhiOOC3qmPfUuhoAV
+                      mtl-2.2.1@mtl-2.2.1-6qsR1PHUy5lL47Hpoa4jCM
+                      mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX
+                      neural-algorithms-0.1.0.0@neural-algorithms-0.1.0.0-5aqhJNMEboR7D3hIbxnTW3
+                      normaldistribution-1.1.0.3@normaldistribution-1.1.0.3-5Tmsx8i18mO3UhoQolUXZE
+                      primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa
+                      random-1.1@random-1.1-54KmMHXjttlERYcr1mvsAe
+                      split-0.2.3.1@split-0.2.3.1-IJKK4pOCYGKud0jZImZke
+                      time-1.6.0.1@time-1.6.0.1 transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3
+                      zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.CG
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Element
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Util
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Vector
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Matrix
+         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Numeric.Vector
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Complex base-4.9.0.0:Data.Either
+                         base-4.9.0.0:Data.Functor.Const base-4.9.0.0:Data.Functor.Identity
+                         base-4.9.0.0:Data.List.NonEmpty base-4.9.0.0:Data.Monoid
+                         base-4.9.0.0:Data.Semigroup base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:Data.Version base-4.9.0.0:Data.Void
+                         base-4.9.0.0:GHC.Exts base-4.9.0.0:GHC.Generics
+                         base-4.9.0.0:GHC.IO.Exception base-4.9.0.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Devel
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Matrix
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Modular
+                         hmatrix-0.17.0.2@hmatrix-0.17.0.2-IdOSLSyc4bNBeSHtVcVJxZ:Internal.Numeric
+                         mwc-random-0.13.5.0@mwc-random-0.13.5.0-9fVrEibWMFm8DwR7HO0MWX:System.Random.MWC
+                         primitive-0.6.1.0@primitive-0.6.1.0-Ip44DqhfCp21tTUYbecwa:Control.Monad.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-6uB77qGCxR6GPLxI2sqsX3:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-4CWLN1T27kOJhNvXgy46ZV:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.List 49b86831b79b49ce5d4d9416ecba61df
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base 8d095ad71634b5551ba5dc1307b7f9e5
+import  -/  containers-0.5.7.1@containers-0.5.7.1:Data.Map.Strict 48e097497655818e164c2bb81a1d7b2d
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  Models.Location dd4e137586ebbbc4454a355db991c55c
+  exports: 1480745372b9db6f1a9a1290118c70c9
+  Location 32839bfa1b13f473b9bd2bd712830631
+  distance a1c48bc22485f6827d9238a9b0a75420
+import  -/  Models.RoverDomain b97cd8117a6404f89f03d51f2f59fc58
+  exports: d83c08f75f6e90218a0a1cae58cf690f
+  Actor 8afbdafad7dca3fb8c1686938d96e167
+  Scoring 8afbdafad7dca3fb8c1686938d96e167
+  getAgents cf36706807f7cc56436d3f7baf52b742
+  getID c5c69f3921720f4252360c25f1f57d57
+  getState 58524a23798bc67183dac1965239df7a
+  isLoyal 6b491f4941e06847da0353660210e7ee
+  setScore 5df12ab1901e38c004afee1a2ee90088
+import  -/  Models.State b252959b413f1809445e9ecdb01e43a2
+  exports: c7f2ff648c9fd96dab306ab96046fb60
+  State 18ace96112b5cd47be56725afc563065
+  Stay 9ab5bc582e14ce393777498a4f5f93d5
+  _loc 115cfd89b4442935fd1e7eb4090a613a
+  getRandomState bf30e61989f4f534a9d39ff589b69b5c
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI :: Models.RoverDomain.Actor Models.POI.POI
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POI.POI
+                  Models.POI.$fShowPOI
+                  Models.POI._poiState
+                  Models.POI.$fActorPOI_$csetState
+                  Models.POI.$fActorPOI_$cgetMove
+                  Models.POI.$fActorPOI_$cmove
+                  Models.POI.$fActorPOI_$coneMove
+                  Models.POI.$fActorPOI_$cresetActor
+                  Models.POI.$fActorPOI_$cresetActors
+                  Models.POI._poiUuid -}
+dd833ccad2509071137218ec7192e6c4
+  $fActorPOI1 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI_$cgetMove ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.POI.POI -> Models.State.Cmd
+  {- Arity: 4, HasNoCafRefs, Strictness: <L,A><L,A><L,A><L,A>,
+     Unfolding: InlineRule (4, True, True)
+                (\ @ t1
+                   @ t2
+                   ($dAgent :: Models.RoverDomain.Agent t1)
+                   ($dScoring :: Models.RoverDomain.Scoring t2)
+                   (ds :: Models.RoverDomain.RoverDomain t1 t2)
+                   (ds1 :: Models.POI.POI) ->
+                 Models.State.Stay) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI_$cmove ::
+    Models.POI.POI -> Models.State.Cmd -> Models.POI.POI
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,U,U,U,U)><L,A>m,
+     Unfolding: InlineRule (2, True, True)
+                (\ (a :: Models.POI.POI) (ds :: Models.State.Cmd) -> a) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI_$coneMove ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.POI.POI -> Models.POI.POI
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <L,A><L,A><L,A><S,1*U(U,U,U,U,U)>m,
+     Unfolding: InlineRule (4, True, True)
+                (\ @ t1
+                   @ t2
+                   ($dAgent :: Models.RoverDomain.Agent t1)
+                   ($dScoring :: Models.RoverDomain.Scoring t2)
+                   (dom :: Models.RoverDomain.RoverDomain t1 t2)
+                   (a1 :: Models.POI.POI) ->
+                 a1) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI_$cresetActor ::
+    System.Random.RandomGen g =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> g -> Models.POI.POI -> (g, Models.POI.POI)
+  {- Arity: 4,
+     Strictness: <L,U><S,1*U(1*U(U),1*U(U))><L,U><S,1*U(A,A,U,U,A)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: (GHC.Types.Int, GHC.Types.Int))
+                   (w2 :: g)
+                   (w3 :: Models.POI.POI) ->
+                 case w1 of ww { (,) ww1 ww2 ->
+                 case w3 of ww3 { Models.POI.POI ww4 ww5 ww6 ww7 ww8 ->
+                 let {
+                   ds :: (g, Models.State.State)
+                   = case Models.State.$wgetRandomState
+                            @ g
+                            w
+                            w2
+                            (GHC.Float.RealFracMethods.int2Double ww1)
+                            (GHC.Float.RealFracMethods.int2Double
+                               ww2) of ww9 { (#,#) ww10 ww11 ->
+                     (ww10, ww11) }
+                 } in
+                 (case ds of wild { (,) g' s -> g' },
+                  Models.POI.POI
+                    (case ds of wild { (,) g' s -> s })
+                    Models.POI.$fActorPOI1
+                    ww6
+                    ww7
+                    (Data.Map.Base.Tip @ GHC.Types.Int @ GHC.Types.Double)) } }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI_$cresetActors ::
+    System.Random.RandomGen g =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> g -> [Models.POI.POI] -> (g, [Models.POI.POI])
+  {- Arity: 4, Strictness: <L,U><L,U(U(U),U(U))><L,U><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: (GHC.Types.Int, GHC.Types.Int))
+                   (w2 :: g)
+                   (w3 :: [Models.POI.POI]) ->
+                 case Models.POI.$w$cresetActors
+                        @ g
+                        w
+                        w1
+                        w2
+                        w3 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fActorPOI_$csetState ::
+    Models.POI.POI -> Models.State.State -> Models.POI.POI
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(A,U,U,U,U)><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Models.POI.POI) (s :: Models.State.State) ->
+                 case ds of wild { Models.POI.POI ds1 x r i m ->
+                 Models.POI.POI s x r i m }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fEqPOI :: GHC.Classes.Eq Models.POI.POI
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POI.POI Models.POI.$fEqPOI_$c== Models.POI.$fEqPOI_$c/= -}
+db40d72befc96be148f26e6bdcaa414a
+  $fEqPOI1 ::
+    Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> GHC.Types.Bool
+  {- Unfolding: (Data.Map.Base.$fEqMap_$c==
+                   @ GHC.Types.Int
+                   @ GHC.Types.Double
+                   GHC.Classes.$fEqInt
+                   GHC.Classes.$fEqDouble) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fEqPOI_$c/= :: Models.POI.POI -> Models.POI.POI -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(S(S(S(S)L)L)LLLL),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)),1*U(U),1*U(U),1*U(U),U)><S(S(S(S(S)L)L)LLLL),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)),1*U(U),1*U(U),1*U(U),U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Models.POI.POI) (b :: Models.POI.POI) ->
+                 case Models.POI.$fEqPOI_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fEqPOI_$c== :: Models.POI.POI -> Models.POI.POI -> GHC.Types.Bool
+  {- Arity: 2,
+     Strictness: <S(S(S(S(S)L)L)LLLL),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)),1*U(U),1*U(U),1*U(U),U)><S(S(S(S(S)L)L)LLLL),1*U(1*U(1*U(1*U(U),1*U(U)),1*U(U)),1*U(U),1*U(U),1*U(U),U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Models.POI.POI) (w1 :: Models.POI.POI) ->
+                 case w of ww { Models.POI.POI ww1 ww2 ww3 ww4 ww5 ->
+                 case ww1 of ww6 { Models.State.State ww7 ww8 ->
+                 case ww7 of ww9 { Models.Location.Location ww10 ww11 ->
+                 case ww10 of ww12 { GHC.Types.D# ww13 ->
+                 case w1 of ww14 { Models.POI.POI ww15 ww16 ww17 ww18 ww19 ->
+                 case ww15 of ww20 { Models.State.State ww21 ww22 ->
+                 case ww21 of ww23 { Models.Location.Location ww24 ww25 ->
+                 case ww24 of ww26 { GHC.Types.D# ww27 ->
+                 Models.POI.$w$c==
+                   ww13
+                   ww11
+                   ww8
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww27
+                   ww25
+                   ww22
+                   ww16
+                   ww17
+                   ww18
+                   ww19 } } } } } } } }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fScoringPOI :: Models.RoverDomain.Scoring Models.POI.POI
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POI.POI
+                  Models.POI.$fActorPOI
+                  Models.POI._poiScore
+                  Models.POI.$fScoringPOI_$csetScore
+                  Models.POI.$fScoringPOI_$cevalScore
+                  Models.POI.$fScoringPOI_$cevalScoreWithout -}
+77eaac5ae36cb3081fb5b548793bf5d6
+  $fScoringPOI1 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 10.0##) -}
+0e6639dfccc8bc1391407e1c1c0fdaba
+  $fScoringPOI2 ::
+    GHC.Types.Int
+    -> GHC.Types.Double -> GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ (ds :: GHC.Types.Int)[OneShot]
+                   (x' :: GHC.Types.Double)[OneShot]
+                   (y' :: GHC.Types.Double)[OneShot] ->
+                 case x' of wild { GHC.Types.D# x ->
+                 case y' of wild1 { GHC.Types.D# y ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>## x y) of wild2 {
+                   GHC.Types.False -> wild1 GHC.Types.True -> wild } } }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fScoringPOI_$cevalScore ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.POI.POI -> Models.POI.POI
+  {- Arity: 4,
+     Strictness: <L,U(1*U,A,A,A,1*U)><L,A><L,1*U(A,1*U,A)><S,1*U(U(U(U(U),U(U)),U),1*U(U),U,U,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ t1
+                   @ t2
+                   (w :: Models.RoverDomain.Agent t1)
+                   (w1 :: Models.RoverDomain.Scoring t2)
+                   (w2 :: Models.RoverDomain.RoverDomain t1 t2)
+                   (w3 :: Models.POI.POI) ->
+                 case w3 of ww { Models.POI.POI ww1 ww2 ww3 ww4 ww5 ->
+                 case Models.POI.$w$cevalScore
+                        @ t1
+                        @ t2
+                        w
+                        w2
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        ww5 of ww6 { (#,,,,#) ww7 ww8 ww9 ww10 ww11 ->
+                 Models.POI.POI ww7 ww8 ww9 ww10 ww11 } }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fScoringPOI_$cevalScoreWithout ::
+    (Models.RoverDomain.Agent t1, Models.RoverDomain.Scoring t2) =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> t1 -> Models.POI.POI -> GHC.Types.Double
+  {- Arity: 5,
+     Strictness: <S(S(LLLLLLLLC(S))LLLL),1*U(1*U(A,A,A,A,A,A,A,A,1*C1(U(U))),A,A,A,A)><L,A><L,A><L,U><S(LLLLS),1*U(A,A,A,A,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ t1
+                   @ t2
+                   (w :: Models.RoverDomain.Agent t1)
+                   (w1 :: Models.RoverDomain.Scoring t2)
+                   (w2 :: Models.RoverDomain.RoverDomain t1 t2)
+                   (w3 :: t1)
+                   (w4 :: Models.POI.POI) ->
+                 case w4 of ww { Models.POI.POI ww1 ww2 ww3 ww4 ww5 ->
+                 case Models.POI.$w$cevalScoreWithout
+                        @ t1
+                        @ t2
+                        w
+                        w3
+                        ww5 of ww6 { DEFAULT ->
+                 GHC.Types.D# ww6 } }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fScoringPOI_$csetScore ::
+    Models.POI.POI -> GHC.Types.Double -> Models.POI.POI
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U,A,U,U,U)><L,U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Models.POI.POI) (s' :: GHC.Types.Double) ->
+                 case ds of wild { Models.POI.POI s ds1 r i m ->
+                 Models.POI.POI s s' r i m }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fShowPOI :: GHC.Show.Show Models.POI.POI
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Models.POI.POI
+                  Models.POI.$fShowPOI_$cshowsPrec
+                  Models.POI.$fShowPOI_$cshow
+                  Models.POI.$fShowPOI_$cshowList -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fShowPOI_$cshow :: Models.POI.POI -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U(A,A,A,1*U(U),A)>,
+     Unfolding: (\ (p :: Models.POI.POI) ->
+                 GHC.CString.unpackAppendCString#
+                   "P"#
+                   (case p of wild { Models.POI.POI ds ds1 ds2 ds3 ds4 ->
+                    case ds3 of ww2 { GHC.Types.I# ww3 ->
+                    case GHC.Show.$wshowSignedInt
+                           0#
+                           ww3
+                           (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                    GHC.Types.: @ GHC.Types.Char ww5 ww6 } } })) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fShowPOI_$cshowList :: [Models.POI.POI] -> GHC.Show.ShowS
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Models.POI.POI]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ Models.POI.POI
+                   (Models.POI.$fShowPOI_$cshowsPrec GHC.Show.shows22)
+                   ls
+                   s) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $fShowPOI_$cshowsPrec ::
+    GHC.Types.Int -> Models.POI.POI -> GHC.Show.ShowS
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,A><L,1*U(A,A,A,1*U(U),A)><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Models.POI.POI)
+                   (w2 :: GHC.Base.String) ->
+                 Models.POI.$w$cshowsPrec w1 w2) -}
+b7637bb5264acc13c7835a02cad271b7
+  $tc'POI :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12873859525013503781##
+                   4719918183610706453##
+                   Models.POI.$trModule
+                   Models.POI.$tc'POI1) -}
+6a8ceef173ebcb15dd7a32f658664fe1
+  $tc'POI1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'POI"#) -}
+60d4b9ee277db5b1307809013ed7a98b
+  $tcPOI :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11357760297261479802##
+                   18409580957014134530##
+                   Models.POI.$trModule
+                   Models.POI.$tcPOI1) -}
+cc264434a4d8d66f138cad071f9f697f
+  $tcPOI1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "POI"#) -}
+95f8a9a7af978a3d5e44a90a20bd9ec5
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Models.POI.$trModule2
+                   Models.POI.$trModule1) -}
+b361fd183b6899b922ec72525b86a762
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Models.POI"#) -}
+17cb0fc78365106059a06c7f249e9213
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "rover-domain-0.1.0.0-G32AcM5MtzlJS0iNGAVaLr"#) -}
+5886e0fe811cd746c8c6f93c6ccf49c7
+  $w$c== ::
+    GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> Models.Orientation.Orientation
+    -> Models.POI.Score
+    -> Models.POI.ScoringRadius
+    -> GHC.Types.Int
+    -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> GHC.Prim.Double#
+    -> GHC.Types.Double
+    -> Models.Orientation.Orientation
+    -> Models.POI.Score
+    -> Models.POI.ScoringRadius
+    -> GHC.Types.Int
+    -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> GHC.Types.Bool
+  {- Arity: 14,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,U><S,U><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,1*U(U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Double#)
+                   (ww1 :: GHC.Types.Double)
+                   (ww2 :: Models.Orientation.Orientation)
+                   (ww3 :: Models.POI.Score)
+                   (ww4 :: Models.POI.ScoringRadius)
+                   (ww5 :: GHC.Types.Int)
+                   (ww6 :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double)
+                   (ww7 :: GHC.Prim.Double#)
+                   (ww8 :: GHC.Types.Double)
+                   (ww9 :: Models.Orientation.Orientation)
+                   (ww10 :: Models.POI.Score)
+                   (ww11 :: Models.POI.ScoringRadius)
+                   (ww12 :: GHC.Types.Int)
+                   (ww13 :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==## ww ww7) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case ww1 of wild1 { GHC.Types.D# x ->
+                      case ww8 of wild2 { GHC.Types.D# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==## x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case ww2 of wild4 { GHC.Types.D# x1 ->
+                           case ww9 of wild5 { GHC.Types.D# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==## x1 y1) of wild6 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case ww3 of wild7 { GHC.Types.D# x2 ->
+                                case ww10 of wild8 { GHC.Types.D# y2 ->
+                                case GHC.Prim.tagToEnum#
+                                       @ GHC.Types.Bool
+                                       (GHC.Prim.==## x2 y2) of wild9 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> case ww4 of wild10 { GHC.Types.D# x3 ->
+                                     case ww11 of wild11 { GHC.Types.D# y3 ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==## x3 y3) of wild12 {
+                                       GHC.Types.False -> GHC.Types.False
+                                       GHC.Types.True
+                                       -> case ww5 of wild13 { GHC.Types.I# x4 ->
+                                          case ww12 of wild14 { GHC.Types.I# y4 ->
+                                          case GHC.Prim.tagToEnum#
+                                                 @ GHC.Types.Bool
+                                                 (GHC.Prim.==# x4 y4) of wild15 {
+                                            GHC.Types.False -> GHC.Types.False
+                                            GHC.Types.True
+                                            -> Models.POI.$fEqPOI1
+                                                 ww6
+                                                 ww13 } } } } } } } } } } } } } } } }) -}
+d6e6624da024c8568546e135fea03a14
+  $w$cevalScore ::
+    Models.RoverDomain.Agent t1 =>
+    Models.RoverDomain.RoverDomain t1 t2
+    -> Models.State.State
+    -> Models.POI.Score
+    -> Models.POI.ScoringRadius
+    -> GHC.Types.Int
+    -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> (# Models.State.State, Models.POI.Score,
+          Models.POI.ScoringRadius, GHC.Types.Int,
+          Data.Map.Base.Map GHC.Types.Int GHC.Types.Double #)
+  {- Arity: 7,
+     Strictness: <L,U(1*U,A,A,A,1*U)><L,1*U(A,1*U,A)><L,U(U(U(U),U(U)),U)><L,1*U(U)><L,U><L,U><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ t1
+                   @ t2
+                   (w :: Models.RoverDomain.Agent t1)
+                   (w1 :: Models.RoverDomain.RoverDomain t1 t2)
+                   (ww :: Models.State.State)
+                   (ww1 :: Models.POI.Score)
+                   (ww2 :: Models.POI.ScoringRadius)
+                   (ww3 :: GHC.Types.Int)
+                   (ww4 :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double) ->
+                 let {
+                   newMap :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+                   = case w1 of wild { Models.RoverDomain.RoverDomain ds1 as ds2 ->
+                     let {
+                       $dActor :: Models.RoverDomain.Actor t1
+                       = Models.RoverDomain.$p1Agent @ t1 w
+                     } in
+                     let {
+                       p :: t1 -> GHC.Types.Bool = Models.RoverDomain.isLoyal @ t1 w
+                     } in
+                     letrec {
+                       go :: [t1]
+                             -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+                             -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+                         {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+                       = \ (ds :: [t1])
+                           (eta :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double) ->
+                         case ds of wild1 {
+                           [] -> eta
+                           : y ys
+                           -> case p y of wild2 {
+                                GHC.Types.False -> go ys eta
+                                GHC.Types.True
+                                -> case Models.RoverDomain.getID
+                                          @ t1
+                                          $dActor
+                                          y of ww5 { GHC.Types.I# ww6 ->
+                                   go
+                                     ys
+                                     (Models.POI.$w$sgo4
+                                        @ GHC.Types.Double
+                                        Models.POI.$fScoringPOI2
+                                        ww6
+                                        (case Models.RoverDomain.getState
+                                                @ t1
+                                                $dActor
+                                                y of wild3 { Models.State.State ds4 ds5 ->
+                                         case ds4 of wild4 { Models.Location.Location ds6 ds7 ->
+                                         case ds6 of wild5 { GHC.Types.D# x ->
+                                         case ww of wild6 { Models.State.State ds8 ds9 ->
+                                         case ds8 of wild7 { Models.Location.Location ds10 ds3 ->
+                                         case ds10 of wild8 { GHC.Types.D# y1 ->
+                                         case ds7 of wild9 { GHC.Types.D# x1 ->
+                                         case ds3 of wild10 { GHC.Types.D# y2 ->
+                                         let {
+                                           x2 :: GHC.Prim.Double# = GHC.Prim.-## x1 y2
+                                         } in
+                                         let {
+                                           x3 :: GHC.Prim.Double# = GHC.Prim.-## x y1
+                                         } in
+                                         let {
+                                           x4 :: GHC.Prim.Double#
+                                           = GHC.Prim.sqrtDouble#
+                                               (GHC.Prim.+##
+                                                  (GHC.Prim.*## x3 x3)
+                                                  (GHC.Prim.*## x2 x2))
+                                         } in
+                                         GHC.Types.D# (GHC.Prim.*## x4 x4) } } } } } } } })
+                                        eta) } } }
+                     } in
+                     go as ww4 }
+                 } in
+                 (# ww,
+                    case Models.POI.$wgo10 0.0## newMap of ww5 { DEFAULT ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.==## ww5 0.0##) of wild {
+                      GHC.Types.False
+                      -> case ww1 of wild1 { GHC.Types.D# y1 ->
+                         case GHC.Prim./## 1.0## ww5 of wild2 { DEFAULT ->
+                         case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.<=## wild2 y1) of wild4 {
+                           GHC.Types.False
+                           -> case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.<=## 10.0## wild2) of wild5 {
+                                GHC.Types.False -> GHC.Types.D# wild2
+                                GHC.Types.True -> Models.POI.$fScoringPOI1 }
+                           GHC.Types.True
+                           -> case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.<=## 10.0## y1) of wild5 {
+                                GHC.Types.False -> wild1
+                                GHC.Types.True -> Models.POI.$fScoringPOI1 } } } }
+                      GHC.Types.True
+                      -> case ww1 of wild1 { GHC.Types.D# y1 ->
+                         case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.<=## 0.0## y1) of wild2 {
+                           GHC.Types.False -> Models.POI.$fActorPOI1
+                           GHC.Types.True
+                           -> case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.<=## 10.0## y1) of wild4 {
+                                GHC.Types.False -> wild1
+                                GHC.Types.True -> Models.POI.$fScoringPOI1 } } } } },
+                    ww2, ww3, newMap #)) -}
+9affe3203c687750dc5c595f0d40a8ee
+  $w$cevalScoreWithout ::
+    Models.RoverDomain.Agent t1 =>
+    t1
+    -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> GHC.Prim.Double#
+  {- Arity: 3,
+     Strictness: <S(S(LLLLLLLLC(S))LLLL),1*U(1*U(A,A,A,A,A,A,A,A,1*C1(U(U))),A,A,A,A)><L,U><S,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ t1
+                   @ t2
+                   (w :: Models.RoverDomain.Agent t1)
+                   (w1 :: t1)
+                   (ww :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double) ->
+                 case Models.RoverDomain.getID
+                        @ t1
+                        (Models.RoverDomain.$p1Agent @ t1 w)
+                        w1 of ww1 { GHC.Types.I# ww2 ->
+                 case Models.POI.$wgo10
+                        0.0##
+                        (Models.POI.$w$sgo10 @ GHC.Types.Double ww2 ww) of ww3 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.==## ww3 0.0##) of wild {
+                   GHC.Types.False
+                   -> case GHC.Prim./## 1.0## ww3 of wild2 { DEFAULT ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.<=## 10.0## wild2) of wild1 {
+                        GHC.Types.False -> wild2 GHC.Types.True -> 10.0## } }
+                   GHC.Types.True -> 0.0## } } }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $w$cresetActors ::
+    System.Random.RandomGen g =>
+    (GHC.Types.Int, GHC.Types.Int)
+    -> g -> [Models.POI.POI] -> (# g, [Models.POI.POI] #)
+  {- Arity: 4, Strictness: <L,U><L,U(U(U),U(U))><L,U><S,1*U>,
+     Inline: [0],
+     Unfolding: (\ @ g
+                   (w :: System.Random.RandomGen g)
+                   (w1 :: (GHC.Types.Int, GHC.Types.Int))
+                   (w2 :: g)
+                   (w3 :: [Models.POI.POI]) ->
+                 letrec {
+                   $wgo :: [Models.POI.POI] -> g -> (# g, [Models.POI.POI] #)
+                     {- Arity: 2, Strictness: <S,1*U><L,U>, Inline: [0] -}
+                   = \ (w4 :: [Models.POI.POI]) (w5 :: g) ->
+                     case w4 of wild {
+                       [] -> (# w5, GHC.Types.[] @ Models.POI.POI #)
+                       : y ys
+                       -> let {
+                            ds1 :: (g, Models.POI.POI)
+                            = case w1 of ww { (,) ww1 ww2 ->
+                              case y of ww3 { Models.POI.POI ww4 ww5 ww6 ww7 ww8 ->
+                              let {
+                                ds :: (g, Models.State.State)
+                                = case Models.State.$wgetRandomState
+                                         @ g
+                                         w
+                                         w5
+                                         (GHC.Float.RealFracMethods.int2Double ww1)
+                                         (GHC.Float.RealFracMethods.int2Double
+                                            ww2) of ww9 { (#,#) ww10 ww11 ->
+                                  (ww10, ww11) }
+                              } in
+                              (case ds of wild1 { (,) g' s -> g' },
+                               Models.POI.POI
+                                 (case ds of wild1 { (,) g' s -> s })
+                                 Models.POI.$fActorPOI1
+                                 ww6
+                                 ww7
+                                 (Data.Map.Base.Tip @ GHC.Types.Int @ GHC.Types.Double)) } }
+                          } in
+                          let {
+                            ds3 :: (g, [Models.POI.POI])
+                            = case $wgo
+                                     ys
+                                     (case ds1 of wild1 { (,) s' v -> s' }) of ww { (#,#) ww1 ww2 ->
+                              (ww1, ww2) }
+                          } in
+                          (# case ds3 of wild1 { (,) s'' v -> s'' },
+                             GHC.Types.:
+                               @ Models.POI.POI
+                               (case ds1 of wild1 { (,) s' v -> v })
+                               (case ds3 of wild1 { (,) s'' v -> v }) #) }
+                 } in
+                 $wgo w3 w2) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  $w$cshowsPrec ::
+    Models.POI.POI -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*U(A,A,A,1*U(U),A)><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Models.POI.POI) (w1 :: GHC.Base.String) ->
+                 GHC.CString.unpackAppendCString#
+                   "P"#
+                   (case w of wild { Models.POI.POI ds ds1 ds2 ds3 ds4 ->
+                    case ds3 of ww2 { GHC.Types.I# ww3 ->
+                    case GHC.Show.$wshowSignedInt
+                           0#
+                           ww3
+                           (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                    GHC.Base.++
+                      @ GHC.Types.Char
+                      (GHC.Types.: @ GHC.Types.Char ww5 ww6)
+                      w1 } } })) -}
+c9fe529fb88d6c724743cd312b3062c9
+  $w$sgo10 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map Models.RoverDomain.UUID a1
+    -> Data.Map.Base.Map Models.RoverDomain.UUID a1
+  {- Arity: 2, Strictness: <L,U><S,1*U>, Inline: [0] -}
+0b0038002c6b48849d880a946db4c309
+  $w$sgo4 ::
+    (GHC.Types.Int -> a1 -> a1 -> a1)
+    -> GHC.Prim.Int#
+    -> a1
+    -> Data.Map.Base.Map GHC.Types.Int a1
+    -> Data.Map.Base.Map GHC.Types.Int a1
+  {- Arity: 4, Strictness: <L,1*C1(C1(C1(U)))><L,U><L,U><S,1*U>,
+     Inline: [0] -}
+9bd25b0ad7e9fd97a56568f9a39c8522
+  $wgo10 ::
+    GHC.Prim.Double#
+    -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+    -> GHC.Prim.Double#
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>, Inline: [0] -}
+614f6ed66b140948da4f6bc1e4b5dbf0
+  $wprintPOI :: Models.POI.Score -> GHC.Prim.Int# -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U(U)><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: Models.POI.Score) (ww1 :: GHC.Prim.Int#) ->
+                 case GHC.Show.$wshowSignedInt
+                        0#
+                        ww1
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (GHC.Types.: @ GHC.Types.Char ww5 ww6)
+                   (GHC.CString.unpackAppendCString#
+                      ": "#
+                      (case ww of ww2 { GHC.Types.D# ww3 ->
+                       GHC.Float.$w$sshowSignedFloat
+                         GHC.Float.$fShowDouble_$sshowFloat
+                         GHC.Show.shows22
+                         ww3
+                         (GHC.Types.[] @ GHC.Types.Char) })) }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  data POI
+    = POI {_poiState :: Models.State.State,
+           _poiScore :: Models.POI.Score,
+           _poiScoringRadius :: Models.POI.ScoringRadius,
+           _poiUuid :: GHC.Types.Int,
+           _closestAgents :: Data.Map.Base.Map GHC.Types.Int GHC.Types.Double}
+8b9c7a9d96dab418c62e0677d6ccc130
+  type Score = GHC.Types.Double
+31bb71f608ef1b812de147194213fa91
+  type ScoringRadius = GHC.Types.Double
+82dceaa3964d5699d24513342f5a5c0f
+  _closestAgents ::
+    Models.POI.POI -> Data.Map.Base.Map GHC.Types.Int GHC.Types.Double
+  RecSel Left Models.POI.POI
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLLS),1*U(A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.POI.POI) ->
+                 case ds of wild { Models.POI.POI ds1 ds2 ds3 ds4 ds5 -> ds5 }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  _poiScore :: Models.POI.POI -> Models.POI.Score
+  RecSel Left Models.POI.POI
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLL),1*U(A,1*U(U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.POI.POI) ->
+                 case ds of wild { Models.POI.POI ds1 ds2 ds3 ds4 ds5 -> ds2 }) -}
+7198e0240ebaef4b81ab74d11cc31633
+  _poiScoringRadius :: Models.POI.POI -> Models.POI.ScoringRadius
+  RecSel Left Models.POI.POI
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLL),1*U(A,A,1*U(U),A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.POI.POI) ->
+                 case ds of wild { Models.POI.POI ds1 ds2 ds3 ds4 ds5 -> ds3 }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  _poiState :: Models.POI.POI -> Models.State.State
+  RecSel Left Models.POI.POI
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U(U,U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.POI.POI) ->
+                 case ds of wild { Models.POI.POI ds1 ds2 ds3 ds4 ds5 -> ds1 }) -}
+a86b70ac9c83cfe74fbb7aa2391d5127
+  _poiUuid :: Models.POI.POI -> GHC.Types.Int
+  RecSel Left Models.POI.POI
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSL),1*U(A,A,A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Models.POI.POI) ->
+                 case ds of wild { Models.POI.POI ds1 ds2 ds3 ds4 ds5 -> ds4 }) -}
+268636d5504ee8c3f1768f202e8c6abc
+  printPOI :: Models.POI.POI -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(LLLS(S)L),1*U(A,1*U(U),A,1*U(U),A)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Models.POI.POI) ->
+                 case w of ww { Models.POI.POI ww1 ww2 ww3 ww4 ww5 ->
+                 case ww4 of ww6 { GHC.Types.I# ww7 ->
+                 Models.POI.$wprintPOI ww2 ww7 } }) -}
+instance Models.RoverDomain.Actor [Models.POI.POI]
+  = Models.POI.$fActorPOI
+instance GHC.Classes.Eq [Models.POI.POI] = Models.POI.$fEqPOI
+instance Models.RoverDomain.Scoring [Models.POI.POI]
+  = Models.POI.$fScoringPOI
+instance GHC.Show.Show [Models.POI.POI] = Models.POI.$fShowPOI
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

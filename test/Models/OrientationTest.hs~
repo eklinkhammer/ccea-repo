@@ -1,0 +1,28 @@
+module Models.OrientationTest
+  (
+    testsOrientation
+  ) where
+
+import Test.HUnit
+import Models.Orientation
+
+testsOrientation :: Test
+testsOrientation = TestList [ TestLabel "rotate" testsRotate]
+
+testsDistance :: Test
+testsDistance = TestList [ TestLabel "Dist.0" testDistanceZero
+                         , TestLabel "Dist.1" testDistanceDifferentQuad
+                         , TestLabel "Dist.2" testDistanceLocs]
+
+testRotateWithin2Pi :: Test
+testRotateWithin2Pi = TestCase (do
+                                   assertEqual "test1" 
+testRotatePast2Pi :: Test
+
+testRotatePast4Pi :: Test
+
+testRotateBackWithin2Pi :: Test
+
+testRotateBackPast2Pi :: Test
+
+testRotateBackPast4Pi :: Test

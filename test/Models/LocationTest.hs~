@@ -1,0 +1,19 @@
+module Models.LocationTest
+  (
+    testsLocation
+  ) where
+
+import Test.HUnit
+
+testsLocation :: Test
+testsLocation = TestList [ TestLabel "distance" testsDistance]
+
+
+testsDistance :: Test
+testsDistance = undefined
+
+testDistanceZero :: Test
+testDistanceZero = TestCase (do
+                                let l1 = Location 3 4
+                                    l2 = Location 0 0
+                                assertEqual "With Zero V" 5 (distance l1 l2))

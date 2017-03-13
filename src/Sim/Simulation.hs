@@ -1,89 +1,121 @@
 {-# LANGUAGE AllowAmbiguousTypes #-}
-
+{-# LANGUAGE FlexibleContexts #-}
 module Sim.Simulation
   (
-    cceaFitnessFunction
-  , scoringFuncG
-  , gFit
+    gFit
+  , dFit
+  , dFitT
+  , traitorFit
+  , simulation
   , simulationWriter
   , simStepWriter
   , assignNets
+  , assignNetsT
   ) where
 
--- Can't seem to import CCEAFitnessFunction, or anything but CCEA (..) from CCEA.CCEA
--- All of the CCEA.EA stuff imports fine though ... ???
 import CCEA
 import NN.NeuralNetwork (NN (..), Network)
 import System.Random
 
-import Models.RoverDomain
-import Models.Agent
 import Control.Monad.Writer
+import Models.RoverDomain
+import Models.Rover
+import Models.POI
 
-gFit :: (Agent a, Scoring s, RandomGen g)
-  => CCEAState g a s -> [Network Double] -> (CCEAState g a s, [Double])
-gFit = cceaFitnessFunction scoringFuncG
+import Data.List
+import System.IO.Unsafe
 
 
-roverDom :: (Scoring s, Agent a) => RoverDomain a s
-roverDom = RoverDomain (5,5) [] []
+gFit :: (RandomGen g, Agent a, Scoring b)
+  => Int -> (g, RoverDomain a b) -> [Network Double] -> ((g, RoverDomain a b), [Double])
+gFit n = cceaFitnessFunction n scoringFuncG
+
+dFit n = cceaFitnessFunction n scoringFuncD
+
+dFitT n = cceaFitnessFunction n scoringFuncDT
+
+traitorFit :: (RandomGen g, Agent a, Scoring b)
+  => Int -> (g, RoverDomain a b) -> [Network Double] -> ((g, RoverDomain a b), [Double])
+traitorFit n = cceaFitnessFunctionT n scoringFuncGT
 
 elitistGaussianNoise :: (RandomGen g, NN n) => BreedingStrategy n g
 elitistGaussianNoise = elitist (mutateWeights nnVars)
 
-type ScoringFunction a s = (RoverDomain a s -> [Double])
+type ScoringFunction d = (d -> [Double])
 
-assignNets :: Agent a => RoverDomain a s -> [Network Double] -> RoverDomain a s
-assignNets dom nets = let withNets = map assignNet (zip nets (getAgents dom))
-                      in setAgents dom withNets
+assignNets' loyalty d nets = let (loyal, dis) = partition isLoyal (getAgents d)
+                             in if loyalty then let withNets = map assignNet (zip nets loyal)
+                                                in setAgents d (withNets ++ dis)
+                                else let withNets = map assignNet (zip nets dis)
+                                     in setAgents d (withNets ++ loyal)
+                                       
+assignNets d nets = assignNets' True d nets
 
-assignNet :: (Agent a) => (Network Double, a) -> a
+assignNetsT d nets = assignNets' False d nets
+
 assignNet (net, agent) = setPolicy agent net
 
 
-type CCEAState g a s = (g, RoverDomain a s)  
--- Wrap up these constants in a reader monad (or as args)
---cceaFitnessFunction :: (Agent a, Scoring s)
---  => ScoringFunction a s -> RoverDomain a s -> [Network Double] -> (RoverDomain a s, [Double])
---cceaFitnessFunction f r ns = let withNets = assignNets r ns
-  --                               r' = simulation 25 withNets
-    --                         in (reset r', f r')
+type CCEAState g d = (g, d)  
 
-cceaFitnessFunction :: (Agent a, Scoring s, RandomGen g)
-  => ScoringFunction a s -> CCEAState g a s -> [Network Double] -> (CCEAState g a s, [Double])
-cceaFitnessFunction f (g,r) ns = let withNets = assignNets r ns
-                                     r' = simulation 10 withNets
-                                 in (reset g r', f r')
-simStepWriter :: (Show a, Show s, Agent a, Scoring s)
-  => RoverDomain a s -> Writer String (RoverDomain a s)
+cceaFitnessFunction n f s@(g,d) nets = let withNets = assignNets d nets
+                                           d' = simulation n withNets
+                                           (g',_) = split g
+                                        in ((g',d), f d')
+                                      
+
+cceaFitnessFunctionT n f s@(g,d) nets = let withNets = assignNetsT d nets
+                                            d' = simulation n withNets
+                                            (g',_) = split g
+                                        in ((g',d), f d')
+                                      
 simStepWriter dom = do
   let agents = getAgents dom
-  tell ((show dom) ++ "\n" ++ (concatMap (show . getState) agents) ++ "\n" ++ (concatMap (show . getPolicyInputA' dom) agents) ++ "\n")
-  return (simStep dom)
+  tell ((show dom) ++ "\n\n")-- ++ (concatMap (show . getState) agents) ++ "\n" ++ (concatMap (show . getPolicyInput dom) agents) ++ "\n")
+  return (timestep dom)
 
-simulationWriter :: (Agent a, Scoring s, Show a, Show s)
-  => Int -> RoverDomain a s -> Writer String (RoverDomain a s)
-simulationWriter 0 r = do
-  tell ("End of simulation" ++ "\n" ++ (show r))
-  return r
-simulationWriter n r = do
+simulationWriter 0 d = do
+  tell ("End of simulation" ++ "\n" ++ (show d))
+  return d
+simulationWriter n d = do
+  let agent = head $ getAgents d
   tell ("Simulation - Steps to Go: " ++ (show n) ++ "\n")
-  simStepWriter r >>= simulationWriter (n-1)
+  tell ("State: " ++ (show (getState agent)) ++ "\n")
+  tell ("Policy Input: " ++ (show $ getPolicyInput d agent) ++ "\n")
+  tell ("Score: " ++ (show $ getAllScores d) ++ "\n")
+  tell ("Total Score: " ++ (show $ getGlobalScore d) ++ "\n")
   
-simStep :: (Agent a, Scoring s) => RoverDomain a s -> RoverDomain a s
-simStep dom = let newAgents = map (oneMove dom) (getAgents dom)
-                  movedDom  = setAgents dom newAgents
-                  newScoring = map (updateScore movedDom) (getScoring movedDom)
-              in setScoring movedDom newScoring
+  simStepWriter d >>= simulationWriter (n-1)
 
+simulation 0 d = d
+simulation n d = let d' = timestep d in simulation (n-1) d'
 
-simulation :: (Agent a, Scoring s) => Int -> RoverDomain a s -> RoverDomain a s
-simulation 0 r = r
-simulation n r = let r' = simStep r in simulation (n-1) r'
+scoringFuncG dom = replicate ((length . filter isLoyal . getAgents) dom) (getGlobalScore dom)
 
-
-scoringFuncG :: Scoring s => ScoringFunction a s
-scoringFuncG dom = let agents = getAgents dom
-                   in replicate (length agents) (getGlobalScore dom)
+scoringFuncGT dom = replicate ((length . filter (not . isLoyal) . getAgents) dom) ( (-1) * (getGlobalScore dom))
                          
                          
+scoringFuncD dom =
+  let g = getGlobalScore dom
+      ds = map (\a -> g - (getScoreWithoutAgent dom a)) (filter isLoyal (getAgents dom))
+  in unsafePerformIO $ do
+    if sum ds /= 0 then putStrLn $ show ds else putStrLn $ (show g)
+    return $! ds
+                      
+scoringFuncDT dom =
+  let g = (-1) * (getGlobalScore dom)
+  in map (\a -> (-1) * (getScoreWithoutAgent dom a) - g)
+     (filter (not . isLoyal) (getAgents dom))
+     
+getScoreWithoutAgent dom a = 
+  let agents       = getAgents dom
+      withoutA     = delete a agents
+      newDom       = setAgents dom (withoutA)
+      scoreWithout = getGlobalScoreWithout dom a
+  in scoreWithout
+  -- putStrLn $ "Score without agent " ++ (show a) ++ ": " ++ (show scoreWithout)
+  -- putStrLn $ "Agents: " ++ (show agents)
+  -- putStrLn $ "WithoutA: " ++ (show withoutA)
+  -- putStrLn $ show dom
+  -- putStrLn $ show newDom
+  -- return $! scoreWithout
