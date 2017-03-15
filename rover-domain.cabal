@@ -54,6 +54,7 @@ test-suite rover-domain-test
                      , Models.POI
                      , Models.POITest
                      , Models.RoverDomain
+                     , Models.Rover
   build-depends:       base
                      , rover-domain
                      , HUnit

@@ -40,7 +40,8 @@ getQuad (State locx ori) (State locy _) = let diffV  = diffLoc locx locy
                                               angle  = atan2 (_y diffV) (_x diffV)
                                               -- 180 is pi instead of -pi
                                               ang    = if angle == pi then (-pi) else angle
-                                              angle' = ang - ori + pi / 4
+                                              fAn = rotate ((rotate ang 0) - (rotate ori 0) + pi / 4) 0
+                                              angle'    = if fAn > pi then fAn - 2* pi else fAn
                                           in if angle' > pi / 2 then 2
                                              else if angle' < (-pi) / 2  then 3
                                                   else if angle' < pi / 2 && angle' > 0 then 1

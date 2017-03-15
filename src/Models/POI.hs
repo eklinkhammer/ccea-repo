@@ -41,13 +41,15 @@ instance Scoring POI where
                       locPOI   = _loc $ getState p
                       distID   = map (\a -> (square $ getDistance locPOI a, getID a)) agents
                       newMap   = foldl updateMap (getMap p) distID
-                      mDist    = minDist newMap
-                      val      = if mDist == 0 then 0 else 1.0 / mDist
+                      mDist    = minimum newMap
+                      val      = if mDist == 0 || mDist > square (_poiScoringRadius p)
+                                 then 0 else 1.0 / mDist
                       newScore = min 10 $ max val (_poiScore p)
                   in setMap (setScore p newScore) newMap
   evalScoreWithout d a p = let mapWithout = Map.delete (getID a) (getMap p)
-                               mDist = minDist mapWithout
-                           in if mDist == 0 then 0 else min 10 $ 1.0 / mDist
+                               mDist = minimum mapWithout
+                           in if mDist == 0 || mDist > square (_poiScoringRadius p)
+                              then 0 else min 10 $ 1.0 / mDist
                                
                            
 instance Show POI where
@@ -66,10 +68,6 @@ printPOI (POI _ score _ uuid _) = (show uuid) ++ ": " ++ (show score)
 
 updateMap :: Map.Map Int Double -> (Double, Int) -> Map.Map Int Double
 updateMap m (dist, uuid) = Map.insertWith (\new old -> if new > old then new else old) uuid dist m
-
-
-minDist :: Map.Map Int Double -> Double
-minDist = minimum
 
 setMap :: POI -> Map.Map Int Double -> POI
 setMap (POI s x r i _) m = POI s x r i m

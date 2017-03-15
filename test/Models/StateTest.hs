@@ -104,5 +104,3 @@ testGetQuadWithOrientation = TestCase (do
                                           let originForward = S.State (S.Location 0 0) (pi / 2)
                                               other = S.State (S.Location 2 5) 0
                                           assertEqual "Test Quad Forward" 1 (S.getQuad originForward other))
-
-
