@@ -4,7 +4,6 @@ module Sim.Simulation
   (
     gFit
   , dFit
-  , dFitT
   , traitorFit
   , simulation
   , simulationWriter
@@ -21,6 +20,7 @@ import Control.Monad.Writer
 import Models.RoverDomain
 import Models.Rover
 import Models.POI
+import Models.State
 
 import Data.List
 import System.IO.Unsafe
@@ -30,9 +30,9 @@ gFit :: (RandomGen g, Agent a, Scoring b)
   => Int -> (g, RoverDomain a b) -> [Network Double] -> ((g, RoverDomain a b), [Double])
 gFit n = cceaFitnessFunction n scoringFuncG
 
+dFit :: (RandomGen g, Agent a, Scoring b)
+  => Int -> (g, RoverDomain a b) -> [Network Double] -> ((g, RoverDomain a b), [Double])
 dFit n = cceaFitnessFunction n scoringFuncD
-
-dFitT n = cceaFitnessFunction n scoringFuncDT
 
 traitorFit :: (RandomGen g, Agent a, Scoring b)
   => Int -> (g, RoverDomain a b) -> [Network Double] -> ((g, RoverDomain a b), [Double])
@@ -80,9 +80,17 @@ simulationWriter 0 d = do
 simulationWriter n d = do
   let agent = head $ getAgents d
   tell ("Simulation - Steps to Go: " ++ (show n) ++ "\n")
-  tell ("State: " ++ (show (getState agent)) ++ "\n")
-  tell ("Policy Input: " ++ (show $ getPolicyInput d agent) ++ "\n")
-  tell ("Score: " ++ (show $ getAllScores d) ++ "\n")
+  --tell ("POIs: " ++ (id (concatMap ((++) "\n" . show . getState) (getScoring d))) ++ "\n")
+  --tell ("States: " ++ (id (concatMap ((++) "\n" . show . getState) (getAgents d))) ++ "\n")
+  let distances = map (\p -> let l = _loc $ getState p
+                             in map (\a -> getDistance l a) (getAgents d)) (getScoring d)
+      scores    = map (getScore . evalScore d) (getScoring d)
+                  
+  tell ("Distances: " ++ (show distances) ++ "\n")
+  
+  --tell ("Policy Input: " ++ (id (concatMap ((++) "\n" . show . getPolicyInput d) (getAgents d))) ++ "\n")
+  tell ("Scores: " ++ (show scores) ++ "\n")
+  --tell ("Score: " ++ (show $ getAllScores d) ++ "\n")
   tell ("Total Score: " ++ (show $ getGlobalScore d) ++ "\n")
   
   simStepWriter d >>= simulationWriter (n-1)
@@ -97,20 +105,14 @@ scoringFuncGT dom = replicate ((length . filter (not . isLoyal) . getAgents) dom
                          
 scoringFuncD dom =
   let g = getGlobalScore dom
-      ds = map (\a -> g - (getScoreWithoutAgent dom a)) (filter isLoyal (getAgents dom))
-  in unsafePerformIO $ do
-    if sum ds /= 0 then putStrLn $ show ds else putStrLn $ (show g)
-    return $! ds
-                      
-scoringFuncDT dom =
-  let g = (-1) * (getGlobalScore dom)
-  in map (\a -> (-1) * (getScoreWithoutAgent dom a) - g)
-     (filter (not . isLoyal) (getAgents dom))
+      agents = filter isLoyal (getAgents dom)
+      ds = map (\a -> g - (getGlobalScoreWithout dom a)) agents
+  in ds--  unsafePerformIO $ do
+    -- if sum ds /= 0 then putStrLn $ show ds else putStrLn $ (show g)
+    -- return $! ds
      
-getScoreWithoutAgent dom a = 
-  let agents       = getAgents dom
-      withoutA     = delete a agents
-      newDom       = setAgents dom (withoutA)
+getScoreWithoutAgent dom agents a = 
+  let withoutA     = delete a agents
       scoreWithout = getGlobalScoreWithout dom a
   in scoreWithout
   -- putStrLn $ "Score without agent " ++ (show a) ++ ": " ++ (show scoreWithout)

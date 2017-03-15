@@ -4,6 +4,7 @@ module Models.POI
   (
     POI (..)
   , printPOI
+  , getDistance
   ) where
 
 import Models.State
@@ -40,12 +41,12 @@ instance Scoring POI where
                       locPOI   = _loc $ getState p
                       distID   = map (\a -> (square $ getDistance locPOI a, getID a)) agents
                       newMap   = foldl updateMap (getMap p) distID
-                      mDist    = maxDist newMap
+                      mDist    = minDist newMap
                       val      = if mDist == 0 then 0 else 1.0 / mDist
                       newScore = min 10 $ max val (_poiScore p)
                   in setMap (setScore p newScore) newMap
   evalScoreWithout d a p = let mapWithout = Map.delete (getID a) (getMap p)
-                               mDist = maxDist mapWithout
+                               mDist = minDist mapWithout
                            in if mDist == 0 then 0 else min 10 $ 1.0 / mDist
                                
                            
@@ -54,7 +55,6 @@ instance Show POI where
 
 getDistance :: Actor a => Location -> a -> Double
 getDistance p a = distance p (_loc $ getState a)
-
 scoringDistance :: POI -> ScoringRadius
 scoringDistance (POI _ _ r _ _) = r
 
@@ -68,8 +68,8 @@ updateMap :: Map.Map Int Double -> (Double, Int) -> Map.Map Int Double
 updateMap m (dist, uuid) = Map.insertWith (\new old -> if new > old then new else old) uuid dist m
 
 
-maxDist :: Map.Map Int Double -> Double
-maxDist = Map.foldl max 0
+minDist :: Map.Map Int Double -> Double
+minDist = minimum
 
 setMap :: POI -> Map.Map Int Double -> POI
 setMap (POI s x r i _) m = POI s x r i m

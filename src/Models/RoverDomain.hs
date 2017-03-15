@@ -86,7 +86,7 @@ getGlobalScoreWithout :: (Agent a, Scoring s) => RoverDomain a s -> a -> Double
 getGlobalScoreWithout d a = sum $ map (evalScoreWithout d a) (getScoring d)
 
 getAllScores :: (Agent a, Scoring s) => RoverDomain a s -> [(Int, Double)]
-getAllScores d = map (\s -> (getID s, getScore $ evalScore d s)) (getScoring d)
+getAllScores d = map (\s -> (getID s, getScore s)) (getScoring d)
 
 timestep d = let d1 = mapAgents d (oneMove d)
              in mapScoring d1 (evalScore d1 . oneMove d1)
